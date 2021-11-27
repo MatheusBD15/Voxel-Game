@@ -1,3 +1,0 @@
-"C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\reopen.dir/objects.a
-E:\Builds\bin\ar.exe cr CMakeFiles\reopen.dir/objects.a @CMakeFiles\reopen.dir\objects1.rsp
-E:\Builds\bin\gcc.exe -g -Wl,--whole-archive CMakeFiles\reopen.dir/objects.a -Wl,--no-whole-archive -o reopen.exe -Wl,--out-implib,libreopen.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\reopen.dir\linklibs.rsp

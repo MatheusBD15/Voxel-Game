@@ -1,3 +1,0 @@
-"C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\opacity.dir/objects.a
-E:\Builds\bin\ar.exe cr CMakeFiles\opacity.dir/objects.a @CMakeFiles\opacity.dir\objects1.rsp
-E:\Builds\bin\gcc.exe -g -mwindows -Wl,--whole-archive CMakeFiles\opacity.dir/objects.a -Wl,--no-whole-archive -o opacity.exe -Wl,--out-implib,libopacity.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\opacity.dir\linklibs.rsp

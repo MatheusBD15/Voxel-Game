@@ -1,3 +1,0 @@
-"C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\msaa.dir/objects.a
-E:\Builds\bin\ar.exe cr CMakeFiles\msaa.dir/objects.a @CMakeFiles\msaa.dir\objects1.rsp
-E:\Builds\bin\gcc.exe -g -Wl,--whole-archive CMakeFiles\msaa.dir/objects.a -Wl,--no-whole-archive -o msaa.exe -Wl,--out-implib,libmsaa.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\msaa.dir\linklibs.rsp

@@ -1,2 +1,0 @@
-E:\Builds\bin\ar.exe qc libglad.a CMakeFiles/glad.dir/src/glad.c.obj
-E:\Builds\bin\ranlib.exe libglad.a

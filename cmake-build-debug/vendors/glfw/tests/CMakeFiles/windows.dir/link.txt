@@ -1,3 +1,0 @@
-"C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\windows.dir/objects.a
-E:\Builds\bin\ar.exe cr CMakeFiles\windows.dir/objects.a @CMakeFiles\windows.dir\objects1.rsp
-E:\Builds\bin\gcc.exe -g -mwindows -Wl,--whole-archive CMakeFiles\windows.dir/objects.a -Wl,--no-whole-archive -o windows.exe -Wl,--out-implib,libwindows.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\windows.dir\linklibs.rsp
