@@ -61,6 +61,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "../vendors/glfw/src/glfw3Config.cmake.in"
   "../vendors/glfw/src/glfw_config.h.in"
   "../vendors/glfw/tests/CMakeLists.txt"
+  "../vendors/glm/CMakeLists.txt"
+  "../vendors/glm/glm/CMakeLists.txt"
   )
 
 # The corresponding makefile is:
@@ -82,6 +84,8 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "vendors/glfw/examples/CMakeFiles/CMakeDirectoryInformation.cmake"
   "vendors/glfw/tests/CMakeFiles/CMakeDirectoryInformation.cmake"
   "vendors/glad/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "vendors/glm/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "vendors/glm/glm/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:

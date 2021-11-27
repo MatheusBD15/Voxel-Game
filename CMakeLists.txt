@@ -34,3 +34,9 @@ set(GLAD_DIR "${VENDORS_DIR}/glad")
 add_subdirectory("${GLAD_DIR}")
 target_link_libraries(${PROJECT_NAME} PRIVATE "glad")
 target_include_directories(${PROJECT_NAME} PRIVATE "${GLAD_DIR}/include")
+
+# GLM
+set(GLM_DIR "${VENDORS_DIR}/glm")
+add_subdirectory("${GLM_DIR}")
+target_link_libraries(${PROJECT_NAME} PRIVATE "glm")
+target_include_directories(${PROJECT_NAME} PRIVATE "${glm_dir}/include")

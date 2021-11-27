@@ -65,17 +65,20 @@ CMAKE_BINARY_DIR = C:\Users\MatheusBD\Desktop\minecraftClone\cmake-build-debug
 all: CMakeFiles/mineCraftClone.dir/all
 all: vendors/glfw/all
 all: vendors/glad/all
+all: vendors/glm/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
 preinstall: vendors/glfw/preinstall
 preinstall: vendors/glad/preinstall
+preinstall: vendors/glm/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/mineCraftClone.dir/clean
 clean: vendors/glfw/clean
 clean: vendors/glad/clean
+clean: vendors/glm/clean
 .PHONY : clean
 
 #=============================================================================
@@ -214,6 +217,36 @@ vendors/glfw/tests/clean: vendors/glfw/tests/CMakeFiles/title.dir/clean
 vendors/glfw/tests/clean: vendors/glfw/tests/CMakeFiles/triangle-vulkan.dir/clean
 vendors/glfw/tests/clean: vendors/glfw/tests/CMakeFiles/windows.dir/clean
 .PHONY : vendors/glfw/tests/clean
+
+#=============================================================================
+# Directory level rules for directory vendors/glm
+
+# Recursive "all" directory target.
+vendors/glm/all: vendors/glm/glm/all
+.PHONY : vendors/glm/all
+
+# Recursive "preinstall" directory target.
+vendors/glm/preinstall: vendors/glm/glm/preinstall
+.PHONY : vendors/glm/preinstall
+
+# Recursive "clean" directory target.
+vendors/glm/clean: vendors/glm/glm/clean
+.PHONY : vendors/glm/clean
+
+#=============================================================================
+# Directory level rules for directory vendors/glm/glm
+
+# Recursive "all" directory target.
+vendors/glm/glm/all:
+.PHONY : vendors/glm/glm/all
+
+# Recursive "preinstall" directory target.
+vendors/glm/glm/preinstall:
+.PHONY : vendors/glm/glm/preinstall
+
+# Recursive "clean" directory target.
+vendors/glm/glm/clean:
+.PHONY : vendors/glm/glm/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/mineCraftClone.dir

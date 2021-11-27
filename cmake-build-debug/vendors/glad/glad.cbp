@@ -5,7 +5,7 @@
 		<Option title="glad"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\vendors\;CMake Files\vendors\glfw\;CMake Files\vendors\glfw\src\;CMake Files\vendors\glfw\examples\;CMake Files\vendors\glfw\tests\;CMake Files\vendors\glad\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\vendors\;CMake Files\vendors\glfw\;CMake Files\vendors\glfw\src\;CMake Files\vendors\glfw\examples\;CMake Files\vendors\glfw\tests\;CMake Files\vendors\glad\;CMake Files\vendors\glm\;CMake Files\vendors\glm\glm\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glad"/>
@@ -96,6 +96,12 @@
 		</Unit>
 		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glad/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\vendors\glad\"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glm/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\vendors\glm\"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glm/glm/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\vendors\glm\glm\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

@@ -21,6 +21,8 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../vendors/glfw/include"
   "../vendors/glad/include"
+  "/include"
+  "../vendors/glm/glm/.."
   )
 
 # The set of dependency files which are needed:
