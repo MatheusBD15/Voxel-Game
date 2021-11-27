@@ -65,35 +65,51 @@ include CMakeFiles/mineCraftClone.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/mineCraftClone.dir/flags.make
 
-CMakeFiles/mineCraftClone.dir/src/main.cpp.obj: CMakeFiles/mineCraftClone.dir/flags.make
-CMakeFiles/mineCraftClone.dir/src/main.cpp.obj: CMakeFiles/mineCraftClone.dir/includes_CXX.rsp
-CMakeFiles/mineCraftClone.dir/src/main.cpp.obj: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\MatheusBD\Desktop\minecraftClone\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/mineCraftClone.dir/src/main.cpp.obj"
-	E:\Builds\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\mineCraftClone.dir\src\main.cpp.obj -c C:\Users\MatheusBD\Desktop\minecraftClone\src\main.cpp
+CMakeFiles/mineCraftClone.dir/src/Main.cpp.obj: CMakeFiles/mineCraftClone.dir/flags.make
+CMakeFiles/mineCraftClone.dir/src/Main.cpp.obj: CMakeFiles/mineCraftClone.dir/includes_CXX.rsp
+CMakeFiles/mineCraftClone.dir/src/Main.cpp.obj: ../src/Main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\MatheusBD\Desktop\minecraftClone\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/mineCraftClone.dir/src/Main.cpp.obj"
+	E:\Builds\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\mineCraftClone.dir\src\Main.cpp.obj -c C:\Users\MatheusBD\Desktop\minecraftClone\src\Main.cpp
 
-CMakeFiles/mineCraftClone.dir/src/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mineCraftClone.dir/src/main.cpp.i"
-	E:\Builds\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\MatheusBD\Desktop\minecraftClone\src\main.cpp > CMakeFiles\mineCraftClone.dir\src\main.cpp.i
+CMakeFiles/mineCraftClone.dir/src/Main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mineCraftClone.dir/src/Main.cpp.i"
+	E:\Builds\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\MatheusBD\Desktop\minecraftClone\src\Main.cpp > CMakeFiles\mineCraftClone.dir\src\Main.cpp.i
 
-CMakeFiles/mineCraftClone.dir/src/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mineCraftClone.dir/src/main.cpp.s"
-	E:\Builds\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\MatheusBD\Desktop\minecraftClone\src\main.cpp -o CMakeFiles\mineCraftClone.dir\src\main.cpp.s
+CMakeFiles/mineCraftClone.dir/src/Main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mineCraftClone.dir/src/Main.cpp.s"
+	E:\Builds\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\MatheusBD\Desktop\minecraftClone\src\Main.cpp -o CMakeFiles\mineCraftClone.dir\src\Main.cpp.s
+
+CMakeFiles/mineCraftClone.dir/src/Window/Window.cpp.obj: CMakeFiles/mineCraftClone.dir/flags.make
+CMakeFiles/mineCraftClone.dir/src/Window/Window.cpp.obj: CMakeFiles/mineCraftClone.dir/includes_CXX.rsp
+CMakeFiles/mineCraftClone.dir/src/Window/Window.cpp.obj: ../src/Window/Window.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\MatheusBD\Desktop\minecraftClone\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/mineCraftClone.dir/src/Window/Window.cpp.obj"
+	E:\Builds\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\mineCraftClone.dir\src\Window\Window.cpp.obj -c C:\Users\MatheusBD\Desktop\minecraftClone\src\Window\Window.cpp
+
+CMakeFiles/mineCraftClone.dir/src/Window/Window.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mineCraftClone.dir/src/Window/Window.cpp.i"
+	E:\Builds\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\MatheusBD\Desktop\minecraftClone\src\Window\Window.cpp > CMakeFiles\mineCraftClone.dir\src\Window\Window.cpp.i
+
+CMakeFiles/mineCraftClone.dir/src/Window/Window.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mineCraftClone.dir/src/Window/Window.cpp.s"
+	E:\Builds\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\MatheusBD\Desktop\minecraftClone\src\Window\Window.cpp -o CMakeFiles\mineCraftClone.dir\src\Window\Window.cpp.s
 
 # Object files for target mineCraftClone
 mineCraftClone_OBJECTS = \
-"CMakeFiles/mineCraftClone.dir/src/main.cpp.obj"
+"CMakeFiles/mineCraftClone.dir/src/Main.cpp.obj" \
+"CMakeFiles/mineCraftClone.dir/src/Window/Window.cpp.obj"
 
 # External object files for target mineCraftClone
 mineCraftClone_EXTERNAL_OBJECTS =
 
-mineCraftClone.exe: CMakeFiles/mineCraftClone.dir/src/main.cpp.obj
+mineCraftClone.exe: CMakeFiles/mineCraftClone.dir/src/Main.cpp.obj
+mineCraftClone.exe: CMakeFiles/mineCraftClone.dir/src/Window/Window.cpp.obj
 mineCraftClone.exe: CMakeFiles/mineCraftClone.dir/build.make
 mineCraftClone.exe: vendors/glfw/src/libglfw3.a
 mineCraftClone.exe: vendors/glad/libglad.a
 mineCraftClone.exe: CMakeFiles/mineCraftClone.dir/linklibs.rsp
 mineCraftClone.exe: CMakeFiles/mineCraftClone.dir/objects1.rsp
 mineCraftClone.exe: CMakeFiles/mineCraftClone.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\MatheusBD\Desktop\minecraftClone\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable mineCraftClone.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\MatheusBD\Desktop\minecraftClone\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable mineCraftClone.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\mineCraftClone.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

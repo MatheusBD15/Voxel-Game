@@ -16,7 +16,7 @@ set(SRC_DIR "${CMAKE_CURRENT_SOURCE_DIR}/src")
 # Vendors dir variables
 set(VENDORS_DIR "${CMAKE_CURRENT_SOURCE_DIR}/vendors")
 
-set(TRANSLATION_FILES "${SRC_DIR}/main.cpp")
+set(TRANSLATION_FILES "${SRC_DIR}/Main.cpp" "${SRC_DIR}/Window/Window.cpp")
 
 set(SOURCES_FILES "${TRANSLATION_FILES}")
 

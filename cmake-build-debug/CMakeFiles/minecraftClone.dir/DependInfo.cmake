@@ -8,7 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/MatheusBD/Desktop/minecraftClone/src/main.cpp" "C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/CMakeFiles/minecraftClone.dir/src/main.cpp.obj"
+  "C:/Users/MatheusBD/Desktop/minecraftClone/src/Main.cpp" "C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/CMakeFiles/minecraftClone.dir/src/Main.cpp.obj"
+  "C:/Users/MatheusBD/Desktop/minecraftClone/src/Window/Window.cpp" "C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/CMakeFiles/minecraftClone.dir/src/Window/Window.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

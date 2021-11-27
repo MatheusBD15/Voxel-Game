@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/mineCraftClone.dir/src/main.cpp.obj"
+  "CMakeFiles/mineCraftClone.dir/src/Main.cpp.obj"
+  "CMakeFiles/mineCraftClone.dir/src/Window/Window.cpp.obj"
   "libmineCraftClone.dll.a"
   "mineCraftClone.exe"
   "mineCraftClone.exe.manifest"

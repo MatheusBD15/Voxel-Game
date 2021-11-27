@@ -1651,10 +1651,16 @@
 		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/src/glfw_config.h">
 			<Option target="glfw"/>
 		</Unit>
-		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/src/main.cpp">
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/src/Main.cpp">
 			<Option target="mineCraftClone"/>
 		</Unit>
-		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/src/main.h">
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/src/Main.h">
+			<Option target="mineCraftClone"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/src/Window/Window.cpp">
+			<Option target="mineCraftClone"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/src/Window/Window.h">
 			<Option target="mineCraftClone"/>
 		</Unit>
 		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glad/src/glad.c">

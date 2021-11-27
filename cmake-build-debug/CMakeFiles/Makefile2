@@ -261,7 +261,7 @@ CMakeFiles/mineCraftClone.dir/all: vendors/glad/CMakeFiles/glad.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/mineCraftClone.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\MatheusBD\Desktop\minecraftClone\cmake-build-debug\CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\MatheusBD\Desktop\minecraftClone\cmake-build-debug\CMakeFiles 16
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/mineCraftClone.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\MatheusBD\Desktop\minecraftClone\cmake-build-debug\CMakeFiles 0
 .PHONY : CMakeFiles/mineCraftClone.dir/rule
@@ -412,12 +412,12 @@ vendors/glfw/examples/CMakeFiles/simple.dir/clean:
 vendors/glfw/examples/CMakeFiles/gears.dir/all: vendors/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f vendors\glfw\examples\CMakeFiles\gears.dir\build.make vendors/glfw/examples/CMakeFiles/gears.dir/depend
 	$(MAKE) $(MAKESILENT) -f vendors\glfw\examples\CMakeFiles\gears.dir\build.make vendors/glfw/examples/CMakeFiles/gears.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\MatheusBD\Desktop\minecraftClone\cmake-build-debug\CMakeFiles --progress-num=17,18,19,20 "Built target gears"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\MatheusBD\Desktop\minecraftClone\cmake-build-debug\CMakeFiles --progress-num=17,18,19 "Built target gears"
 .PHONY : vendors/glfw/examples/CMakeFiles/gears.dir/all
 
 # Build rule for subdir invocation for target.
 vendors/glfw/examples/CMakeFiles/gears.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\MatheusBD\Desktop\minecraftClone\cmake-build-debug\CMakeFiles 16
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\MatheusBD\Desktop\minecraftClone\cmake-build-debug\CMakeFiles 15
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 vendors/glfw/examples/CMakeFiles/gears.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\MatheusBD\Desktop\minecraftClone\cmake-build-debug\CMakeFiles 0
 .PHONY : vendors/glfw/examples/CMakeFiles/gears.dir/rule
@@ -698,7 +698,7 @@ vendors/glfw/tests/CMakeFiles/glfwinfo.dir/clean:
 vendors/glfw/tests/CMakeFiles/iconify.dir/all: vendors/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f vendors\glfw\tests\CMakeFiles\iconify.dir\build.make vendors/glfw/tests/CMakeFiles/iconify.dir/depend
 	$(MAKE) $(MAKESILENT) -f vendors\glfw\tests\CMakeFiles\iconify.dir\build.make vendors/glfw/tests/CMakeFiles/iconify.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\MatheusBD\Desktop\minecraftClone\cmake-build-debug\CMakeFiles --progress-num=44,45,46 "Built target iconify"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\MatheusBD\Desktop\minecraftClone\cmake-build-debug\CMakeFiles --progress-num=43,44,45 "Built target iconify"
 .PHONY : vendors/glfw/tests/CMakeFiles/iconify.dir/all
 
 # Build rule for subdir invocation for target.
@@ -854,12 +854,12 @@ vendors/glfw/tests/CMakeFiles/gamma.dir/clean:
 vendors/glfw/tests/CMakeFiles/icon.dir/all: vendors/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f vendors\glfw\tests\CMakeFiles\icon.dir\build.make vendors/glfw/tests/CMakeFiles/icon.dir/depend
 	$(MAKE) $(MAKESILENT) -f vendors\glfw\tests\CMakeFiles\icon.dir\build.make vendors/glfw/tests/CMakeFiles/icon.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\MatheusBD\Desktop\minecraftClone\cmake-build-debug\CMakeFiles --progress-num=41,42,43 "Built target icon"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\MatheusBD\Desktop\minecraftClone\cmake-build-debug\CMakeFiles --progress-num=41,42 "Built target icon"
 .PHONY : vendors/glfw/tests/CMakeFiles/icon.dir/all
 
 # Build rule for subdir invocation for target.
 vendors/glfw/tests/CMakeFiles/icon.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\MatheusBD\Desktop\minecraftClone\cmake-build-debug\CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\MatheusBD\Desktop\minecraftClone\cmake-build-debug\CMakeFiles 14
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 vendors/glfw/tests/CMakeFiles/icon.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\MatheusBD\Desktop\minecraftClone\cmake-build-debug\CMakeFiles 0
 .PHONY : vendors/glfw/tests/CMakeFiles/icon.dir/rule
@@ -880,7 +880,7 @@ vendors/glfw/tests/CMakeFiles/icon.dir/clean:
 vendors/glfw/tests/CMakeFiles/inputlag.dir/all: vendors/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f vendors\glfw\tests\CMakeFiles\inputlag.dir\build.make vendors/glfw/tests/CMakeFiles/inputlag.dir/depend
 	$(MAKE) $(MAKESILENT) -f vendors\glfw\tests\CMakeFiles\inputlag.dir\build.make vendors/glfw/tests/CMakeFiles/inputlag.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\MatheusBD\Desktop\minecraftClone\cmake-build-debug\CMakeFiles --progress-num=47,48,49 "Built target inputlag"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\MatheusBD\Desktop\minecraftClone\cmake-build-debug\CMakeFiles --progress-num=46,47,48 "Built target inputlag"
 .PHONY : vendors/glfw/tests/CMakeFiles/inputlag.dir/all
 
 # Build rule for subdir invocation for target.
@@ -906,12 +906,12 @@ vendors/glfw/tests/CMakeFiles/inputlag.dir/clean:
 vendors/glfw/tests/CMakeFiles/joysticks.dir/all: vendors/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f vendors\glfw\tests\CMakeFiles\joysticks.dir\build.make vendors/glfw/tests/CMakeFiles/joysticks.dir/depend
 	$(MAKE) $(MAKESILENT) -f vendors\glfw\tests\CMakeFiles\joysticks.dir\build.make vendors/glfw/tests/CMakeFiles/joysticks.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\MatheusBD\Desktop\minecraftClone\cmake-build-debug\CMakeFiles --progress-num=50,51 "Built target joysticks"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\MatheusBD\Desktop\minecraftClone\cmake-build-debug\CMakeFiles --progress-num=49,50,51 "Built target joysticks"
 .PHONY : vendors/glfw/tests/CMakeFiles/joysticks.dir/all
 
 # Build rule for subdir invocation for target.
 vendors/glfw/tests/CMakeFiles/joysticks.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\MatheusBD\Desktop\minecraftClone\cmake-build-debug\CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\MatheusBD\Desktop\minecraftClone\cmake-build-debug\CMakeFiles 15
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 vendors/glfw/tests/CMakeFiles/joysticks.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\MatheusBD\Desktop\minecraftClone\cmake-build-debug\CMakeFiles 0
 .PHONY : vendors/glfw/tests/CMakeFiles/joysticks.dir/rule
@@ -1114,12 +1114,12 @@ vendors/glfw/tests/CMakeFiles/windows.dir/clean:
 vendors/glad/CMakeFiles/glad.dir/all:
 	$(MAKE) $(MAKESILENT) -f vendors\glad\CMakeFiles\glad.dir\build.make vendors/glad/CMakeFiles/glad.dir/depend
 	$(MAKE) $(MAKESILENT) -f vendors\glad\CMakeFiles\glad.dir\build.make vendors/glad/CMakeFiles/glad.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\MatheusBD\Desktop\minecraftClone\cmake-build-debug\CMakeFiles --progress-num=21 "Built target glad"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\MatheusBD\Desktop\minecraftClone\cmake-build-debug\CMakeFiles --progress-num=20,21 "Built target glad"
 .PHONY : vendors/glad/CMakeFiles/glad.dir/all
 
 # Build rule for subdir invocation for target.
 vendors/glad/CMakeFiles/glad.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\MatheusBD\Desktop\minecraftClone\cmake-build-debug\CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\MatheusBD\Desktop\minecraftClone\cmake-build-debug\CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 vendors/glad/CMakeFiles/glad.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\MatheusBD\Desktop\minecraftClone\cmake-build-debug\CMakeFiles 0
 .PHONY : vendors/glad/CMakeFiles/glad.dir/rule

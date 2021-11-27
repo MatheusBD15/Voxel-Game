@@ -602,29 +602,53 @@ glad/fast:
 	$(MAKE) $(MAKESILENT) -f vendors\glad\CMakeFiles\glad.dir\build.make vendors/glad/CMakeFiles/glad.dir/build
 .PHONY : glad/fast
 
-src/main.obj: src/main.cpp.obj
-.PHONY : src/main.obj
+src/Main.obj: src/Main.cpp.obj
+.PHONY : src/Main.obj
 
 # target to build an object file
-src/main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mineCraftClone.dir\build.make CMakeFiles/mineCraftClone.dir/src/main.cpp.obj
-.PHONY : src/main.cpp.obj
+src/Main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\mineCraftClone.dir\build.make CMakeFiles/mineCraftClone.dir/src/Main.cpp.obj
+.PHONY : src/Main.cpp.obj
 
-src/main.i: src/main.cpp.i
-.PHONY : src/main.i
+src/Main.i: src/Main.cpp.i
+.PHONY : src/Main.i
 
 # target to preprocess a source file
-src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mineCraftClone.dir\build.make CMakeFiles/mineCraftClone.dir/src/main.cpp.i
-.PHONY : src/main.cpp.i
+src/Main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\mineCraftClone.dir\build.make CMakeFiles/mineCraftClone.dir/src/Main.cpp.i
+.PHONY : src/Main.cpp.i
 
-src/main.s: src/main.cpp.s
-.PHONY : src/main.s
+src/Main.s: src/Main.cpp.s
+.PHONY : src/Main.s
 
 # target to generate assembly for a file
-src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mineCraftClone.dir\build.make CMakeFiles/mineCraftClone.dir/src/main.cpp.s
-.PHONY : src/main.cpp.s
+src/Main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\mineCraftClone.dir\build.make CMakeFiles/mineCraftClone.dir/src/Main.cpp.s
+.PHONY : src/Main.cpp.s
+
+src/Window/Window.obj: src/Window/Window.cpp.obj
+.PHONY : src/Window/Window.obj
+
+# target to build an object file
+src/Window/Window.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\mineCraftClone.dir\build.make CMakeFiles/mineCraftClone.dir/src/Window/Window.cpp.obj
+.PHONY : src/Window/Window.cpp.obj
+
+src/Window/Window.i: src/Window/Window.cpp.i
+.PHONY : src/Window/Window.i
+
+# target to preprocess a source file
+src/Window/Window.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\mineCraftClone.dir\build.make CMakeFiles/mineCraftClone.dir/src/Window/Window.cpp.i
+.PHONY : src/Window/Window.cpp.i
+
+src/Window/Window.s: src/Window/Window.cpp.s
+.PHONY : src/Window/Window.s
+
+# target to generate assembly for a file
+src/Window/Window.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\mineCraftClone.dir\build.make CMakeFiles/mineCraftClone.dir/src/Window/Window.cpp.s
+.PHONY : src/Window/Window.cpp.s
 
 # Help Target
 help:
@@ -672,9 +696,12 @@ help:
 	@echo ... triangle-vulkan
 	@echo ... wave
 	@echo ... windows
-	@echo ... src/main.obj
-	@echo ... src/main.i
-	@echo ... src/main.s
+	@echo ... src/Main.obj
+	@echo ... src/Main.i
+	@echo ... src/Main.s
+	@echo ... src/Window/Window.obj
+	@echo ... src/Window/Window.i
+	@echo ... src/Window/Window.s
 .PHONY : help
 
 
