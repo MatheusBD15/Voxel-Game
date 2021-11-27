@@ -1,0 +1,3 @@
+C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/CMakeFiles/minecraftClone.dir
+C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/CMakeFiles/edit_cache.dir

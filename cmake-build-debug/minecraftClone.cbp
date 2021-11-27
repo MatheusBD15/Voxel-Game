@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="minecraftClone"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="minecraftClone">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/minecraftClone.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/."/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/Makefile&quot;  VERBOSE=1 minecraftClone"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="minecraftClone/fast">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/minecraftClone.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/."/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/Makefile&quot;  VERBOSE=1 minecraftClone/fast"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/main.cpp">
+			<Option target="minecraftClone"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/main.h">
+			<Option target="minecraftClone"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

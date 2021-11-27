@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/MatheusBD/Desktop/minecraftClone/main.cpp
+main.h
+C:/Users/MatheusBD/Desktop/minecraftClone/main.h
+iostream
+-
+
+C:/Users/MatheusBD/Desktop/minecraftClone/main.h
+
