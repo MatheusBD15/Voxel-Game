@@ -75,6 +75,8 @@ C:/Users/MatheusBD/Desktop/minecraftClone/src/Window/Window.h
 C:/Users/MatheusBD/Desktop/minecraftClone/src/Main.h
 GLFW/glfw3.h
 -
+stdint.h
+C:/Users/MatheusBD/Desktop/minecraftClone/src/stdint.h
 
 C:/Users/MatheusBD/Desktop/minecraftClone/src/Window/Window.cpp
 Window.h
