@@ -2,10 +2,10 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6"/>
 	<Project>
-		<Option title="minecraftClone"/>
+		<Option title="mineCraftClone"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\vendors\;CMake Files\vendors\glfw\;CMake Files\vendors\glfw\src\;CMake Files\vendors\glfw\examples\;CMake Files\vendors\glfw\tests\;CMake Files\vendors\glad\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug"/>
@@ -27,14 +27,16 @@
 					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="minecraftClone">
-				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/minecraftClone.exe" prefix_auto="0" extension_auto="0"/>
+			<Target title="mineCraftClone">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/mineCraftClone.exe" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/."/>
+					<Add option="-DGLFW_INCLUDE_NONE"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glad/include"/>
 					<Add directory="E:/Builds/include"/>
 					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
 					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
@@ -44,20 +46,22 @@
 					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/Makefile&quot;  VERBOSE=1 minecraftClone"/>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/Makefile&quot;  VERBOSE=1 mineCraftClone"/>
 					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="minecraftClone/fast">
-				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/minecraftClone.exe" prefix_auto="0" extension_auto="0"/>
+			<Target title="mineCraftClone/fast">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/mineCraftClone.exe" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/."/>
+					<Add option="-DGLFW_INCLUDE_NONE"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glad/include"/>
 					<Add directory="E:/Builds/include"/>
 					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
 					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
@@ -67,7 +71,27 @@
 					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/Makefile&quot;  VERBOSE=1 minecraftClone/fast"/>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/Makefile&quot;  VERBOSE=1 mineCraftClone/fast"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/local">
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/local"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install">
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/Makefile&quot;  VERBOSE=1 install"/>
 					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -83,15 +107,1860 @@
 					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="list_install_components">
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/Makefile&quot;  VERBOSE=1 list_install_components"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/strip">
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/strip"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="uninstall">
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/Makefile&quot;  VERBOSE=1 uninstall"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="update_mappings">
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/src"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/src/Makefile&quot;  VERBOSE=1 update_mappings"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="glfw">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/src/libglfw3.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/src"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-D_GLFW_USE_CONFIG_H"/>
+					<Add option="-DUNICODE"/>
+					<Add option="-D_UNICODE"/>
+					<Add option="-DWINVER=0x0501"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/src"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/src"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/src/Makefile&quot;  VERBOSE=1 glfw"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="glfw/fast">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/src/libglfw3.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/src"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-D_GLFW_USE_CONFIG_H"/>
+					<Add option="-DUNICODE"/>
+					<Add option="-D_UNICODE"/>
+					<Add option="-DWINVER=0x0501"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/src"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/src"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/src/Makefile&quot;  VERBOSE=1 glfw/fast"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="boing">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/boing.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 boing"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="boing/fast">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/boing.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 boing/fast"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="simple">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/simple.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 simple"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="simple/fast">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/simple.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 simple/fast"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gears">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/gears.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 gears"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gears/fast">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/gears.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 gears/fast"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="particles">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/particles.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 particles"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="particles/fast">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/particles.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 particles/fast"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="heightmap">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/heightmap.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 heightmap"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="heightmap/fast">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/heightmap.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 heightmap/fast"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="splitview">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/splitview.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 splitview"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="splitview/fast">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/splitview.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 splitview/fast"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="offscreen">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/offscreen.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 offscreen"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="offscreen/fast">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/offscreen.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 offscreen/fast"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="sharing">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/sharing.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 sharing"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="sharing/fast">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/sharing.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 sharing/fast"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="wave">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/wave.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 wave"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="wave/fast">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/wave.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 wave/fast"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="clipboard">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/clipboard.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clipboard"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="clipboard/fast">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/clipboard.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clipboard/fast"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="events">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/events.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 events"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="events/fast">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/events.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 events/fast"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="msaa">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/msaa.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 msaa"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="msaa/fast">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/msaa.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 msaa/fast"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="glfwinfo">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/glfwinfo.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 glfwinfo"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="glfwinfo/fast">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/glfwinfo.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 glfwinfo/fast"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="iconify">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/iconify.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 iconify"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="iconify/fast">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/iconify.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 iconify/fast"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="monitors">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/monitors.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 monitors"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="monitors/fast">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/monitors.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 monitors/fast"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="reopen">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/reopen.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 reopen"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="reopen/fast">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/reopen.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 reopen/fast"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="cursor">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/cursor.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 cursor"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="cursor/fast">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/cursor.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 cursor/fast"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="empty">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/empty.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 empty"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="empty/fast">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/empty.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 empty/fast"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gamma">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/gamma.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 gamma"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gamma/fast">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/gamma.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 gamma/fast"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="icon">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/icon.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 icon"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="icon/fast">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/icon.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 icon/fast"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="inputlag">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/inputlag.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 inputlag"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="inputlag/fast">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/inputlag.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 inputlag/fast"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="joysticks">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/joysticks.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 joysticks"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="joysticks/fast">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/joysticks.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 joysticks/fast"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="threads">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/threads.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 threads"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="threads/fast">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/threads.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 threads/fast"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="opacity">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/opacity.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 opacity"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="opacity/fast">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/opacity.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 opacity/fast"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="tearing">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/tearing.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 tearing"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="tearing/fast">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/tearing.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 tearing/fast"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="timeout">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/timeout.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 timeout"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="timeout/fast">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/timeout.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 timeout/fast"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="title">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/title.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 title"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="title/fast">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/title.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 title/fast"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="triangle-vulkan">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/triangle-vulkan.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 triangle-vulkan"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="triangle-vulkan/fast">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/triangle-vulkan.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 triangle-vulkan/fast"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="windows">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/windows.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 windows"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="windows/fast">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/windows.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps"/>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 windows/fast"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="glad">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glad/libglad.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glad"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glad/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glad/Makefile&quot;  VERBOSE=1 glad"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glad/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glad/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glad/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="glad/fast">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glad/libglad.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glad"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glad/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glad/Makefile&quot;  VERBOSE=1 glad/fast"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glad/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glad/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glad/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 		</Build>
-		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/main.cpp">
-			<Option target="minecraftClone"/>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glfw/src/glfw_config.h">
+			<Option target="glfw"/>
 		</Unit>
-		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/main.h">
-			<Option target="minecraftClone"/>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/src/main.cpp">
+			<Option target="mineCraftClone"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/src/main.h">
+			<Option target="mineCraftClone"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glad/src/glad.c">
+			<Option target="glad"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/CMake/GenerateMappings.cmake">
+			<Option target="update_mappings"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps/getopt.c">
+			<Option target="particles"/>
+			<Option target="clipboard"/>
+			<Option target="events"/>
+			<Option target="msaa"/>
+			<Option target="glfwinfo"/>
+			<Option target="iconify"/>
+			<Option target="monitors"/>
+			<Option target="inputlag"/>
+			<Option target="windows"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps/getopt.h">
+			<Option target="particles"/>
+			<Option target="clipboard"/>
+			<Option target="events"/>
+			<Option target="msaa"/>
+			<Option target="glfwinfo"/>
+			<Option target="iconify"/>
+			<Option target="monitors"/>
+			<Option target="inputlag"/>
+			<Option target="windows"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps/glad/gl.h">
+			<Option target="boing"/>
+			<Option target="simple"/>
+			<Option target="gears"/>
+			<Option target="particles"/>
+			<Option target="heightmap"/>
+			<Option target="splitview"/>
+			<Option target="offscreen"/>
+			<Option target="sharing"/>
+			<Option target="wave"/>
+			<Option target="clipboard"/>
+			<Option target="events"/>
+			<Option target="msaa"/>
+			<Option target="glfwinfo"/>
+			<Option target="iconify"/>
+			<Option target="monitors"/>
+			<Option target="reopen"/>
+			<Option target="cursor"/>
+			<Option target="empty"/>
+			<Option target="gamma"/>
+			<Option target="icon"/>
+			<Option target="inputlag"/>
+			<Option target="joysticks"/>
+			<Option target="threads"/>
+			<Option target="opacity"/>
+			<Option target="tearing"/>
+			<Option target="timeout"/>
+			<Option target="title"/>
+			<Option target="windows"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps/glad/vulkan.h">
+			<Option target="glfwinfo"/>
+			<Option target="triangle-vulkan"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps/glad_gl.c">
+			<Option target="boing"/>
+			<Option target="simple"/>
+			<Option target="gears"/>
+			<Option target="particles"/>
+			<Option target="heightmap"/>
+			<Option target="splitview"/>
+			<Option target="offscreen"/>
+			<Option target="sharing"/>
+			<Option target="wave"/>
+			<Option target="clipboard"/>
+			<Option target="events"/>
+			<Option target="msaa"/>
+			<Option target="glfwinfo"/>
+			<Option target="iconify"/>
+			<Option target="monitors"/>
+			<Option target="reopen"/>
+			<Option target="cursor"/>
+			<Option target="empty"/>
+			<Option target="gamma"/>
+			<Option target="icon"/>
+			<Option target="inputlag"/>
+			<Option target="joysticks"/>
+			<Option target="threads"/>
+			<Option target="opacity"/>
+			<Option target="tearing"/>
+			<Option target="timeout"/>
+			<Option target="title"/>
+			<Option target="windows"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps/glad_vulkan.c">
+			<Option target="glfwinfo"/>
+			<Option target="triangle-vulkan"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps/tinycthread.c">
+			<Option target="particles"/>
+			<Option target="empty"/>
+			<Option target="threads"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/deps/tinycthread.h">
+			<Option target="particles"/>
+			<Option target="empty"/>
+			<Option target="threads"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/examples/boing.c">
+			<Option target="boing"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/examples/gears.c">
+			<Option target="gears"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/examples/glfw.rc">
+			<Option target="boing"/>
+			<Option target="simple"/>
+			<Option target="gears"/>
+			<Option target="particles"/>
+			<Option target="heightmap"/>
+			<Option target="splitview"/>
+			<Option target="offscreen"/>
+			<Option target="sharing"/>
+			<Option target="wave"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/examples/heightmap.c">
+			<Option target="heightmap"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/examples/offscreen.c">
+			<Option target="offscreen"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/examples/particles.c">
+			<Option target="particles"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/examples/sharing.c">
+			<Option target="sharing"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/examples/simple.c">
+			<Option target="simple"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/examples/splitview.c">
+			<Option target="splitview"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/examples/wave.c">
+			<Option target="wave"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include/GLFW/glfw3.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/include/GLFW/glfw3native.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/src/context.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/src/egl_context.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/src/egl_context.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/src/init.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/src/input.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/src/internal.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/src/mappings.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/src/mappings.h.in">
+			<Option target="update_mappings"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/src/monitor.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/src/osmesa_context.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/src/osmesa_context.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/src/vulkan.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/src/wgl_context.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/src/wgl_context.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/src/win32_init.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/src/win32_joystick.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/src/win32_joystick.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/src/win32_monitor.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/src/win32_platform.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/src/win32_thread.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/src/win32_time.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/src/win32_window.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/src/window.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/tests/clipboard.c">
+			<Option target="clipboard"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/tests/cursor.c">
+			<Option target="cursor"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/tests/empty.c">
+			<Option target="empty"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/tests/events.c">
+			<Option target="events"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/tests/gamma.c">
+			<Option target="gamma"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/tests/glfwinfo.c">
+			<Option target="glfwinfo"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/tests/icon.c">
+			<Option target="icon"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/tests/iconify.c">
+			<Option target="iconify"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/tests/inputlag.c">
+			<Option target="inputlag"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/tests/joysticks.c">
+			<Option target="joysticks"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/tests/monitors.c">
+			<Option target="monitors"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/tests/msaa.c">
+			<Option target="msaa"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/tests/opacity.c">
+			<Option target="opacity"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/tests/reopen.c">
+			<Option target="reopen"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/tests/tearing.c">
+			<Option target="tearing"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/tests/threads.c">
+			<Option target="threads"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/tests/timeout.c">
+			<Option target="timeout"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/tests/title.c">
+			<Option target="title"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/tests/triangle-vulkan.c">
+			<Option target="triangle-vulkan"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/tests/windows.c">
+			<Option target="windows"/>
 		</Unit>
 		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\vendors\glfw\"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/cmake_uninstall.cmake.in">
+			<Option virtualFolder="CMake Files\vendors\glfw\"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\vendors\glfw\src\"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/src/glfw3.pc.in">
+			<Option virtualFolder="CMake Files\vendors\glfw\src\"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/src/glfw3Config.cmake.in">
+			<Option virtualFolder="CMake Files\vendors\glfw\src\"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/src/glfw_config.h.in">
+			<Option virtualFolder="CMake Files\vendors\glfw\src\"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/examples/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\vendors\glfw\examples\"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/tests/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\vendors\glfw\tests\"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glad/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\vendors\glad\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

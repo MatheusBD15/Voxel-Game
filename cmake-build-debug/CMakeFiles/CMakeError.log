@@ -1,0 +1,26 @@
+Performing C SOURCE FILE Test _GLFW_HAS_64ASLR failed with the following output:
+Change Dir: C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):E:/Builds/bin/mingw32-make.exe -f Makefile cmTC_7eabe/fast && mingw32-make.exe[1]: Entering directory 'C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/CMakeFiles/CMakeTmp'
+E:/Builds/bin/mingw32-make.exe  -f CMakeFiles\cmTC_7eabe.dir\build.make CMakeFiles/cmTC_7eabe.dir/build
+mingw32-make.exe[2]: Entering directory 'C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_7eabe.dir/src.c.obj
+E:\Builds\bin\gcc.exe -D_GLFW_HAS_64ASLR  -Wl,--high-entropy-va -o CMakeFiles\cmTC_7eabe.dir\src.c.obj -c C:\Users\MatheusBD\Desktop\minecraftClone\cmake-build-debug\CMakeFiles\CMakeTmp\src.c
+Linking C executable cmTC_7eabe.exe
+"C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_7eabe.dir\link.txt --verbose=1
+"C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\cmTC_7eabe.dir/objects.a
+E:\Builds\bin\ar.exe cr CMakeFiles\cmTC_7eabe.dir/objects.a @CMakeFiles\cmTC_7eabe.dir\objects1.rsp
+E:\Builds\bin\gcc.exe  -Wl,--high-entropy-va -Wl,--whole-archive CMakeFiles\cmTC_7eabe.dir/objects.a -Wl,--no-whole-archive -o cmTC_7eabe.exe -Wl,--out-implib,libcmTC_7eabe.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_7eabe.dir\linklibs.rsp
+e:/builds/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/bin/ld.exe: unrecognized option '--high-entropy-va'
+e:/builds/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/bin/ld.exe: use the --help option for usage information
+collect2.exe: error: ld returned 1 exit status
+CMakeFiles\cmTC_7eabe.dir\build.make:99: recipe for target 'cmTC_7eabe.exe' failed
+mingw32-make.exe[2]: *** [cmTC_7eabe.exe] Error 1
+mingw32-make.exe[2]: Leaving directory 'C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_7eabe/fast' failed
+mingw32-make.exe[1]: *** [cmTC_7eabe/fast] Error 2
+mingw32-make.exe[1]: Leaving directory 'C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }

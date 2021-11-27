@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\cursor.dir/objects.a
+E:\Builds\bin\ar.exe cr CMakeFiles\cursor.dir/objects.a @CMakeFiles\cursor.dir\objects1.rsp
+E:\Builds\bin\gcc.exe -g -Wl,--whole-archive CMakeFiles\cursor.dir/objects.a -Wl,--no-whole-archive -o cursor.exe -Wl,--out-implib,libcursor.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cursor.dir\linklibs.rsp

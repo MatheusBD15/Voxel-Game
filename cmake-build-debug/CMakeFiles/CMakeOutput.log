@@ -519,3 +519,133 @@ mingw32-make.exe[1]: Leaving directory 'C:/Users/MatheusBD/Desktop/minecraftClon
     Feature record: CXX_FEATURE:0cxx_relaxed_constexpr
     Feature record: CXX_FEATURE:0cxx_return_type_deduction
     Feature record: CXX_FEATURE:0cxx_variable_templates
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):E:/Builds/bin/mingw32-make.exe -f Makefile cmTC_2d499/fast && mingw32-make.exe[1]: Entering directory 'C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/CMakeFiles/CMakeTmp'
+E:/Builds/bin/mingw32-make.exe  -f CMakeFiles\cmTC_2d499.dir\build.make CMakeFiles/cmTC_2d499.dir/build
+mingw32-make.exe[2]: Entering directory 'C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2d499.dir/CheckIncludeFile.c.obj
+E:\Builds\bin\gcc.exe    -o CMakeFiles\cmTC_2d499.dir\CheckIncludeFile.c.obj -c C:\Users\MatheusBD\Desktop\minecraftClone\cmake-build-debug\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+Linking C executable cmTC_2d499.exe
+"C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_2d499.dir\link.txt --verbose=1
+"C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\cmTC_2d499.dir/objects.a
+E:\Builds\bin\ar.exe cr CMakeFiles\cmTC_2d499.dir/objects.a @CMakeFiles\cmTC_2d499.dir\objects1.rsp
+E:\Builds\bin\gcc.exe -Wl,--whole-archive CMakeFiles\cmTC_2d499.dir/objects.a -Wl,--no-whole-archive -o cmTC_2d499.exe -Wl,--out-implib,libcmTC_2d499.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_2d499.dir\linklibs.rsp
+mingw32-make.exe[2]: Leaving directory 'C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/CMakeFiles/CMakeTmp'
+mingw32-make.exe[1]: Leaving directory 'C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD succeeded with the following output:
+Change Dir: C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):E:/Builds/bin/mingw32-make.exe -f Makefile cmTC_b2fde/fast && mingw32-make.exe[1]: Entering directory 'C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/CMakeFiles/CMakeTmp'
+E:/Builds/bin/mingw32-make.exe  -f CMakeFiles\cmTC_b2fde.dir\build.make CMakeFiles/cmTC_b2fde.dir/build
+mingw32-make.exe[2]: Entering directory 'C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b2fde.dir/src.c.obj
+E:\Builds\bin\gcc.exe -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles\cmTC_b2fde.dir\src.c.obj -c C:\Users\MatheusBD\Desktop\minecraftClone\cmake-build-debug\CMakeFiles\CMakeTmp\src.c
+Linking C executable cmTC_b2fde.exe
+"C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_b2fde.dir\link.txt --verbose=1
+"C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\cmTC_b2fde.dir/objects.a
+E:\Builds\bin\ar.exe cr CMakeFiles\cmTC_b2fde.dir/objects.a @CMakeFiles\cmTC_b2fde.dir\objects1.rsp
+E:\Builds\bin\gcc.exe -Wl,--whole-archive CMakeFiles\cmTC_b2fde.dir/objects.a -Wl,--no-whole-archive -o cmTC_b2fde.exe -Wl,--out-implib,libcmTC_b2fde.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_b2fde.dir\linklibs.rsp
+mingw32-make.exe[2]: Leaving directory 'C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/CMakeFiles/CMakeTmp'
+mingw32-make.exe[1]: Leaving directory 'C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the include file dinput.h exists passed with the following output:
+Change Dir: C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):E:/Builds/bin/mingw32-make.exe -f Makefile cmTC_d3f31/fast && mingw32-make.exe[1]: Entering directory 'C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/CMakeFiles/CMakeTmp'
+E:/Builds/bin/mingw32-make.exe  -f CMakeFiles\cmTC_d3f31.dir\build.make CMakeFiles/cmTC_d3f31.dir/build
+mingw32-make.exe[2]: Entering directory 'C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d3f31.dir/CheckIncludeFile.c.obj
+E:\Builds\bin\gcc.exe    -o CMakeFiles\cmTC_d3f31.dir\CheckIncludeFile.c.obj -c C:\Users\MatheusBD\Desktop\minecraftClone\cmake-build-debug\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+Linking C executable cmTC_d3f31.exe
+"C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_d3f31.dir\link.txt --verbose=1
+"C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\cmTC_d3f31.dir/objects.a
+E:\Builds\bin\ar.exe cr CMakeFiles\cmTC_d3f31.dir/objects.a @CMakeFiles\cmTC_d3f31.dir\objects1.rsp
+E:\Builds\bin\gcc.exe -Wl,--whole-archive CMakeFiles\cmTC_d3f31.dir/objects.a -Wl,--no-whole-archive -o cmTC_d3f31.exe -Wl,--out-implib,libcmTC_d3f31.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_d3f31.dir\linklibs.rsp
+mingw32-make.exe[2]: Leaving directory 'C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/CMakeFiles/CMakeTmp'
+mingw32-make.exe[1]: Leaving directory 'C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file xinput.h exists passed with the following output:
+Change Dir: C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):E:/Builds/bin/mingw32-make.exe -f Makefile cmTC_327c1/fast && mingw32-make.exe[1]: Entering directory 'C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/CMakeFiles/CMakeTmp'
+E:/Builds/bin/mingw32-make.exe  -f CMakeFiles\cmTC_327c1.dir\build.make CMakeFiles/cmTC_327c1.dir/build
+mingw32-make.exe[2]: Entering directory 'C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_327c1.dir/CheckIncludeFile.c.obj
+E:\Builds\bin\gcc.exe    -o CMakeFiles\cmTC_327c1.dir\CheckIncludeFile.c.obj -c C:\Users\MatheusBD\Desktop\minecraftClone\cmake-build-debug\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+Linking C executable cmTC_327c1.exe
+"C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_327c1.dir\link.txt --verbose=1
+"C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\cmTC_327c1.dir/objects.a
+E:\Builds\bin\ar.exe cr CMakeFiles\cmTC_327c1.dir/objects.a @CMakeFiles\cmTC_327c1.dir\objects1.rsp
+E:\Builds\bin\gcc.exe -Wl,--whole-archive CMakeFiles\cmTC_327c1.dir/objects.a -Wl,--no-whole-archive -o cmTC_327c1.exe -Wl,--out-implib,libcmTC_327c1.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_327c1.dir\linklibs.rsp
+mingw32-make.exe[2]: Leaving directory 'C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/CMakeFiles/CMakeTmp'
+mingw32-make.exe[1]: Leaving directory 'C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+
+Performing C SOURCE FILE Test _GLFW_HAS_DEP succeeded with the following output:
+Change Dir: C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):E:/Builds/bin/mingw32-make.exe -f Makefile cmTC_75815/fast && mingw32-make.exe[1]: Entering directory 'C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/CMakeFiles/CMakeTmp'
+E:/Builds/bin/mingw32-make.exe  -f CMakeFiles\cmTC_75815.dir\build.make CMakeFiles/cmTC_75815.dir/build
+mingw32-make.exe[2]: Entering directory 'C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_75815.dir/src.c.obj
+E:\Builds\bin\gcc.exe -D_GLFW_HAS_DEP  -Wl,--nxcompat -o CMakeFiles\cmTC_75815.dir\src.c.obj -c C:\Users\MatheusBD\Desktop\minecraftClone\cmake-build-debug\CMakeFiles\CMakeTmp\src.c
+Linking C executable cmTC_75815.exe
+"C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_75815.dir\link.txt --verbose=1
+"C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\cmTC_75815.dir/objects.a
+E:\Builds\bin\ar.exe cr CMakeFiles\cmTC_75815.dir/objects.a @CMakeFiles\cmTC_75815.dir\objects1.rsp
+E:\Builds\bin\gcc.exe  -Wl,--nxcompat -Wl,--whole-archive CMakeFiles\cmTC_75815.dir/objects.a -Wl,--no-whole-archive -o cmTC_75815.exe -Wl,--out-implib,libcmTC_75815.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_75815.dir\linklibs.rsp
+mingw32-make.exe[2]: Leaving directory 'C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/CMakeFiles/CMakeTmp'
+mingw32-make.exe[1]: Leaving directory 'C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test _GLFW_HAS_ASLR succeeded with the following output:
+Change Dir: C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):E:/Builds/bin/mingw32-make.exe -f Makefile cmTC_62123/fast && mingw32-make.exe[1]: Entering directory 'C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/CMakeFiles/CMakeTmp'
+E:/Builds/bin/mingw32-make.exe  -f CMakeFiles\cmTC_62123.dir\build.make CMakeFiles/cmTC_62123.dir/build
+mingw32-make.exe[2]: Entering directory 'C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_62123.dir/src.c.obj
+E:\Builds\bin\gcc.exe -D_GLFW_HAS_ASLR  -Wl,--dynamicbase -o CMakeFiles\cmTC_62123.dir\src.c.obj -c C:\Users\MatheusBD\Desktop\minecraftClone\cmake-build-debug\CMakeFiles\CMakeTmp\src.c
+Linking C executable cmTC_62123.exe
+"C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_62123.dir\link.txt --verbose=1
+"C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\cmTC_62123.dir/objects.a
+E:\Builds\bin\ar.exe cr CMakeFiles\cmTC_62123.dir/objects.a @CMakeFiles\cmTC_62123.dir\objects1.rsp
+E:\Builds\bin\gcc.exe  -Wl,--dynamicbase -Wl,--whole-archive CMakeFiles\cmTC_62123.dir/objects.a -Wl,--no-whole-archive -o cmTC_62123.exe -Wl,--out-implib,libcmTC_62123.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_62123.dir\linklibs.rsp
+mingw32-make.exe[2]: Leaving directory 'C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/CMakeFiles/CMakeTmp'
+mingw32-make.exe[1]: Leaving directory 'C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }

@@ -1,12 +1,12 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/minecraftClone.dir/main.cpp.obj"
-  "libminecraftClone.dll.a"
-  "minecraftClone.exe"
-  "minecraftClone.exe.manifest"
-  "minecraftClone.pdb"
+  "CMakeFiles/mineCraftClone.dir/src/main.cpp.obj"
+  "libmineCraftClone.dll.a"
+  "mineCraftClone.exe"
+  "mineCraftClone.exe.manifest"
+  "mineCraftClone.pdb"
 )
 
 # Per-language clean rules from dependency scanning.
 foreach(lang CXX)
-  include(CMakeFiles/minecraftClone.dir/cmake_clean_${lang}.cmake OPTIONAL)
+  include(CMakeFiles/mineCraftClone.dir/cmake_clean_${lang}.cmake OPTIONAL)
 endforeach()

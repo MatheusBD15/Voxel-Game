@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="glad"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\vendors\;CMake Files\vendors\glfw\;CMake Files\vendors\glfw\src\;CMake Files\vendors\glfw\examples\;CMake Files\vendors\glfw\tests\;CMake Files\vendors\glad\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glad"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glad/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glad/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glad/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glad/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="glad">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glad/libglad.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glad"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glad/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glad/Makefile&quot;  VERBOSE=1 glad"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glad/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glad/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glad/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="glad/fast">
+				<Option output="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glad/libglad.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glad"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glad/include"/>
+					<Add directory="E:/Builds/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="e:\builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glad/Makefile&quot;  VERBOSE=1 glad/fast"/>
+					<CompileFile command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glad/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glad/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Builds/bin/mingw32-make.exe -f &quot;C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/vendors/glad/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glad/src/glad.c">
+			<Option target="glad"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\vendors\glfw\"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/cmake_uninstall.cmake.in">
+			<Option virtualFolder="CMake Files\vendors\glfw\"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\vendors\glfw\src\"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/src/glfw3.pc.in">
+			<Option virtualFolder="CMake Files\vendors\glfw\src\"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/src/glfw3Config.cmake.in">
+			<Option virtualFolder="CMake Files\vendors\glfw\src\"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/src/glfw_config.h.in">
+			<Option virtualFolder="CMake Files\vendors\glfw\src\"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/examples/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\vendors\glfw\examples\"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glfw/tests/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\vendors\glfw\tests\"/>
+		</Unit>
+		<Unit filename="C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glad/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\vendors\glad\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

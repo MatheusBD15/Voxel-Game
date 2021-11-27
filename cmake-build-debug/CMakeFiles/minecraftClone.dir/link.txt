@@ -1,3 +1,3 @@
-"C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\minecraftClone.dir/objects.a
-E:\Builds\bin\ar.exe cr CMakeFiles\minecraftClone.dir/objects.a @CMakeFiles\minecraftClone.dir\objects1.rsp
-E:\Builds\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\minecraftClone.dir/objects.a -Wl,--no-whole-archive -o minecraftClone.exe -Wl,--out-implib,libminecraftClone.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\minecraftClone.dir\linklibs.rsp
+"C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\mineCraftClone.dir/objects.a
+E:\Builds\bin\ar.exe cr CMakeFiles\mineCraftClone.dir/objects.a @CMakeFiles\mineCraftClone.dir\objects1.rsp
+E:\Builds\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\mineCraftClone.dir/objects.a -Wl,--no-whole-archive -o mineCraftClone.exe -Wl,--out-implib,libmineCraftClone.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\mineCraftClone.dir\linklibs.rsp

@@ -1,4 +1,12 @@
 "C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - MinGW Makefiles" C:\Users\MatheusBD\Desktop\minecraftClone
--- Configuring done
--- Generating done
--- Build files have been written to: C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug
+-- Could NOT find Doxygen (missing: DOXYGEN_EXECUTABLE) 
+-- Using Win32 for window creation
+CMake Error at CMakeLists.txt:34 (add_subdirectory):
+  add_subdirectory given source
+  "C:/Users/MatheusBD/Desktop/minecraftClone/vendors/glad" which is not an
+  existing directory.
+
+
+-- Configuring incomplete, errors occurred!
+See also "C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/CMakeFiles/CMakeOutput.log".
+See also "C:/Users/MatheusBD/Desktop/minecraftClone/cmake-build-debug/CMakeFiles/CMakeError.log".
