@@ -4,7 +4,7 @@ if (${CMAKE_VERSION} VERSION_LESS 3.12)
     cmake_policy(VERSION ${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION})
 endif()
 
-project(mineCraftClone VERSION 0.0
+project(voxelGame VERSION 0.0
         DESCRIPTION "Implementation of minecraft using C and OpenGL."
         LANGUAGES CXX)
 
