@@ -4,21 +4,8 @@
 
 #include "VAO.h"
 
-VAO::VAO()
+VAO::VAO(std::vector<float> vertices, std::vector<unsigned int> indices)
 {
-    std::vector<unsigned int> indices = {  // note that we start from 0!
-            0, 1, 3,  // first Triangle
-            1, 2, 3   // second Triangle
-    };
-
-    std::vector<float> vertices = {
-            0.5f,  0.5f, 0.0f,  // top right
-            0.5f, -0.5f, 0.0f,  // bottom right
-            -0.5f, -0.5f, 0.0f,  // bottom left
-            -0.5f,  0.5f, 0.0f   // top left
-    };
-
-
     glCreateVertexArrays(1, &m_id);
     glBindVertexArray(m_id);
 
@@ -43,6 +30,7 @@ void VAO::unbind() const
 
 void VAO::deallocate() const
 {
+    VAO::unbind();
     glDeleteVertexArrays(1, &m_id);
     m_EBO->deallocate();
     m_VBO->deallocate();

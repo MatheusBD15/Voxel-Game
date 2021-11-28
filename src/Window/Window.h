@@ -27,4 +27,6 @@ public:
     static void processInput(GLFWwindow *window);
 };
 
+void framebuffer_size_callback(GLFWwindow* window, int width, int height);
+
 #endif //VOXELGAME_WINDOW_H

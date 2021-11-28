@@ -3,6 +3,7 @@
 //
 
 #include <VAO/VAO.h>
+#include <Mesh/Mesh.h>
 #include "Window.h"
 
 Window::Window()
@@ -65,8 +66,7 @@ void Window::start()
     glDeleteShader(vertexShader);
     glDeleteShader(fragmentShader);
 
-    VAO* vao = new VAO();
-    unsigned int VAOid = vao->getId();
+    Mesh* mesh = new Mesh();
 
     // Main loop
     while (!glfwWindowShouldClose(m_window))
@@ -77,7 +77,7 @@ void Window::start()
         glClear(GL_COLOR_BUFFER_BIT);
 
         glUseProgram(shaderProgram);
-        glBindVertexArray(VAOid);
+        mesh->bind();
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
         glfwSwapBuffers(m_window);
@@ -85,7 +85,8 @@ void Window::start()
     }
 
     // deallocate resources
-    vao->deallocate();
+    mesh->unbind();
+    delete(mesh);
     glDeleteProgram(shaderProgram);
 
     glfwTerminate();

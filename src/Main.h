@@ -8,6 +8,4 @@
 #include <GLFW/glfw3.h>
 #include "stdint.h"
 
-void framebuffer_size_callback(GLFWwindow* window, int width, int height);
-
 #endif //VOXELGAME_MAIN_H

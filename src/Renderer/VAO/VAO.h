@@ -18,7 +18,7 @@ private:
     EBO* m_EBO;
 
 public:
-    VAO();
+    VAO(std::vector<float> vertices, std::vector<unsigned int> indices);
 
     void bind() const;
 
