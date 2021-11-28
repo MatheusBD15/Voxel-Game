@@ -2,18 +2,11 @@
 // Created by MatheusBD on 27/11/2021.
 //
 
-#include <Vao/VAO.h>
+#include <VAO/VAO.h>
 #include "Window.h"
 
-Window::Window() {}
-
-void Window::start()
+Window::Window()
 {
-    glfwInit();
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6);
-    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-
     m_window = glfwCreateWindow(800, 600, "Voxel Game", NULL, NULL);
 
     if (m_window == NULL)
@@ -21,7 +14,10 @@ void Window::start()
         std::cout << "Failed to create GLFW window" << std::endl;
         glfwTerminate();
     }
+}
 
+void Window::start()
+{
     glfwMakeContextCurrent(m_window);
 
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
@@ -107,3 +103,7 @@ void Window::processInput(GLFWwindow *window)
         glfwSetWindowShouldClose(window, true);
 }
 
+void framebuffer_size_callback(GLFWwindow* window, int width, int height)
+{
+    glViewport(0, 0, width, height);
+}

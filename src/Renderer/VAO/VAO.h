@@ -7,8 +7,8 @@
 
 #include <GLFW/glfw3.h>
 #include <glad/glad.h>
-#include "Vbo/VBO.h"
-#include "Ebo/EBO.h"
+#include "VBO/VBO.h"
+#include "EBO/EBO.h"
 
 class VAO
 {

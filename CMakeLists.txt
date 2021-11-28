@@ -24,13 +24,15 @@ set(TRANSLATION_FILES "${SRC_DIR}/Main.cpp"
         src/Renderer/VBO/VBO.h
         src/Renderer/VAO/VAO.cpp
         src/Renderer/VAO/VAO.h
-        src/Renderer/Utils/Vertice.h)
+        src/Renderer/Utils/Vertice.h
+        src/Application/Application.cpp
+        src/Application/Application.h)
 
 set(SOURCES_FILES "${TRANSLATION_FILES}")
 
 add_executable(${PROJECT_NAME} ${SOURCES_FILES})
 
-include_directories("${SRC_DIR}/Renderer" "${SRC_DIR}/Window")
+include_directories("${SRC_DIR}/Renderer" "${SRC_DIR}/Window" "${SRC_DIR}/Application")
 
 # GLFW
 set(GLFW_DIR "${VENDORS_DIR}/glfw")

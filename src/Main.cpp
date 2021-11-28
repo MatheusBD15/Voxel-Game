@@ -3,18 +3,13 @@
 //
 #include "Main.h"
 #include <glad/glad.h>
-#include "Window/Window.h"
+#include "Application.h"
 
 int main()
 {
-    Window* window = new Window();
+    auto* application = new Application();
 
-    window->start();
+    application->run();
 
     return 0;
-}
-
-void framebuffer_size_callback(GLFWwindow* window, int width, int height)
-{
-    glViewport(0, 0, width, height);
 }
