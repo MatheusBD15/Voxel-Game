@@ -134,7 +134,7 @@ namespace glm
 	///
 	/// @param center Specify the center of a picking region in window coordinates.
 	/// @param delta Specify the width and height, respectively, of the picking region in window coordinates.
-	/// @param viewport Rendering viewport
+	/// @param viewport Renderer viewport
 	/// @tparam T Native type used for the computation. Currently supported: half (not recommended), float or double.
 	/// @tparam U Currently supported: Floating-point types and integer types.
 	///

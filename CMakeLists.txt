@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.7...3.20)
 
 if (${CMAKE_VERSION} VERSION_LESS 3.12)
     cmake_policy(VERSION ${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION})
-endif()
+endif ()
 
 project(voxelGame VERSION 0.0
         DESCRIPTION "Implementation of minecraft using C and OpenGL."
@@ -16,11 +16,21 @@ set(SRC_DIR "${CMAKE_CURRENT_SOURCE_DIR}/src")
 # Vendors dir variables
 set(VENDORS_DIR "${CMAKE_CURRENT_SOURCE_DIR}/vendors")
 
-set(TRANSLATION_FILES "${SRC_DIR}/Main.cpp" "${SRC_DIR}/Window/Window.cpp")
+set(TRANSLATION_FILES "${SRC_DIR}/Main.cpp"
+        "${SRC_DIR}/Window/Window.cpp"
+        src/Renderer/EBO/EBO.cpp
+        src/Renderer/EBO/EBO.h
+        src/Renderer/VBO/VBO.cpp
+        src/Renderer/VBO/VBO.h
+        src/Renderer/VAO/VAO.cpp
+        src/Renderer/VAO/VAO.h
+        src/Renderer/Utils/Vertice.h)
 
 set(SOURCES_FILES "${TRANSLATION_FILES}")
 
 add_executable(${PROJECT_NAME} ${SOURCES_FILES})
+
+include_directories("${SRC_DIR}/Renderer" "${SRC_DIR}/Window")
 
 # GLFW
 set(GLFW_DIR "${VENDORS_DIR}/glfw")
