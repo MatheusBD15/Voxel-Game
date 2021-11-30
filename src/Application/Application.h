@@ -11,6 +11,7 @@ class Application
 {
 private:
     Window* m_window;
+    bool m_running = true;
 
 public:
     Application();

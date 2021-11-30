@@ -16,6 +16,8 @@ private:
     std::vector<unsigned int> m_indices;
 
 public:
+    EBO() = default;
+
     explicit EBO(std::vector<unsigned int> indices);
 
     unsigned int getId() const { return m_id; }

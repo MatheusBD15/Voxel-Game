@@ -22,9 +22,13 @@ public:
 
     void close();
 
+    void update();
+
+    void postUpdate();
+
     GLFWwindow* getWindow() { return m_window; };
 
-    static void processInput(GLFWwindow *window);
+    void processInput();
 };
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);

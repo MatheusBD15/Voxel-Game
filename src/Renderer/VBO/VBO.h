@@ -17,6 +17,7 @@ private:
     std::vector<float> m_vertices;
 
 public:
+    VBO() = default;
 
     explicit VBO(std::vector<float> vertices);
 

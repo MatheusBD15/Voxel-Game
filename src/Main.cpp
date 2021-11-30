@@ -2,7 +2,6 @@
 // Created by MatheusBD on 26/11/2021.
 //
 #include "Main.h"
-#include <glad/glad.h>
 #include "Application.h"
 
 int main()

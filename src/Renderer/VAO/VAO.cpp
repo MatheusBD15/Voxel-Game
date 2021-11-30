@@ -9,8 +9,8 @@ VAO::VAO(std::vector<float> vertices, std::vector<unsigned int> indices)
     glCreateVertexArrays(1, &m_id);
     glBindVertexArray(m_id);
 
-    m_VBO = new VBO(vertices);
-    m_EBO = new EBO(indices);
+    m_VBO = VBO(vertices);
+    m_EBO = EBO(indices);
 
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
@@ -32,6 +32,6 @@ void VAO::deallocate() const
 {
     VAO::unbind();
     glDeleteVertexArrays(1, &m_id);
-    m_EBO->deallocate();
-    m_VBO->deallocate();
+    m_EBO.deallocate();
+    m_VBO.deallocate();
 }

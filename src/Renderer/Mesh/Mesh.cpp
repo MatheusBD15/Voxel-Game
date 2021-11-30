@@ -18,20 +18,20 @@ Mesh::Mesh()
             -0.5f,  0.5f, 0.0f   // top left
     };
 
-    m_VAO = new VAO(vertices, indices);
+    m_VAO = VAO(vertices, indices);
 }
 
 Mesh::~Mesh()
 {
-    m_VAO->deallocate();
+    m_VAO.deallocate();
 }
 
 void Mesh::bind()
 {
-    m_VAO->bind();
+    m_VAO.bind();
 }
 
 void Mesh::unbind()
 {
-    m_VAO->unbind();
+    m_VAO.unbind();
 }
