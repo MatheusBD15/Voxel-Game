@@ -2,6 +2,8 @@
 // Created by MatheusBD on 28/11/2021.
 //
 
+#include <vector>
+#include <Mesh/Mesh.h>
 #include "Application.h"
 #include "Renderer/Renderer.h"
 
@@ -55,7 +57,19 @@ void Application::run()
     glDeleteShader(vertexShader);
     glDeleteShader(fragmentShader);
 
-    // deallocate resources
+    std::vector<unsigned int> indices = {  // note that we start from 0!
+            0, 1, 3,  // first Triangle
+            1, 2, 3   // second Triangle
+    };
+
+    std::vector<float> vertices = {
+            0.5f,  0.5f, 0.0f,  // top right
+            0.5f, -0.5f, 0.0f,  // bottom right
+            -0.5f, -0.5f, 0.0f,  // bottom left
+            -0.5f,  0.5f, 0.0f   // top left
+    };
+
+    Mesh* mesh = new Mesh(vertices, indices);
 
     while(m_running)
     {
@@ -63,9 +77,9 @@ void Application::run()
 
         Renderer::prepare();
 
-        Renderer::render();
-
         glUseProgram(shaderProgram);
+
+        Renderer::render(mesh);
 
         m_window->postUpdate();
 
@@ -74,6 +88,8 @@ void Application::run()
             m_running = false;
         }
     }
+
+    delete(mesh);
 
     glDeleteProgram(shaderProgram);
 

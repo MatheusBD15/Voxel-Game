@@ -11,10 +11,10 @@ VBO::VBO(std::vector<float> vertices)
     m_vertices = std::move(vertices);
 
     glBindBuffer(GL_ARRAY_BUFFER, m_id);
-    glBufferStorage(GL_ARRAY_BUFFER, m_vertices.size() * sizeof(Vertice), m_vertices.data(), GL_DYNAMIC_STORAGE_BIT);
+    glBufferStorage(GL_ARRAY_BUFFER, m_vertices.size() * sizeof(float), m_vertices.data(), GL_DYNAMIC_STORAGE_BIT);
 }
 
-void VBO::deallocate() const
+VBO::~VBO()
 {
     glDeleteBuffers(1, &m_id);
 }

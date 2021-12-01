@@ -14,11 +14,12 @@ class VAO
 {
 private:
     unsigned int m_id = 0;
-    VBO m_VBO;
-    EBO m_EBO;
+    VBO* m_VBO;
+    EBO* m_EBO;
 
 public:
     VAO() = default;
+    ~VAO();
 
     VAO(std::vector<float> vertices, std::vector<unsigned int> indices);
 
@@ -26,13 +27,11 @@ public:
 
     void unbind() const;
 
-    void deallocate() const;
-
     unsigned int getId() const { return m_id; }
 
-    VBO getVbo() const { return m_VBO; }
+    VBO* getVbo() const { return m_VBO; }
 
-    EBO getEbo() const { return m_EBO; }
+    EBO* getEbo() const { return m_EBO; }
 };
 
 

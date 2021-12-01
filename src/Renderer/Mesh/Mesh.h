@@ -10,13 +10,13 @@
 class Mesh
 {
 private:
-    VAO m_VAO;
+    VAO* m_VAO;
 
 public:
-    Mesh();
+    Mesh(std::vector<float> vertices, std::vector<unsigned int> indices);
     ~Mesh();
 
-    VAO getVAO() { return m_VAO; }
+    VAO* getVAO() { return m_VAO; }
 
     void bind();
 

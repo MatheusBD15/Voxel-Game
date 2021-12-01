@@ -12,7 +12,7 @@ EBO::EBO(std::vector<unsigned int> indices)
     glBufferStorage(GL_ELEMENT_ARRAY_BUFFER, m_indices.size() * sizeof(unsigned int), m_indices.data(), GL_DYNAMIC_STORAGE_BIT);
 }
 
-void EBO::deallocate() const
+EBO::~EBO()
 {
     glDeleteBuffers(1, &m_id);
 }

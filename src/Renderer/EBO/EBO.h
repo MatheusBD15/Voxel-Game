@@ -17,12 +17,11 @@ private:
 
 public:
     EBO() = default;
+    ~EBO();
 
     explicit EBO(std::vector<unsigned int> indices);
 
     unsigned int getId() const { return m_id; }
-
-    void deallocate() const;
 };
 
 

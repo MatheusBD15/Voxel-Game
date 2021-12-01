@@ -6,10 +6,8 @@
 #include "Renderer.h"
 
 // in the future receives a mesh, shader and camera, and sets them all, unbinds at the end
-void Renderer::render()
+void Renderer::render(Mesh* mesh)
 {
-    Mesh* mesh = new Mesh();
-
     mesh->bind();
 
     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);

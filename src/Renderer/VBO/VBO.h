@@ -18,12 +18,11 @@ private:
 
 public:
     VBO() = default;
+    ~VBO();
 
     explicit VBO(std::vector<float> vertices);
 
     unsigned int getId() const { return m_id; };
-
-    void deallocate() const;
 };
 
 
