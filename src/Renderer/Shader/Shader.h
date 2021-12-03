@@ -11,6 +11,10 @@
 #include <fstream>
 #include <sstream>
 #include <iostream>
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+
 
 class Shader
 {
@@ -26,20 +30,14 @@ public:
 
     // utility uniform functions
     // ------------------------------------------------------------------------
-    void setBool(const std::string &name, bool value) const
-    {
-        glUniform1i(glGetUniformLocation(m_id, name.c_str()), (int)value);
-    }
+    void setUniform(const std::string &name, glm::mat4 mat);
+
+    void setUniform(const std::string &name, bool value) const;
+
     // ------------------------------------------------------------------------
-    void setInt(const std::string &name, int value) const
-    {
-        glUniform1i(glGetUniformLocation(m_id, name.c_str()), value);
-    }
+    void setUniform(const std::string &name, int value) const;
     // ------------------------------------------------------------------------
-    void setFloat(const std::string &name, float value) const
-    {
-        glUniform1f(glGetUniformLocation(m_id, name.c_str()), value);
-    }
+    void setUniform(const std::string &name, float value) const;
 
 private:
     // utility function for checking shader compilation/linking errors.

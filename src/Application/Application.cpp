@@ -34,7 +34,7 @@ void Application::run()
             -0.5f,  0.5f, 0.0f   // top left
     };
 
-    Mesh* mesh = new Mesh(vertices, indices);
+    Mesh mesh = Mesh(vertices, indices);
 
     Shader shader = Shader("C:\\Users\\MBDambo\\Desktop\\Voxel Game\\Voxel-Game\\src\\Shaders\\vertex.shader",
                            "C:\\Users\\MBDambo\\Desktop\\Voxel Game\\Voxel-Game\\src\\Shaders\\fragment.shader");
@@ -47,7 +47,7 @@ void Application::run()
 
         shader.use();
 
-        Renderer::render(mesh);
+        Renderer::render(&mesh);
 
         m_window->postUpdate();
 
@@ -57,7 +57,7 @@ void Application::run()
         }
     }
 
-    delete(mesh);
+    delete(&mesh);
 
     glfwTerminate();
 }

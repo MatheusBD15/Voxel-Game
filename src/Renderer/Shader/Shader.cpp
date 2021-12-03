@@ -53,7 +53,7 @@ Shader::Shader(const char *vertexPath, const char *fragmentPath)
     glAttachShader(m_id, vertex);
     glAttachShader(m_id, fragment);
     glLinkProgram(m_id);
-    checkCompileErrors("PROGRAM");
+    checkCompileErrors(m_id, "PROGRAM");
     // delete the shaders as they're linked into our program now and no longer necessary
     glDeleteShader(vertex);
     glDeleteShader(fragment);
@@ -102,3 +102,24 @@ void Shader::checkCompileErrors(unsigned int shader, std::string type)
         }
     }
 }
+
+void Shader::setUniform(const std::string &name, glm::mat4 mat)
+{
+    glUniformMatrix4fv(glGetUniformLocation(m_id, name.c_str()), 1, GL_FALSE, glm::value_ptr(mat));
+}
+
+void Shader::setUniform(const std::string &name, bool value) const
+{
+    glUniform1i(glGetUniformLocation(m_id, name.c_str()), (int)value);
+}
+// ------------------------------------------------------------------------
+void Shader::setUniform(const std::string &name, int value) const
+{
+    glUniform1i(glGetUniformLocation(m_id, name.c_str()), value);
+}
+// ------------------------------------------------------------------------
+void Shader::setUniform(const std::string &name, float value) const
+{
+    glUniform1f(glGetUniformLocation(m_id, name.c_str()), value);
+}
+
