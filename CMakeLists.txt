@@ -30,13 +30,13 @@ set(TRANSLATION_FILES "${SRC_DIR}/Main.cpp"
         src/Renderer/Mesh/Mesh.cpp
         src/Renderer/Mesh/Mesh.h
         src/Renderer/Renderer/Renderer.cpp
-        src/Renderer/Renderer/Renderer.h src/Renderer/Shader/Shader.cpp src/Renderer/Shader/Shader.h)
+        src/Renderer/Renderer/Renderer.h src/Renderer/Shader/Shader.cpp src/Renderer/Shader/Shader.h src/Camera/Camera.cpp src/Camera/Camera.h)
 
 set(SOURCES_FILES "${TRANSLATION_FILES}")
 
 add_executable(${PROJECT_NAME} ${SOURCES_FILES})
 
-include_directories("${SRC_DIR}/Renderer" "${SRC_DIR}/Window" "${SRC_DIR}/Application")
+include_directories("${SRC_DIR}/Renderer" "${SRC_DIR}/Window" "${SRC_DIR}/Application" "${SRC_DIR}/Camera")
 
 # GLFW
 set(GLFW_DIR "${VENDORS_DIR}/glfw")

@@ -22,6 +22,7 @@ public:
     unsigned int m_id;
     // constructor generates the shader on the fly
     // ------------------------------------------------------------------------
+    Shader() = default;
     Shader(const char* vertexPath, const char* fragmentPath);
     ~Shader();
     // activate the shader

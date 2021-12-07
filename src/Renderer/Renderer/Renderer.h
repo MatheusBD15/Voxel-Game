@@ -13,7 +13,7 @@ public:
 
     static void prepare();
 
-    static void render(Mesh* mesh);
+    static void render(Mesh* mesh, Camera* camera);
 };
 
 

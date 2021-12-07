@@ -5,6 +5,7 @@
 #include <vector>
 #include <Mesh/Mesh.h>
 #include <Shader/Shader.h>
+#include <Camera.h>
 #include "Application.h"
 #include "Renderer/Renderer.h"
 
@@ -23,21 +24,89 @@ void Application::run()
     m_window->start();
 
     std::vector<unsigned int> indices = {  // note that we start from 0!
-            0, 1, 3,  // first Triangle
-            1, 2, 3   // second Triangle
+        // /*Above ABC,BCD*/
+        0,1,2,
+        1,2,3,
+        /*Following EFG,FGH*/
+        4,5,6,
+        5,6,7,
+        /*Left ABF,AEF*/
+        0,1,5,
+        0,4,5,
+        /*Right side CDH,CGH*/
+        2,3,7,
+        2,6,7,
+        /*ACG,AEG*/
+        0,2,6,
+        0,4,6,
+        /*Behind BFH,BDH*/
+        1,5,7,
+        1,3,7
     };
 
+//    std::vector<float> vertices = {
+//        -0.5f,0.5f,-0.5f,   0.0f, 0.0f, 0.0f,//Point A 0
+//        -0.5f,0.5f,0.5f,    0.0f, 0.0f, 1.0f,//Point B 1
+//        0.5f,0.5f,-0.5f,    0.0f, 1.0f, 0.0f,//Point C 2
+//        0.5f,0.5f,0.5f,     0.0f, 1.0f, 1.0f,//Point D 3
+//
+//        -0.5f,-0.5f,-0.5f,  1.0f, 0.0f, 0.0f,//Point E 4
+//        -0.5f,-0.5f,0.5f,   1.0f, 0.0f, 1.0f,//Point F 5
+//        0.5f,-0.5f,-0.5f,   1.0f, 1.0f, 0.0f,//Point G 6
+//        0.5f,-0.5f,0.5f,    1.0f, 1.0f, 1.0f//Point H 7
+//    };
+
     std::vector<float> vertices = {
-            0.5f,  0.5f, 0.0f,  // top right
-            0.5f, -0.5f, 0.0f,  // bottom right
-            -0.5f, -0.5f, 0.0f,  // bottom left
-            -0.5f,  0.5f, 0.0f   // top left
+            -0.5f, -0.5f, -0.5f,
+            0.5f, -0.5f, -0.5f,
+            0.5f,  0.5f, -0.5f,
+            0.5f,  0.5f, -0.5f,
+            -0.5f,  0.5f, -0.5f,
+            -0.5f, -0.5f, -0.5f,
+
+            -0.5f, -0.5f,  0.5f,
+            0.5f, -0.5f,  0.5f,
+            0.5f,  0.5f,  0.5f,
+            0.5f,  0.5f,  0.5f,
+            -0.5f,  0.5f,  0.5f,
+            -0.5f, -0.5f,  0.5f,
+
+            -0.5f,  0.5f,  0.5f,
+            -0.5f,  0.5f, -0.5f,
+            -0.5f, -0.5f, -0.5f,
+            -0.5f, -0.5f, -0.5f,
+            -0.5f, -0.5f,  0.5f,
+            -0.5f,  0.5f,  0.5f,
+
+            0.5f,  0.5f,  0.5f,
+            0.5f,  0.5f, -0.5f,
+            0.5f, -0.5f, -0.5f,
+            0.5f, -0.5f, -0.5f,
+            0.5f, -0.5f,  0.5f,
+            0.5f,  0.5f,  0.5f,
+
+            -0.5f, -0.5f, -0.5f,
+            0.5f, -0.5f, -0.5f,
+            0.5f, -0.5f,  0.5f,
+            0.5f, -0.5f,  0.5f,
+            -0.5f, -0.5f,  0.5f,
+            -0.5f, -0.5f, -0.5f,
+
+            -0.5f,  0.5f, -0.5f,
+            0.5f,  0.5f, -0.5f,
+            0.5f,  0.5f,  0.5f,
+            0.5f,  0.5f,  0.5f,
+            -0.5f,  0.5f,  0.5f,
+            -0.5f,  0.5f, -0.5f
+
     };
 
     Mesh mesh = Mesh(vertices, indices);
 
     Shader shader = Shader("C:\\Users\\MBDambo\\Desktop\\Voxel Game\\Voxel-Game\\src\\Shaders\\vertex.shader",
                            "C:\\Users\\MBDambo\\Desktop\\Voxel Game\\Voxel-Game\\src\\Shaders\\fragment.shader");
+
+    Camera camera = Camera(shader);
 
     while(m_running)
     {
@@ -47,7 +116,7 @@ void Application::run()
 
         shader.use();
 
-        Renderer::render(&mesh);
+        Renderer::render(&mesh, &camera);
 
         m_window->postUpdate();
 
