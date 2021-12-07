@@ -12,6 +12,8 @@ class Application
 private:
     Window* m_window;
     bool m_running = true;
+    float m_deltaTime = 0.0f;
+    float m_lastFrame = 0.0f;
 
 public:
     Application();

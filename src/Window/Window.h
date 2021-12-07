@@ -8,11 +8,13 @@
 #include <GLFW/glfw3.h>
 #include <glad/glad.h>
 #include <iostream>
+#include <Camera.h>
 
 class Window
 {
 private:
     GLFWwindow* m_window;
+    Camera* m_camera;
 
 public:
 
@@ -22,15 +24,23 @@ public:
 
     void close();
 
-    void update();
+    void update(float deltaTime);
 
     void postUpdate();
 
     GLFWwindow* getWindow() { return m_window; };
 
-    void processInput();
+    void processInput(float deltaTime);
+
+    void setCamera(Camera* camera);
+
+    void mouseCallback(GLFWwindow* window, double xpos, double ypos);
 };
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
+
+void mouseCallback(GLFWwindow* window, double xpos, double ypos);
+
+
 
 #endif //VOXELGAME_WINDOW_H

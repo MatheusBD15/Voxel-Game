@@ -21,8 +21,6 @@ Application::Application()
 
 void Application::run()
 {
-    m_window->start();
-
     std::vector<unsigned int> indices = {  // note that we start from 0!
         // /*Above ABC,BCD*/
         0,1,2,
@@ -101,6 +99,8 @@ void Application::run()
 
     };
 
+    m_window->start();
+
     Mesh mesh = Mesh(vertices, indices);
 
     Shader shader = Shader("C:\\Users\\MBDambo\\Desktop\\Voxel Game\\Voxel-Game\\src\\Shaders\\vertex.shader",
@@ -108,9 +108,16 @@ void Application::run()
 
     Camera camera = Camera(shader);
 
+    m_window->setCamera(&camera);
+
     while(m_running)
     {
-        m_window->update();
+        // delta time calculation
+        float currentFrame = glfwGetTime();
+        m_deltaTime = currentFrame - m_lastFrame;
+        m_lastFrame = currentFrame;
+
+        m_window->update(m_deltaTime);
 
         Renderer::prepare();
 
