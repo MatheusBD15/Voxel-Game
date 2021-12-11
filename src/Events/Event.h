@@ -5,6 +5,8 @@
 #ifndef VOXELGAME_EVENT_H
 #define VOXELGAME_EVENT_H
 
+#include <string>
+
 #define BIT(x) (1 << x)
 
 enum class EventType

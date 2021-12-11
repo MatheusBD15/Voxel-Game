@@ -1,0 +1,8 @@
+//
+// Created by MBDambo on 11/12/2021.
+//
+
+#ifndef VOXELGAME_MOUSEEVENT_H
+#define VOXELGAME_MOUSEEVENT_H
+
+#endif //VOXELGAME_MOUSEEVENT_H
