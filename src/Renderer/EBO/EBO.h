@@ -12,8 +12,8 @@
 class EBO
 {
 private:
-    unsigned int m_id;
-    std::vector<unsigned int> m_indices;
+    unsigned int m_Id;
+    std::vector<unsigned int> m_Indices;
 
 public:
     EBO() = default;
@@ -21,7 +21,7 @@ public:
 
     explicit EBO(std::vector<unsigned int> indices);
 
-    unsigned int getId() const { return m_id; }
+    unsigned int getId() const { return m_Id; }
 };
 
 

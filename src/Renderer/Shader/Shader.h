@@ -19,7 +19,7 @@
 class Shader
 {
 public:
-    unsigned int m_id;
+    unsigned int m_Id;
     // constructor generates the shader on the fly
     // ------------------------------------------------------------------------
     Shader() = default;

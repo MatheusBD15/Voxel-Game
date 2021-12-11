@@ -3400,22 +3400,22 @@ Concurrency::details::SchedulerBase|Concurrency::details::ThreadScheduler|Concur
 	preview ( 
 		#(
 			"[",
-			$e.m_id,
+			$e.m_Id,
 			"] ",
 			#if ($e.m_schedulerKind == 0) ("ThreadScheduler")
 			#else ("UmsScheduler"),
-			#if ($e.m_id == $e.s_pDefaultScheduler->m_id) (", default")
+			#if ($e.m_Id == $e.s_pDefaultScheduler->m_Id) (", default")
 			#else ("")
 		)
 	)
 
 	children (
 		#(
-			#(ID: $e.m_id),
+			#(ID: $e.m_Id),
 			#(SchedulerPolicy: $e.m_policy),
 			#(VirtualProcessorCount: $e.m_virtualProcessorCount),
 			#(ReferenceCount: $e.m_refCount),
-			#([isDefaultScheduler]: $e.m_id == $e.s_pDefaultScheduler->m_id)
+			#([isDefaultScheduler]: $e.m_Id == $e.s_pDefaultScheduler->m_Id)
 		)
 	)
 }
@@ -3429,7 +3429,7 @@ Concurrency::details::ScheduleGroupBase|Concurrency::details::CacheLocalSchedule
 	preview ( 
 		#(
 			"[",
-			$e.m_id,
+			$e.m_Id,
 			"]",
 			#if ($e.m_kind & 4) (" AnonymousScheduleGroup")
 			#else ("")
@@ -3438,7 +3438,7 @@ Concurrency::details::ScheduleGroupBase|Concurrency::details::CacheLocalSchedule
 
 	children (
 		#(
-			#(ID: $e.m_id),
+			#(ID: $e.m_Id),
 			#(Scheduler: *($e.m_pScheduler))
 		)
 	)
@@ -3466,7 +3466,7 @@ Concurrency::details::ContextBase|Concurrency::details::InternalContextBase|Conc
 
 	children (
 		#(
-			#(ID: $e.m_id),
+			#(ID: $e.m_Id),
 			#(ThreadID: $e.m_threadId),
 			#(Scheduler: *($e.m_pScheduler)),
 			#(ScheduleGroup: *($e.m_pGroup))
@@ -3490,7 +3490,7 @@ Concurrency::details::ExternalContextBase{
 
 	children (
 		#(
-			#(ID: $e.m_id),
+			#(ID: $e.m_Id),
 			#(ThreadID: $e.m_threadId),
 			#(Scheduler: *($e.m_pScheduler)),
 			#(ScheduleGroup: *($e.m_pGroup))

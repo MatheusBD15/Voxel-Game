@@ -30,7 +30,7 @@ set(TRANSLATION_FILES "${SRC_DIR}/Main.cpp"
         src/Renderer/Mesh/Mesh.cpp
         src/Renderer/Mesh/Mesh.h
         src/Renderer/Renderer/Renderer.cpp
-        src/Renderer/Renderer/Renderer.h src/Renderer/Shader/Shader.cpp src/Renderer/Shader/Shader.h src/Camera/Camera.cpp src/Camera/Camera.h)
+        src/Renderer/Renderer/Renderer.h src/Renderer/Shader/Shader.cpp src/Renderer/Shader/Shader.h src/Camera/Camera.cpp src/Camera/Camera.h src/Events/Event.h)
 
 set(SOURCES_FILES "${TRANSLATION_FILES}")
 

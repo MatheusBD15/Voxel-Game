@@ -16,7 +16,7 @@ Application::Application()
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-    m_window = new Window();
+    m_Window = new Window();
 };
 
 void Application::run()
@@ -99,7 +99,7 @@ void Application::run()
 
     };
 
-    m_window->start();
+    m_Window->start();
 
     Mesh mesh = Mesh(vertices, indices);
 
@@ -108,16 +108,16 @@ void Application::run()
 
     Camera camera = Camera(shader);
 
-    m_window->setCamera(&camera);
+    m_Window->setCamera(&camera);
 
-    while(m_running)
+    while(m_Running)
     {
         // delta time calculation
         float currentFrame = glfwGetTime();
-        m_deltaTime = currentFrame - m_lastFrame;
-        m_lastFrame = currentFrame;
+        m_DeltaTime = currentFrame - m_LastFrame;
+        m_LastFrame = currentFrame;
 
-        m_window->update(m_deltaTime);
+        m_Window->update(m_DeltaTime);
 
         Renderer::prepare();
 
@@ -125,11 +125,11 @@ void Application::run()
 
         Renderer::render(&mesh, &camera);
 
-        m_window->postUpdate();
+        m_Window->postUpdate();
 
-        if(glfwWindowShouldClose(m_window->getWindow()))
+        if(glfwWindowShouldClose(m_Window->getWindow()))
         {
-            m_running = false;
+            m_Running = false;
         }
     }
 

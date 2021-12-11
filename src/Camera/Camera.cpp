@@ -6,40 +6,40 @@
 
 Camera::Camera(const Shader& vertexShader)
 {
-    m_vertexShader = vertexShader;
+    m_VertexShader = vertexShader;
 
-    m_cameraDirection.x = cos(glm::radians(m_yaw)) * cos(glm::radians(m_pitch));
-    m_cameraDirection.y = sin(glm::radians(m_pitch));
-    m_cameraDirection.z = sin(glm::radians(m_yaw)) * cos(glm::radians(m_pitch));
-    m_cameraFront = glm::normalize(m_cameraDirection);
+    m_CameraDirection.x = cos(glm::radians(m_Yaw)) * cos(glm::radians(m_Pitch));
+    m_CameraDirection.y = sin(glm::radians(m_Pitch));
+    m_CameraDirection.z = sin(glm::radians(m_Yaw)) * cos(glm::radians(m_Pitch));
+    m_CameraFront = glm::normalize(m_CameraDirection);
 
     glm::vec3 up = glm::vec3(0.0f, 1.0f, 0.0f);
 
-    m_cameraRight = glm::normalize(glm::cross(up, m_cameraDirection));
+    m_CameraRight = glm::normalize(glm::cross(up, m_CameraDirection));
 
-    m_cameraUp = glm::cross(m_cameraDirection, m_cameraRight);
+    m_CameraUp = glm::cross(m_CameraDirection, m_CameraRight);
 
-    m_model = glm::mat4(1.0f);
-    m_model = glm::rotate(m_model, glm::radians(10.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+    m_Model = glm::mat4(1.0f);
+    m_Model = glm::rotate(m_Model, glm::radians(10.0f), glm::vec3(1.0f, 0.0f, 0.0f));
 
-    m_view = glm::mat4(1.0f);
-    m_view = glm::lookAt(m_cameraPos, m_cameraPos + m_cameraFront, m_cameraUp);
+    m_View = glm::mat4(1.0f);
+    m_View = glm::lookAt(m_CameraPos, m_CameraPos + m_CameraFront, m_CameraUp);
 
-    m_projection = glm::perspective(glm::radians(45.0f), 800.0f / 600.0f, 0.1f, 100.0f);
+    m_Projection = glm::perspective(glm::radians(45.0f), 800.0f / 600.0f, 0.1f, 100.0f);
 }
 
 void Camera::use()
 {
     // update camera rotation
-    m_cameraDirection.x = cos(glm::radians(m_yaw)) * cos(glm::radians(m_pitch));
-    m_cameraDirection.y = sin(glm::radians(m_pitch));
-    m_cameraDirection.z = sin(glm::radians(m_yaw)) * cos(glm::radians(m_pitch));
-    m_cameraFront = glm::normalize(m_cameraDirection);
+    m_CameraDirection.x = cos(glm::radians(m_Yaw)) * cos(glm::radians(m_Pitch));
+    m_CameraDirection.y = sin(glm::radians(m_Pitch));
+    m_CameraDirection.z = sin(glm::radians(m_Yaw)) * cos(glm::radians(m_Pitch));
+    m_CameraFront = glm::normalize(m_CameraDirection);
 
     // update view
-    m_view = glm::lookAt(m_cameraPos, m_cameraPos + m_cameraFront, m_cameraUp);
+    m_View = glm::lookAt(m_CameraPos, m_CameraPos + m_CameraFront, m_CameraUp);
 
-    m_vertexShader.setUniform("model", m_model);
-    m_vertexShader.setUniform("view", m_view);
-    m_vertexShader.setUniform("projection", m_projection);
+    m_VertexShader.setUniform("model", m_Model);
+    m_VertexShader.setUniform("view", m_View);
+    m_VertexShader.setUniform("projection", m_Projection);
 }

@@ -13,8 +13,8 @@
 class Window
 {
 private:
-    GLFWwindow* m_window;
-    Camera* m_camera;
+    GLFWwindow* m_Window;
+    Camera* m_Camera;
 
 public:
 
@@ -28,7 +28,7 @@ public:
 
     void postUpdate();
 
-    GLFWwindow* getWindow() { return m_window; };
+    GLFWwindow* getWindow() { return m_Window; };
 
     void processInput(float deltaTime);
 

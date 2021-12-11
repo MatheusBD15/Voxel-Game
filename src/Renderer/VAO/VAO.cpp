@@ -6,8 +6,8 @@
 
 VAO::VAO(std::vector<float> vertices, std::vector<unsigned int> indices)
 {
-    glCreateVertexArrays(1, &m_id);
-    glBindVertexArray(m_id);
+    glCreateVertexArrays(1, &m_Id);
+    glBindVertexArray(m_Id);
 
     m_VBO = new VBO(vertices);
     m_EBO = new EBO(indices);
@@ -19,7 +19,7 @@ VAO::VAO(std::vector<float> vertices, std::vector<unsigned int> indices)
 
 void VAO::bind() const
 {
-    glBindVertexArray(m_id);
+    glBindVertexArray(m_Id);
 }
 
 void VAO::unbind() const
@@ -29,7 +29,7 @@ void VAO::unbind() const
 
 VAO::~VAO()
 {
-    glDeleteVertexArrays(1, &m_id);
+    glDeleteVertexArrays(1, &m_Id);
     delete(m_EBO);
     delete(m_VBO);
 }

@@ -7,15 +7,15 @@
 
 VBO::VBO(std::vector<float> vertices)
 {
-    glCreateBuffers(1, &m_id);
+    glCreateBuffers(1, &m_Id);
     m_vertices = std::move(vertices);
 
-    glBindBuffer(GL_ARRAY_BUFFER, m_id);
+    glBindBuffer(GL_ARRAY_BUFFER, m_Id);
     glBufferStorage(GL_ARRAY_BUFFER, m_vertices.size() * sizeof(float), m_vertices.data(), GL_DYNAMIC_STORAGE_BIT);
 }
 
 VBO::~VBO()
 {
-    glDeleteBuffers(1, &m_id);
+    glDeleteBuffers(1, &m_Id);
 }
 

@@ -10,17 +10,17 @@
 class Application
 {
 private:
-    Window* m_window;
-    bool m_running = true;
-    float m_deltaTime = 0.0f;
-    float m_lastFrame = 0.0f;
+    Window* m_Window;
+    bool m_Running = true;
+    float m_DeltaTime = 0.0f;
+    float m_LastFrame = 0.0f;
 
 public:
     Application();
 
     void run();
 
-    Window* getWindow() { return m_window; }
+    Window* getWindow() { return m_Window; }
 };
 
 

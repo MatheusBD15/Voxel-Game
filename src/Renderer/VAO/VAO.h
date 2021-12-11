@@ -13,7 +13,7 @@
 class VAO
 {
 private:
-    unsigned int m_id = 0;
+    unsigned int m_Id = 0;
     VBO* m_VBO;
     EBO* m_EBO;
 
@@ -27,7 +27,7 @@ public:
 
     void unbind() const;
 
-    unsigned int getId() const { return m_id; }
+    unsigned int getId() const { return m_Id; }
 
     VBO* getVbo() const { return m_VBO; }
 

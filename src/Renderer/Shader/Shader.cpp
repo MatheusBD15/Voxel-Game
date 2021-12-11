@@ -49,11 +49,11 @@ Shader::Shader(const char *vertexPath, const char *fragmentPath)
     glCompileShader(fragment);
     checkCompileErrors(fragment, "FRAGMENT");
     // shader Program
-    m_id = glCreateProgram();
-    glAttachShader(m_id, vertex);
-    glAttachShader(m_id, fragment);
-    glLinkProgram(m_id);
-    checkCompileErrors(m_id, "PROGRAM");
+    m_Id = glCreateProgram();
+    glAttachShader(m_Id, vertex);
+    glAttachShader(m_Id, fragment);
+    glLinkProgram(m_Id);
+    checkCompileErrors(m_Id, "PROGRAM");
     // delete the shaders as they're linked into our program now and no longer necessary
     glDeleteShader(vertex);
     glDeleteShader(fragment);
@@ -61,12 +61,12 @@ Shader::Shader(const char *vertexPath, const char *fragmentPath)
 
 Shader::~Shader()
 {
-    glDeleteProgram(m_id);
+    glDeleteProgram(m_Id);
 }
 
 void Shader::use()
 {
-    glUseProgram(m_id);
+    glUseProgram(m_Id);
 }
 
 void Shader::checkCompileErrors(unsigned int shader, std::string type)
@@ -105,21 +105,21 @@ void Shader::checkCompileErrors(unsigned int shader, std::string type)
 
 void Shader::setUniform(const std::string &name, glm::mat4 mat)
 {
-    glUniformMatrix4fv(glGetUniformLocation(m_id, name.c_str()), 1, GL_FALSE, glm::value_ptr(mat));
+    glUniformMatrix4fv(glGetUniformLocation(m_Id, name.c_str()), 1, GL_FALSE, glm::value_ptr(mat));
 }
 
 void Shader::setUniform(const std::string &name, bool value) const
 {
-    glUniform1i(glGetUniformLocation(m_id, name.c_str()), (int)value);
+    glUniform1i(glGetUniformLocation(m_Id, name.c_str()), (int)value);
 }
 // ------------------------------------------------------------------------
 void Shader::setUniform(const std::string &name, int value) const
 {
-    glUniform1i(glGetUniformLocation(m_id, name.c_str()), value);
+    glUniform1i(glGetUniformLocation(m_Id, name.c_str()), value);
 }
 // ------------------------------------------------------------------------
 void Shader::setUniform(const std::string &name, float value) const
 {
-    glUniform1f(glGetUniformLocation(m_id, name.c_str()), value);
+    glUniform1f(glGetUniformLocation(m_Id, name.c_str()), value);
 }
 

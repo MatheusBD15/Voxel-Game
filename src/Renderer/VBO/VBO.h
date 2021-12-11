@@ -13,7 +13,7 @@
 class VBO
 {
 private:
-    unsigned int m_id;
+    unsigned int m_Id;
     std::vector<float> m_vertices;
 
 public:
@@ -22,7 +22,7 @@ public:
 
     explicit VBO(std::vector<float> vertices);
 
-    unsigned int getId() const { return m_id; };
+    unsigned int getId() const { return m_Id; };
 };
 
 
