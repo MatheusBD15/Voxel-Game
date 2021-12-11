@@ -5,6 +5,8 @@
 #ifndef VOXELGAME_EVENT_H
 #define VOXELGAME_EVENT_H
 
+#include <sstream>
+#include <functional>
 #include <string>
 
 #define BIT(x) (1 << x)
