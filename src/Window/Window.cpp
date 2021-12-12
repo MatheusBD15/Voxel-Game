@@ -3,9 +3,10 @@
 //
 
 #include <VAO/VAO.h>
-#include <Mesh/Mesh.h>
 #include "Window.h"
-#include "Application.h"
+#include "ApplicationEvent.h"
+#include "MouseEvent.h"
+#include "KeyEvent.h"
 
 Window::Window()
 {
@@ -32,7 +33,9 @@ void Window::start()
     glViewport(0, 0, 800, 600);
     glEnable(GL_DEPTH_TEST);
     glfwSetInputMode(m_Window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
-    //glfwSetCursorPosCallback(m_Window, [this](GLFWwindow *window, double xpos, double ypos) {mouseCallback(window, xpos, ypos;}));
+    glfwSetWindowUserPointer(m_Window, &m_Data);
+
+    Window::setGLFWCallbacks();
 }
 
 void Window::close()
@@ -72,6 +75,91 @@ void Window::postUpdate()
 {
     glfwSwapBuffers(m_Window);
     glfwPollEvents();
+}
+
+void Window::setGLFWCallbacks()
+{
+    glfwSetWindowSizeCallback(m_Window, [](GLFWwindow* window, int width, int height) {
+
+        WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+
+        data.width = width;
+        data.height = height;
+
+        WindowResizeEvent event(width, height);
+        data.eventCallback(event);
+    });
+
+    glfwSetWindowCloseCallback(m_Window, [](GLFWwindow* window) {
+
+        WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+        WindowCloseEvent event;
+
+        data.eventCallback(event);
+    });
+
+    glfwSetKeyCallback(m_Window, [](GLFWwindow* window, int key, int scancode, int action, int mods) {
+
+        WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+
+        switch(action)
+        {
+            case GLFW_PRESS:
+            {
+                KeyPressedEvent event(key, 0);
+                data.eventCallback(event);
+                break;
+            }
+            case GLFW_RELEASE:
+            {
+                KeyReleasedEvent event(key);
+                data.eventCallback(event);
+                break;
+            }
+            case GLFW_REPEAT:
+            {
+                KeyPressedEvent event(key, 1);
+                data.eventCallback(event);
+                break;
+            }
+            default:
+                break;
+        }
+    });
+
+    glfwSetMouseButtonCallback(m_Window, [](GLFWwindow* window, int button, int action, int mods) {
+
+        WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+
+        std::cout << "AAA";
+
+        switch(action)
+        {
+            case GLFW_PRESS:
+            {
+                MouseButtonPressedEvent event(button);
+                data.eventCallback(event);
+                break;
+            }
+            case GLFW_RELEASE:
+            {
+                MouseButtonReleasedEvent event(button);
+                data.eventCallback(event);
+                break;
+            }
+            default:
+                break;
+        }
+    });
+
+    glfwSetCursorPosCallback(m_Window, [](GLFWwindow* window, double xPos, double yPos) {
+
+        WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+
+        MouseMovedEvent event(xPos, yPos);
+
+        data.eventCallback(event);
+    });
 }
 
 void Window::mouseCallback(GLFWwindow *window, double xpos, double ypos)

@@ -20,7 +20,7 @@ public:
 
     void run();
 
-    Window* getWindow() { return m_Window; }
+    void OnEvent(Event& event);
 };
 
 

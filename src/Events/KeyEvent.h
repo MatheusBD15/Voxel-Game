@@ -16,7 +16,7 @@ protected:
         : m_KeyCode(keycode) {}
 
 public:
-    inline int GetKeyCode() const { return m_KeyCode }
+    inline int GetKeyCode() const { return m_KeyCode; }
 
     EVENT_CLASS_CATEGORY(EventCategoryKeyboard | EventCategoryInput)
 };

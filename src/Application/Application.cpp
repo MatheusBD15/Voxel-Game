@@ -9,6 +9,8 @@
 #include "Application.h"
 #include "Renderer/Renderer.h"
 
+#define BIND_EVENT_FN(x) std::bind(&x, this, std::placeholders::_1)
+
 Application::Application()
 {
     glfwInit();
@@ -17,6 +19,7 @@ Application::Application()
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
     m_Window = new Window();
+    m_Window->setEventCallback(BIND_EVENT_FN(Application::OnEvent));
 };
 
 void Application::run()
@@ -136,4 +139,9 @@ void Application::run()
     delete(&mesh);
 
     glfwTerminate();
+}
+
+void Application::OnEvent(Event &event)
+{
+    std::cout << "AAA";
 }

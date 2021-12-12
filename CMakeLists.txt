@@ -44,7 +44,11 @@ set(SOURCES_FILES "${TRANSLATION_FILES}")
 
 add_executable(${PROJECT_NAME} ${SOURCES_FILES})
 
-include_directories("${SRC_DIR}/Renderer" "${SRC_DIR}/Window" "${SRC_DIR}/Application" "${SRC_DIR}/Camera")
+include_directories("${SRC_DIR}/Renderer"
+        "${SRC_DIR}/Window"
+        "${SRC_DIR}/Application"
+        "${SRC_DIR}/Camera"
+        "${SRC_DIR}/Events")
 
 # GLFW
 set(GLFW_DIR "${VENDORS_DIR}/glfw")

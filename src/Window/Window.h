@@ -9,10 +9,21 @@
 #include <glad/glad.h>
 #include <iostream>
 #include <Camera.h>
+#include <functional>
+#include "Event.h"
 
 class Window
 {
 private:
+    using EventCallbackFn = std::function<void(Event&)>;
+
+    struct WindowData
+    {
+        EventCallbackFn eventCallback;
+        int width, height;
+    };
+
+    WindowData m_Data;
     GLFWwindow* m_Window;
     Camera* m_Camera;
 
@@ -28,11 +39,15 @@ public:
 
     void postUpdate();
 
-    GLFWwindow* getWindow() { return m_Window; };
+    inline GLFWwindow* getWindow() { return m_Window; };
 
     void processInput(float deltaTime);
 
     void setCamera(Camera* camera);
+
+    inline void setEventCallback(const EventCallbackFn& callback) { m_Data.eventCallback = callback; }
+
+    void setGLFWCallbacks();
 
     void mouseCallback(GLFWwindow* window, double xpos, double ypos);
 };
