@@ -19,7 +19,7 @@ Application::Application()
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
     m_Window = new Window();
-    m_Window->setEventCallback(BIND_EVENT_FN(Application::OnEvent));
+    m_Window->setEventCallback(BIND_EVENT_FN(Application::onEvent));
 };
 
 void Application::run()
@@ -141,7 +141,17 @@ void Application::run()
     glfwTerminate();
 }
 
-void Application::OnEvent(Event &event)
+void Application::onEvent(Event &event)
 {
     std::cout << "AAA";
+    EventDispatcher dispatcher(event);
+
+    dispatcher.dispatch<WindowCloseEvent>(BIND_EVENT_FN(Application::onWindowClose));
+}
+
+bool Application::onWindowClose(WindowCloseEvent &e)
+{
+    m_Running = false;
+    m_Window->close();
+    return true;
 }

@@ -5,6 +5,7 @@
 #ifndef VOXELGAME_APPLICATION_H
 #define VOXELGAME_APPLICATION_H
 
+#include <ApplicationEvent.h>
 #include "Window.h"
 
 class Application
@@ -20,7 +21,9 @@ public:
 
     void run();
 
-    void OnEvent(Event& event);
+    void onEvent(Event& event);
+
+    bool onWindowClose(WindowCloseEvent& e);
 };
 
 

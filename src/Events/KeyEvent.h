@@ -16,7 +16,7 @@ protected:
         : m_KeyCode(keycode) {}
 
 public:
-    inline int GetKeyCode() const { return m_KeyCode; }
+    inline int getKeyCode() const { return m_KeyCode; }
 
     EVENT_CLASS_CATEGORY(EventCategoryKeyboard | EventCategoryInput)
 };
@@ -30,7 +30,7 @@ public:
     KeyPressedEvent(int keycode, int repeatCount)
         : KeyEvent(keycode), m_RepeatCount(repeatCount) {}
 
-    inline int GetRepeatCount() const { return m_RepeatCount; }
+    inline int getRepeatCount() const { return m_RepeatCount; }
 
     EVENT_CLASS_TYPE(KeyPressed)
 };
