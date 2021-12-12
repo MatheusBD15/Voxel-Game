@@ -32,7 +32,7 @@ void Window::start()
 
     glViewport(0, 0, 800, 600);
     glEnable(GL_DEPTH_TEST);
-    glfwSetInputMode(m_Window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+//    glfwSetInputMode(m_Window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
     glfwSetWindowUserPointer(m_Window, &m_Data);
 
     Window::setGLFWCallbacks();

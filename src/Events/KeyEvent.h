@@ -32,6 +32,14 @@ public:
 
     inline int getRepeatCount() const { return m_RepeatCount; }
 
+    // Only for debugging purposes
+    std::string toString() const override
+    {
+        std::stringstream ss;
+        ss << "KeyPressedEvent: " << m_KeyCode << ", " << m_RepeatCount;
+        return ss.str();
+    }
+
     EVENT_CLASS_TYPE(KeyPressed)
 };
 
@@ -40,6 +48,14 @@ class KeyReleasedEvent : public KeyEvent
 public:
     KeyReleasedEvent(int keycode)
         : KeyEvent(keycode) {}
+
+    // Only for debugging purposes
+    std::string toString() const override
+    {
+        std::stringstream ss;
+        ss << "KeyReleasedEvent: " << m_KeyCode;
+        return ss.str();
+    }
 
     EVENT_CLASS_TYPE(KeyPressed)
 };

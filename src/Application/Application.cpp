@@ -143,15 +143,51 @@ void Application::run()
 
 void Application::onEvent(Event &event)
 {
-    std::cout << "AAA";
     EventDispatcher dispatcher(event);
 
     dispatcher.dispatch<WindowCloseEvent>(BIND_EVENT_FN(Application::onWindowClose));
+    dispatcher.dispatch<KeyPressedEvent>(BIND_EVENT_FN(Application::onKeyPressed));
+    dispatcher.dispatch<KeyReleasedEvent>(BIND_EVENT_FN(Application::onKeyReleased));
+    dispatcher.dispatch<MouseMovedEvent>(BIND_EVENT_FN(Application::onMouseMoved));
+    dispatcher.dispatch<MouseScrolledEvent>(BIND_EVENT_FN(Application::onMouseScrolled));
+    dispatcher.dispatch<MouseButtonReleasedEvent>(BIND_EVENT_FN(Application::onMouseButtonReleased));
+    dispatcher.dispatch<MouseButtonPressedEvent>(BIND_EVENT_FN(Application::onMouseButtonPressed));
 }
 
 bool Application::onWindowClose(WindowCloseEvent &e)
 {
+    std::cout << e.toString();
     m_Running = false;
     m_Window->close();
     return true;
+}
+
+bool Application::onKeyPressed(KeyPressedEvent &e)
+{
+    std::cout << e.toString();
+}
+
+bool Application::onKeyReleased(KeyReleasedEvent &e)
+{
+    std::cout << e.toString();
+}
+
+bool Application::onMouseMoved(MouseMovedEvent &e)
+{
+    std::cout << e.toString();
+}
+
+bool Application::onMouseButtonPressed(MouseButtonPressedEvent &e)
+{
+    std::cout << e.toString();
+}
+
+bool Application::onMouseButtonReleased(MouseButtonReleasedEvent &e)
+{
+    std::cout << e.toString();
+}
+
+bool Application::onMouseScrolled(MouseScrolledEvent &e)
+{
+    std::cout << e.toString();
 }

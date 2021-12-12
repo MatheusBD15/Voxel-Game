@@ -6,6 +6,8 @@
 #define VOXELGAME_APPLICATION_H
 
 #include <ApplicationEvent.h>
+#include <KeyEvent.h>
+#include <MouseEvent.h>
 #include "Window.h"
 
 class Application
@@ -23,7 +25,14 @@ public:
 
     void onEvent(Event& event);
 
+    // event callbacks
     bool onWindowClose(WindowCloseEvent& e);
+    bool onKeyPressed(KeyPressedEvent& e);
+    bool onKeyReleased(KeyReleasedEvent& e);
+    bool onMouseMoved(MouseMovedEvent& e);
+    bool onMouseScrolled(MouseScrolledEvent& e);
+    bool onMouseButtonPressed(MouseButtonPressedEvent& e);
+    bool onMouseButtonReleased(MouseButtonReleasedEvent& e);
 };
 
 
