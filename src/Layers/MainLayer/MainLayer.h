@@ -5,33 +5,18 @@
 #ifndef VOXELGAME_MAINLAYER_H
 #define VOXELGAME_MAINLAYER_H
 
-
 #include <Layers/Layer.h>
 #include <iostream>
 
 class MainLayer : public Layer {
 public:
-    MainLayer() {}
-    ~MainLayer() {}
+    MainLayer() = default;
+    ~MainLayer() override = default;
 
-    void onUpdate() override
-    {
-    }
-
-    void onAttach() override
-    {
-        std::cout << "Attach";
-    }
-
-    void onDetach() override
-    {
-        std::cout << "Detach";
-    }
-
-    void onEvent(Event& event) override
-    {
-        std::cout << "EVENTO";
-    }
+    void onUpdate() override;
+    void onAttach() override;
+    void onDetach() override;
+    void onEvent(Event& event) override;
 };
 
 
