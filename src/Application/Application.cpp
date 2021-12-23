@@ -6,6 +6,7 @@
 #include <Mesh/Mesh.h>
 #include <Shader/Shader.h>
 #include <Camera/Camera.h>
+#include <Layers/MainLayer/MainLayer.h>
 #include "Application.h"
 #include "Renderer/Renderer.h"
 
@@ -20,6 +21,8 @@ Application::Application()
 
     m_Window = new Window();
     m_Window->setEventCallback(BIND_EVENT_FN(Application::onEvent));
+    m_LayerStack = LayerStack();
+    pushLayer(new MainLayer());
 };
 
 void Application::run()
@@ -122,6 +125,9 @@ void Application::run()
 
         m_Window->update(m_DeltaTime);
 
+        for(Layer* layer : m_LayerStack)
+            layer->onUpdate();
+
         Renderer::prepare();
 
         shader.use();
@@ -152,6 +158,13 @@ void Application::onEvent(Event &event)
     dispatcher.dispatch<MouseScrolledEvent>(BIND_EVENT_FN(Application::onMouseScrolled));
     dispatcher.dispatch<MouseButtonReleasedEvent>(BIND_EVENT_FN(Application::onMouseButtonReleased));
     dispatcher.dispatch<MouseButtonPressedEvent>(BIND_EVENT_FN(Application::onMouseButtonPressed));
+
+    // dispatch events to all layers
+    for(auto it = m_LayerStack.end(); it != m_LayerStack.begin(); )
+    {
+        (*--it)->onEvent(event);
+        if(event.handled) break;
+    }
 }
 
 bool Application::onWindowClose(WindowCloseEvent &e)
@@ -190,4 +203,14 @@ bool Application::onMouseButtonReleased(MouseButtonReleasedEvent &e)
 bool Application::onMouseScrolled(MouseScrolledEvent &e)
 {
     std::cout << e.toString();
+}
+
+void Application::pushLayer(Layer *layer)
+{
+    m_LayerStack.pushLayer(layer);
+}
+
+void Application::pushOverlay(Layer *overlay)
+{
+    m_LayerStack.pushOverlay(overlay);
 }

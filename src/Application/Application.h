@@ -8,6 +8,8 @@
 #include <Events/ApplicationEvent.h>
 #include <Events/KeyEvent.h>
 #include <Events/MouseEvent.h>
+#include <Layers/Layer.h>
+#include <Layers/LayerStack.h>
 #include "Window/Window.h"
 
 class Application
@@ -17,11 +19,15 @@ private:
     bool m_Running = true;
     float m_DeltaTime = 0.0f;
     float m_LastFrame = 0.0f;
-
+    LayerStack m_LayerStack;
 public:
     Application();
 
     void run();
+
+    // layer handling
+    void pushLayer(Layer* layer);
+    void pushOverlay(Layer* overlay);
 
     void onEvent(Event& event);
 
