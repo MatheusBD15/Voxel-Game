@@ -25,7 +25,6 @@ private:
 
     WindowData m_Data;
     GLFWwindow* m_Window;
-    Camera* m_Camera;
 
 public:
 
@@ -42,8 +41,6 @@ public:
     inline GLFWwindow* getWindow() { return m_Window; };
 
     void processInput(float deltaTime);
-
-    void setCamera(Camera* camera);
 
     inline void setEventCallback(const EventCallbackFn& callback) { m_Data.eventCallback = callback; }
 

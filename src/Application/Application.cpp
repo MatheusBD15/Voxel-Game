@@ -22,99 +22,16 @@ Application::Application()
     m_Window = new Window();
     m_Window->setEventCallback(BIND_EVENT_FN(Application::onEvent));
     m_LayerStack = LayerStack();
-    pushLayer(new MainLayer());
+    Application::pushLayer(new MainLayer());
 };
 
 void Application::run()
 {
-    std::vector<unsigned int> indices = {  // note that we start from 0!
-        // /*Above ABC,BCD*/
-        0,1,2,
-        1,2,3,
-        /*Following EFG,FGH*/
-        4,5,6,
-        5,6,7,
-        /*Left ABF,AEF*/
-        0,1,5,
-        0,4,5,
-        /*Right side CDH,CGH*/
-        2,3,7,
-        2,6,7,
-        /*ACG,AEG*/
-        0,2,6,
-        0,4,6,
-        /*Behind BFH,BDH*/
-        1,5,7,
-        1,3,7
-    };
-
-//    std::vector<float> vertices = {
-//        -0.5f,0.5f,-0.5f,   0.0f, 0.0f, 0.0f,//Point A 0
-//        -0.5f,0.5f,0.5f,    0.0f, 0.0f, 1.0f,//Point B 1
-//        0.5f,0.5f,-0.5f,    0.0f, 1.0f, 0.0f,//Point C 2
-//        0.5f,0.5f,0.5f,     0.0f, 1.0f, 1.0f,//Point D 3
-//
-//        -0.5f,-0.5f,-0.5f,  1.0f, 0.0f, 0.0f,//Point E 4
-//        -0.5f,-0.5f,0.5f,   1.0f, 0.0f, 1.0f,//Point F 5
-//        0.5f,-0.5f,-0.5f,   1.0f, 1.0f, 0.0f,//Point G 6
-//        0.5f,-0.5f,0.5f,    1.0f, 1.0f, 1.0f//Point H 7
-//    };
-
-    std::vector<float> vertices = {
-            -0.5f, -0.5f, -0.5f,
-            0.5f, -0.5f, -0.5f,
-            0.5f,  0.5f, -0.5f,
-            0.5f,  0.5f, -0.5f,
-            -0.5f,  0.5f, -0.5f,
-            -0.5f, -0.5f, -0.5f,
-
-            -0.5f, -0.5f,  0.5f,
-            0.5f, -0.5f,  0.5f,
-            0.5f,  0.5f,  0.5f,
-            0.5f,  0.5f,  0.5f,
-            -0.5f,  0.5f,  0.5f,
-            -0.5f, -0.5f,  0.5f,
-
-            -0.5f,  0.5f,  0.5f,
-            -0.5f,  0.5f, -0.5f,
-            -0.5f, -0.5f, -0.5f,
-            -0.5f, -0.5f, -0.5f,
-            -0.5f, -0.5f,  0.5f,
-            -0.5f,  0.5f,  0.5f,
-
-            0.5f,  0.5f,  0.5f,
-            0.5f,  0.5f, -0.5f,
-            0.5f, -0.5f, -0.5f,
-            0.5f, -0.5f, -0.5f,
-            0.5f, -0.5f,  0.5f,
-            0.5f,  0.5f,  0.5f,
-
-            -0.5f, -0.5f, -0.5f,
-            0.5f, -0.5f, -0.5f,
-            0.5f, -0.5f,  0.5f,
-            0.5f, -0.5f,  0.5f,
-            -0.5f, -0.5f,  0.5f,
-            -0.5f, -0.5f, -0.5f,
-
-            -0.5f,  0.5f, -0.5f,
-            0.5f,  0.5f, -0.5f,
-            0.5f,  0.5f,  0.5f,
-            0.5f,  0.5f,  0.5f,
-            -0.5f,  0.5f,  0.5f,
-            -0.5f,  0.5f, -0.5f
-
-    };
-
     m_Window->start();
 
-    Mesh mesh = Mesh(vertices, indices);
-
-    Shader shader = Shader("C:\\Users\\MBDambo\\Desktop\\Voxel Game\\Voxel-Game\\src\\Shaders\\vertex.shader",
-                           "C:\\Users\\MBDambo\\Desktop\\Voxel Game\\Voxel-Game\\src\\Shaders\\fragment.shader");
-
-    Camera camera = Camera(shader);
-
-    m_Window->setCamera(&camera);
+    // runs all onAttach of all layers
+    for(Layer* layer : m_LayerStack)
+        layer->onAttach();
 
     while(m_Running)
     {
@@ -126,13 +43,15 @@ void Application::run()
         m_Window->update(m_DeltaTime);
 
         for(Layer* layer : m_LayerStack)
-            layer->onUpdate();
+            layer->onUpdate(m_DeltaTime);
 
-        Renderer::prepare();
-
-        shader.use();
-
-        Renderer::render(&mesh, &camera);
+//        Renderer::prepare();
+//
+//        shader.use();
+//
+//        camera.use();
+//
+//        Renderer::render(&mesh);
 
         m_Window->postUpdate();
 
@@ -142,7 +61,7 @@ void Application::run()
         }
     }
 
-    delete(&mesh);
+//    delete(&mesh);
 
     glfwTerminate();
 }
@@ -152,12 +71,6 @@ void Application::onEvent(Event &event)
     EventDispatcher dispatcher(event);
 
     dispatcher.dispatch<WindowCloseEvent>(BIND_EVENT_FN(Application::onWindowClose));
-    dispatcher.dispatch<KeyPressedEvent>(BIND_EVENT_FN(Application::onKeyPressed));
-    dispatcher.dispatch<KeyReleasedEvent>(BIND_EVENT_FN(Application::onKeyReleased));
-    dispatcher.dispatch<MouseMovedEvent>(BIND_EVENT_FN(Application::onMouseMoved));
-    dispatcher.dispatch<MouseScrolledEvent>(BIND_EVENT_FN(Application::onMouseScrolled));
-    dispatcher.dispatch<MouseButtonReleasedEvent>(BIND_EVENT_FN(Application::onMouseButtonReleased));
-    dispatcher.dispatch<MouseButtonPressedEvent>(BIND_EVENT_FN(Application::onMouseButtonPressed));
 
     // dispatch events to all layers
     for(auto it = m_LayerStack.end(); it != m_LayerStack.begin(); )
@@ -173,36 +86,6 @@ bool Application::onWindowClose(WindowCloseEvent &e)
     m_Running = false;
     m_Window->close();
     return true;
-}
-
-bool Application::onKeyPressed(KeyPressedEvent &e)
-{
-    std::cout << e.toString();
-}
-
-bool Application::onKeyReleased(KeyReleasedEvent &e)
-{
-    std::cout << e.toString();
-}
-
-bool Application::onMouseMoved(MouseMovedEvent &e)
-{
-    std::cout << e.toString();
-}
-
-bool Application::onMouseButtonPressed(MouseButtonPressedEvent &e)
-{
-    std::cout << e.toString();
-}
-
-bool Application::onMouseButtonReleased(MouseButtonReleasedEvent &e)
-{
-    std::cout << e.toString();
-}
-
-bool Application::onMouseScrolled(MouseScrolledEvent &e)
-{
-    std::cout << e.toString();
 }
 
 void Application::pushLayer(Layer *layer)

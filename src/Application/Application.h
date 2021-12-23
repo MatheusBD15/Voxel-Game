@@ -20,6 +20,7 @@ private:
     float m_DeltaTime = 0.0f;
     float m_LastFrame = 0.0f;
     LayerStack m_LayerStack;
+
 public:
     Application();
 
@@ -28,17 +29,10 @@ public:
     // layer handling
     void pushLayer(Layer* layer);
     void pushOverlay(Layer* overlay);
-
     void onEvent(Event& event);
 
     // event callbacks
     bool onWindowClose(WindowCloseEvent& e);
-    bool onKeyPressed(KeyPressedEvent& e);
-    bool onKeyReleased(KeyReleasedEvent& e);
-    bool onMouseMoved(MouseMovedEvent& e);
-    bool onMouseScrolled(MouseScrolledEvent& e);
-    bool onMouseButtonPressed(MouseButtonPressedEvent& e);
-    bool onMouseButtonReleased(MouseButtonReleasedEvent& e);
 };
 
 

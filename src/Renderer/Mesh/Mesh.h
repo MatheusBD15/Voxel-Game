@@ -14,6 +14,7 @@ private:
 
 public:
     Mesh(std::vector<float> vertices, std::vector<unsigned int> indices);
+    Mesh() = default;
     ~Mesh();
 
     VAO* getVAO() { return m_VAO; }

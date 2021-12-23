@@ -46,29 +46,13 @@ void Window::close()
 
 void Window::processInput(float deltaTime)
 {
-    // replace with event generation
-    const float cameraSpeed = 2.5f * deltaTime; // adjust accordingly
-
     if(glfwGetKey(m_Window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
         glfwSetWindowShouldClose(m_Window, true);
-    if (glfwGetKey(m_Window, GLFW_KEY_W) == GLFW_PRESS)
-        m_Camera->m_CameraPos += cameraSpeed * m_Camera->m_CameraFront;
-    if (glfwGetKey(m_Window, GLFW_KEY_S) == GLFW_PRESS)
-        m_Camera->m_CameraPos -= cameraSpeed * m_Camera->m_CameraFront;
-    if (glfwGetKey(m_Window, GLFW_KEY_A) == GLFW_PRESS)
-        m_Camera->m_CameraPos -= glm::normalize(glm::cross(m_Camera->m_CameraFront, m_Camera->m_CameraUp)) * cameraSpeed;
-    if (glfwGetKey(m_Window, GLFW_KEY_D) == GLFW_PRESS)
-        m_Camera->m_CameraPos += glm::normalize(glm::cross(m_Camera->m_CameraFront, m_Camera->m_CameraUp)) * cameraSpeed;
 }
 
 void Window::update(float deltaTime)
 {
     Window::processInput(deltaTime);
-}
-
-void Window::setCamera(Camera *camera)
-{
-    m_Camera = camera;
 }
 
 void Window::postUpdate()
@@ -130,8 +114,6 @@ void Window::setGLFWCallbacks()
     glfwSetMouseButtonCallback(m_Window, [](GLFWwindow* window, int button, int action, int mods) {
 
         WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
-
-        std::cout << "AAA";
 
         switch(action)
         {

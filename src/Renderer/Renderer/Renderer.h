@@ -5,6 +5,9 @@
 #ifndef VOXELGAME_RENDERER_H
 #define VOXELGAME_RENDERER_H
 
+#include <Mesh/Mesh.h>
+#include <Camera/Camera.h>
+
 
 class Renderer
 {

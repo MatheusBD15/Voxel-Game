@@ -37,6 +37,7 @@ public:
 
 public:
     Camera(const Shader &vertexShader);
+    Camera() = default;
 
     // sets the uniforms
     void use();

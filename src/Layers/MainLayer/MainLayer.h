@@ -7,13 +7,24 @@
 
 #include <Layers/Layer.h>
 #include <iostream>
+#include <vector>
+#include <Events/ApplicationEvent.h>
+#include <Events/KeyEvent.h>
+#include <Events/MouseEvent.h>
+#include <Mesh/Mesh.h>
+#include <Shader/Shader.h>
+#include <Camera/Camera.h>
 
 class MainLayer : public Layer {
+private:
+    Camera m_Camera;
+    Shader m_Shader;
+    Mesh m_Mesh;
 public:
     MainLayer() = default;
     ~MainLayer() override = default;
 
-    void onUpdate() override;
+    void onUpdate(float deltaTime) override;
     void onAttach() override;
     void onDetach() override;
     void onEvent(Event& event) override;
