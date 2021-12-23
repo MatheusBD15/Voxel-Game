@@ -5,10 +5,10 @@
 #ifndef VOXELGAME_APPLICATION_H
 #define VOXELGAME_APPLICATION_H
 
-#include <ApplicationEvent.h>
-#include <KeyEvent.h>
-#include <MouseEvent.h>
-#include "Window.h"
+#include <Events/ApplicationEvent.h>
+#include <Events/KeyEvent.h>
+#include <Events/MouseEvent.h>
+#include "Window/Window.h"
 
 class Application
 {

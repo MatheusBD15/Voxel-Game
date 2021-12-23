@@ -8,9 +8,9 @@
 #include <GLFW/glfw3.h>
 #include <glad/glad.h>
 #include <iostream>
-#include <Camera.h>
+#include <Camera/Camera.h>
 #include <functional>
-#include "Event.h"
+#include "Events/Event.h"
 
 class Window
 {

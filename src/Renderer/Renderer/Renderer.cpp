@@ -3,7 +3,7 @@
 //
 
 #include <Mesh/Mesh.h>
-#include <Camera.h>
+#include <Camera/Camera.h>
 #include "Renderer.h"
 
 // in the future receives a mesh, shader and camera, and sets them all, unbinds at the end

@@ -3,10 +3,10 @@
 //
 
 #include <VAO/VAO.h>
-#include "Window.h"
-#include "ApplicationEvent.h"
-#include "MouseEvent.h"
-#include "KeyEvent.h"
+#include "Window/Window.h"
+#include "Events/ApplicationEvent.h"
+#include "Events/MouseEvent.h"
+#include "Events/KeyEvent.h"
 
 Window::Window()
 {

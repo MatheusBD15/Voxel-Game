@@ -5,7 +5,7 @@
 #include <vector>
 #include <Mesh/Mesh.h>
 #include <Shader/Shader.h>
-#include <Camera.h>
+#include <Camera/Camera.h>
 #include "Application.h"
 #include "Renderer/Renderer.h"
 

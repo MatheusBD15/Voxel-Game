@@ -6,6 +6,5 @@
 #define VOXELGAME_MAIN_H
 
 #include <GLFW/glfw3.h>
-#include "stdint.h"
 
 #endif //VOXELGAME_MAIN_H
