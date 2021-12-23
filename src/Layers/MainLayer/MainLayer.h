@@ -17,9 +17,9 @@
 
 class MainLayer : public Layer {
 private:
-    Camera m_Camera;
-    Shader m_Shader;
-    Mesh m_Mesh;
+    Camera* m_Camera;
+    Shader* m_Shader;
+    Mesh* m_Mesh;
 public:
     MainLayer() = default;
     ~MainLayer() override = default;

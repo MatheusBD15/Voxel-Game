@@ -64,12 +64,13 @@ void MainLayer::onAttach()
             -0.5f,  0.5f, -0.5f
     };
 
-    m_Mesh = Mesh(vertices, indices);
+    m_Mesh = new Mesh(vertices, indices);
 
-    m_Shader = Shader("C:\\Users\\MBDambo\\Desktop\\Voxel Game\\Voxel-Game\\src\\Shaders\\vertex.shader",
+    m_Shader = new Shader("C:\\Users\\MBDambo\\Desktop\\Voxel Game\\Voxel-Game\\src\\Shaders\\vertex.shader",
                            "C:\\Users\\MBDambo\\Desktop\\Voxel Game\\Voxel-Game\\src\\Shaders\\fragment.shader");
 
-    m_Camera = Camera(m_Shader);
+    m_Camera = new Camera(*m_Shader);
+    std::cout << "AAA";
 }
 
 void MainLayer::onDetach()
@@ -86,7 +87,7 @@ void MainLayer::onUpdate(float deltaTime)
 {
     Renderer::prepare();
 
-    m_Shader.use();
+    m_Shader->use();
 
-    Renderer::render(&m_Mesh, &m_Camera);
+    Renderer::render(m_Mesh, m_Camera);
 }
