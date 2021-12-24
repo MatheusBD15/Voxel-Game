@@ -64,8 +64,8 @@ void MainLayer::onAttach()
 
     m_Mesh = new Mesh(vertices, indices);
 
-    m_Shader = new Shader("C:\\Users\\MBDambo\\Desktop\\Voxel Game\\Voxel-Game\\src\\Shaders\\vertex.shader",
-                           "C:\\Users\\MBDambo\\Desktop\\Voxel Game\\Voxel-Game\\src\\Shaders\\fragment.shader");
+    m_Shader = new Shader("src/Shaders/vertex.shader",
+                           "src/Shaders/fragment.shader");
 
     m_Camera = new Camera();
 
