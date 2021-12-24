@@ -14,6 +14,7 @@
 #include <Mesh/Mesh.h>
 #include <Shader/Shader.h>
 #include <Camera/Camera.h>
+#include <Renderer/Renderer.h>
 
 class MainLayer : public Layer {
 private:
@@ -30,8 +31,6 @@ public:
     void onAttach() override;
     void onDetach() override;
     void onEvent(Event& event) override;
-
-    void onKeyPressed(KeyPressedEvent& event);
 };
 
 

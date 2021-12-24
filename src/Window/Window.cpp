@@ -153,22 +153,3 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
     glViewport(0, 0, width, height);
 }
-
-void mouseCallback(GLFWwindow* window, double xpos, double ypos)
-{
-//    float xoffset = xpos - Camera::m_LastX;
-//    float yoffset = Camera::m_lastY - ypos; // reversed since y-coordinates range from bottom to top
-//    Camera::m_LastX = xpos;
-//    Camera::m_lastY = ypos;
-//
-//    xoffset *= Camera::m_Sensitivity;
-//    yoffset *= Camera::m_Sensitivity;
-//
-//    Camera::m_Yaw   += xoffset;
-//    Camera::m_Pitch += yoffset;
-//
-//    if(Camera::m_Pitch > 89.0f)
-//        Camera::m_Pitch =  89.0f;
-//    if(Camera::m_Pitch < -89.0f)
-//        Camera::m_Pitch = -89.0f;
-}

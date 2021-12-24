@@ -1,12 +1,8 @@
 
-#include <Renderer/Renderer.h>
 #include "MainLayer.h"
-
-#define BIND_EVENT_FN(x) std::bind(&x, this, std::placeholders::_1)
 
 void MainLayer::onAttach()
 {
-    std::cout << "Attach";
     std::vector<unsigned int> indices = {
             0,1,2,
             1,2,3,
@@ -85,12 +81,9 @@ void MainLayer::onEvent(Event &event)
 {
     std::string eventType = std::string(event.getName());
 
-    std::cout << eventType;
-
     if(eventType == "KeyPressed")
     {
         auto* keyPressedEvent = dynamic_cast<KeyEvent*>(&event);
-        std::cout << keyPressedEvent->getKeyCode();
 
         const float cameraSpeed = 2.5f * m_DeltaTime; // adjust accordingly
 
@@ -109,6 +102,7 @@ void MainLayer::onEvent(Event &event)
         {
             m_Camera->m_CameraPos -= glm::normalize(glm::cross(m_Camera->m_CameraFront, m_Camera->m_CameraUp)) * cameraSpeed;
         }
+        // d key
         if(keyPressedEvent->getKeyCode() == 68)
         {
             m_Camera->m_CameraPos += glm::normalize(glm::cross(m_Camera->m_CameraFront, m_Camera->m_CameraUp)) * cameraSpeed;
@@ -145,9 +139,4 @@ void MainLayer::onUpdate(float deltaTime)
     m_Shader->use();
 
     Renderer::render(m_Mesh, m_Camera);
-}
-
-void MainLayer::onKeyPressed(KeyPressedEvent &event)
-{
-
 }
