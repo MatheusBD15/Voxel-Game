@@ -36,8 +36,9 @@ public:
     Shader m_VertexShader;
 
 public:
-    Camera(const Shader &vertexShader);
-    Camera() = default;
+    Camera();
+
+    void setVertexShader(const Shader &vertexShader);
 
     // sets the uniforms
     void use();

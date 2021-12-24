@@ -45,14 +45,6 @@ void Application::run()
         for(Layer* layer : m_LayerStack)
             layer->onUpdate(m_DeltaTime);
 
-//        Renderer::prepare();
-//
-//        shader.use();
-//
-//        camera.use();
-//
-//        Renderer::render(&mesh);
-
         m_Window->postUpdate();
 
         if(glfwWindowShouldClose(m_Window->getWindow()))
@@ -60,8 +52,6 @@ void Application::run()
             m_Running = false;
         }
     }
-
-//    delete(&mesh);
 
     glfwTerminate();
 }

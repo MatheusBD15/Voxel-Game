@@ -20,6 +20,8 @@ private:
     Camera* m_Camera;
     Shader* m_Shader;
     Mesh* m_Mesh;
+    float m_DeltaTime = 0.0f;
+
 public:
     MainLayer() = default;
     ~MainLayer() override = default;
@@ -28,6 +30,8 @@ public:
     void onAttach() override;
     void onDetach() override;
     void onEvent(Event& event) override;
+
+    void onKeyPressed(KeyPressedEvent& event);
 };
 
 

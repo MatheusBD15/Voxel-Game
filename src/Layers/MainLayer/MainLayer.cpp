@@ -2,6 +2,8 @@
 #include <Renderer/Renderer.h>
 #include "MainLayer.h"
 
+#define BIND_EVENT_FN(x) std::bind(&x, this, std::placeholders::_1)
+
 void MainLayer::onAttach()
 {
     std::cout << "Attach";
@@ -69,8 +71,9 @@ void MainLayer::onAttach()
     m_Shader = new Shader("C:\\Users\\MBDambo\\Desktop\\Voxel Game\\Voxel-Game\\src\\Shaders\\vertex.shader",
                            "C:\\Users\\MBDambo\\Desktop\\Voxel Game\\Voxel-Game\\src\\Shaders\\fragment.shader");
 
-    m_Camera = new Camera(*m_Shader);
-    std::cout << "AAA";
+    m_Camera = new Camera();
+
+    m_Camera->setVertexShader(*m_Shader);
 }
 
 void MainLayer::onDetach()
@@ -80,14 +83,71 @@ void MainLayer::onDetach()
 
 void MainLayer::onEvent(Event &event)
 {
-    std::cout << event.toString();
+    std::string eventType = std::string(event.getName());
+
+    std::cout << eventType;
+
+    if(eventType == "KeyPressed")
+    {
+        auto* keyPressedEvent = dynamic_cast<KeyEvent*>(&event);
+        std::cout << keyPressedEvent->getKeyCode();
+
+        const float cameraSpeed = 2.5f * m_DeltaTime; // adjust accordingly
+
+        // w key was pressed
+        if(keyPressedEvent->getKeyCode() == 87)
+        {
+            m_Camera->m_CameraPos += cameraSpeed * m_Camera->m_CameraFront;
+        }
+        // s key
+        if(keyPressedEvent->getKeyCode() == 83)
+        {
+            m_Camera->m_CameraPos -= cameraSpeed * m_Camera->m_CameraFront;
+        }
+        // a key
+        if(keyPressedEvent->getKeyCode() == 65)
+        {
+            m_Camera->m_CameraPos -= glm::normalize(glm::cross(m_Camera->m_CameraFront, m_Camera->m_CameraUp)) * cameraSpeed;
+        }
+        if(keyPressedEvent->getKeyCode() == 68)
+        {
+            m_Camera->m_CameraPos += glm::normalize(glm::cross(m_Camera->m_CameraFront, m_Camera->m_CameraUp)) * cameraSpeed;
+        }
+    }
+    if(eventType == "MouseMoved")
+    {
+        auto* mouseMovedEvent = dynamic_cast<MouseMovedEvent*>(&event);
+
+        float xoffset = mouseMovedEvent->getX() - m_Camera->m_LastX;
+        float yoffset = m_Camera->m_lastY - mouseMovedEvent->getY(); // reversed since y-coordinates range from bottom to top
+        m_Camera->m_LastX = mouseMovedEvent->getX();
+        m_Camera->m_lastY = mouseMovedEvent->getY();
+
+        xoffset *= m_Camera->m_Sensitivity;
+        yoffset *= m_Camera->m_Sensitivity;
+
+        m_Camera->m_Yaw   += xoffset;
+        m_Camera->m_Pitch += yoffset;
+
+        if(m_Camera->m_Pitch > 89.0f)
+            m_Camera->m_Pitch =  89.0f;
+        if(m_Camera->m_Pitch < -89.0f)
+            m_Camera->m_Pitch = -89.0f;
+    }
 }
 
 void MainLayer::onUpdate(float deltaTime)
 {
+    m_DeltaTime = deltaTime;
+
     Renderer::prepare();
 
     m_Shader->use();
 
     Renderer::render(m_Mesh, m_Camera);
+}
+
+void MainLayer::onKeyPressed(KeyPressedEvent &event)
+{
+
 }

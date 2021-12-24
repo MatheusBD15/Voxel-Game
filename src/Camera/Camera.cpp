@@ -4,10 +4,8 @@
 
 #include "Camera.h"
 
-Camera::Camera(const Shader& vertexShader)
+Camera::Camera()
 {
-    m_VertexShader = vertexShader;
-
     m_CameraDirection.x = cos(glm::radians(m_Yaw)) * cos(glm::radians(m_Pitch));
     m_CameraDirection.y = sin(glm::radians(m_Pitch));
     m_CameraDirection.z = sin(glm::radians(m_Yaw)) * cos(glm::radians(m_Pitch));
@@ -42,4 +40,9 @@ void Camera::use()
     m_VertexShader.setUniform("model", m_Model);
     m_VertexShader.setUniform("view", m_View);
     m_VertexShader.setUniform("projection", m_Projection);
+}
+
+void Camera::setVertexShader(const Shader &vertexShader)
+{
+    m_VertexShader = vertexShader;
 }
