@@ -31,6 +31,9 @@ public:
     void onAttach() override;
     void onDetach() override;
     void onEvent(Event& event) override;
+
+    bool onKeyPressed(KeyPressedEvent& event);
+    bool onMouseMoved(MouseMovedEvent& event);
 };
 
 

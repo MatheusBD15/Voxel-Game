@@ -8,9 +8,8 @@
 #include <Camera/Camera.h>
 #include <Layers/MainLayer/MainLayer.h>
 #include "Application.h"
-#include "Renderer/Renderer.h"
 
-#define BIND_EVENT_FN(x) std::bind(&x, this, std::placeholders::_1)
+#define EVENT_FUNCTION(function) [this](auto&&... args) -> decltype(auto) { return this->function(std::forward<decltype(args)>(args)...); }
 
 Application::Application()
 {
@@ -20,7 +19,7 @@ Application::Application()
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
     m_Window = new Window();
-    m_Window->setEventCallback(BIND_EVENT_FN(Application::onEvent));
+    m_Window->setEventCallback(EVENT_FUNCTION(Application::onEvent));
     m_LayerStack = LayerStack();
     Application::pushLayer(new MainLayer());
 };
@@ -60,7 +59,7 @@ void Application::onEvent(Event &event)
 {
     EventDispatcher dispatcher(event);
 
-    dispatcher.dispatch<WindowCloseEvent>(BIND_EVENT_FN(Application::onWindowClose));
+    dispatcher.dispatch<WindowCloseEvent>(EVENT_FUNCTION(Application::onWindowClose));
 
     // dispatch events to all layers
     for(auto it = m_LayerStack.end(); it != m_LayerStack.begin(); )
