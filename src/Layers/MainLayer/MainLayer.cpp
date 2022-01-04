@@ -20,51 +20,16 @@ void MainLayer::onAttach()
             1,3,7
     };
 
-//    std::vector<float> vertices = {
-//            -0.5f, -0.5f, -0.5f,    0.18f, 0.6f, 0.96f, 1.0f,
-//            0.5f, -0.5f, -0.5f,     0.18f, 0.6f, 0.96f, 1.0f,
-//            0.5f,  0.5f, -0.5f,     0.18f, 0.6f, 0.96f, 1.0f,
-//            0.5f,  0.5f, -0.5f,     0.18f, 0.6f, 0.96f, 1.0f,
-//            -0.5f,  0.5f, -0.5f,    0.18f, 0.6f, 0.96f, 1.0f,
-//            -0.5f, -0.5f, -0.5f,    0.18f, 0.6f, 0.96f, 1.0f,
-//
-//            -0.5f, -0.5f,  0.5f,    0.18f, 0.6f, 0.96f, 1.0f,
-//            0.5f, -0.5f,  0.5f,     0.18f, 0.6f, 0.96f, 1.0f,
-//            0.5f,  0.5f,  0.5f,     0.18f, 0.6f, 0.96f, 1.0f,
-//            0.5f,  0.5f,  0.5f,     0.18f, 0.6f, 0.96f, 1.0f,
-//            -0.5f,  0.5f,  0.5f,    0.18f, 0.6f, 0.96f, 1.0f,
-//            -0.5f, -0.5f,  0.5f,    0.18f, 0.6f, 0.96f, 1.0f,
-//
-//            -0.5f,  0.5f,  0.5f,    0.18f, 0.6f, 0.96f, 1.0f,
-//            -0.5f,  0.5f, -0.5f,    0.18f, 0.6f, 0.96f, 1.0f,
-//            -0.5f, -0.5f, -0.5f,    0.18f, 0.6f, 0.96f, 1.0f,
-//            -0.5f, -0.5f, -0.5f,    0.18f, 0.6f, 0.96f, 1.0f,
-//            -0.5f, -0.5f,  0.5f,    0.18f, 0.6f, 0.96f, 1.0f,
-//            -0.5f,  0.5f,  0.5f,    0.18f, 0.6f, 0.96f, 1.0f,
-//
-//            0.5f,  0.5f,  0.5f,     0.18f, 0.6f, 0.96f, 1.0f,
-//            0.5f,  0.5f, -0.5f,     0.18f, 0.6f, 0.96f, 1.0f,
-//            0.5f, -0.5f, -0.5f,     0.18f, 0.6f, 0.96f, 1.0f,
-//            0.5f, -0.5f, -0.5f,     0.18f, 0.6f, 0.96f, 1.0f,
-//            0.5f, -0.5f,  0.5f,     0.18f, 0.6f, 0.96f, 1.0f,
-//            0.5f,  0.5f,  0.5f,     0.18f, 0.6f, 0.96f, 1.0f,
-//
-//            -0.5f, -0.5f, -0.5f,    0.0f, 0.6f, 0.96f, 1.0f,
-//            0.5f, -0.5f, -0.5f,     0.0f, 0.6f, 0.96f, 1.0f,
-//            0.5f, -0.5f,  0.5f,     0.0f, 0.6f, 0.96f, 1.0f,
-//            0.5f, -0.5f,  0.5f,     0.0f, 0.6f, 0.96f, 1.0f,
-//            -0.5f, -0.5f,  0.5f,    0.0f, 0.6f, 0.96f, 1.0f,
-//            -0.5f, -0.5f, -0.5f,    0.0f, 0.6f, 0.96f, 1.0f,
-//
-//            -0.5f,  0.5f, -0.5f,    0.18f, 0.6f, 0.96f, 1.0f,
-//            0.5f,  0.5f, -0.5f,     0.18f, 0.6f, 0.96f, 1.0f,
-//            0.5f,  0.5f,  0.5f,     0.18f, 0.6f, 0.96f, 1.0f,
-//            0.5f,  0.5f,  0.5f,     0.18f, 0.6f, 0.96f, 1.0f,
-//            -0.5f,  0.5f,  0.5f,    0.18f, 0.6f, 0.96f, 1.0f,
-//            -0.5f,  0.5f, -0.5f,    0.18f, 0.6f, 0.96f, 1.0f,
-//    };
+    auto cube1 = Renderer::createCube(0.0, 0.0);
+    auto cube2 = Renderer::createCube(1.0, 1.0f);
 
-    auto vertices = Renderer::createCube();
+    auto vertices = std::move(cube1);
+
+    vertices.insert(vertices.end(),
+                    std::make_move_iterator(cube2.begin()),
+                    std::make_move_iterator(cube2.end())
+                    );
+
 
     m_Mesh = new Mesh(vertices, indices);
 
@@ -75,6 +40,18 @@ void MainLayer::onAttach()
 
     m_Camera->setVertexShader(*m_Shader);
 }
+
+void MainLayer::onUpdate(float deltaTime)
+{
+    m_DeltaTime = deltaTime;
+
+    Renderer::prepare();
+
+    m_Shader->use();
+
+    Renderer::render(m_Mesh, m_Camera);
+}
+
 
 void MainLayer::onDetach()
 {
@@ -89,17 +66,6 @@ void MainLayer::onEvent(Event &event)
 
     dispatcher.dispatch<KeyPressedEvent>(EVENT_FUNCTION(MainLayer::onKeyPressed));
     dispatcher.dispatch<MouseMovedEvent>(EVENT_FUNCTION(MainLayer::onMouseMoved));
-}
-
-void MainLayer::onUpdate(float deltaTime)
-{
-    m_DeltaTime = deltaTime;
-
-    Renderer::prepare();
-
-    m_Shader->use();
-
-    Renderer::render(m_Mesh, m_Camera);
 }
 
 bool MainLayer::onKeyPressed(KeyPressedEvent& event)

@@ -18,9 +18,7 @@ public:
 
     static void render(Mesh* mesh, Camera* camera);
 
-    static std::vector<Vertex> createCube();
-
-
+    static std::vector<Vertex> createCube(float x, float y);
 };
 
 
