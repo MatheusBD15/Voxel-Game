@@ -13,8 +13,12 @@ VAO::VAO(std::vector<float> vertices, std::vector<unsigned int> indices)
     m_EBO = new EBO(indices);
 
     // position attribute
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
-    glEnableVertexAttribArray(0);
+    glEnableVertexArrayAttrib(m_Id, 0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 7 * sizeof(float), (void*)0);
+
+    // color attribute
+    glEnableVertexArrayAttrib(m_Id, 1);
+    glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, 7 * sizeof(float), (void*)12);
 }
 
 void VAO::bind() const
