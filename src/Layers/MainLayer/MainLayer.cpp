@@ -20,9 +20,8 @@ void MainLayer::onAttach()
             1,3,7
     };
 
-    std::vector<Vertex> cube1 = Renderer::createCube(0.0, 0.0, 0.0f);
-
-    std::vector<Vertex> vertices = std::move(cube1);
+    std::vector<Vertex> vertices;
+    vertices.reserve(400);
 
     for(int x = 0; x < 20; ++x)
     {
@@ -76,7 +75,7 @@ void MainLayer::onEvent(Event &event)
 
 bool MainLayer::onKeyPressed(KeyPressedEvent& event)
 {
-    const float cameraSpeed = 2.5f * m_DeltaTime; // adjust accordingly
+    const float cameraSpeed = 10.0f * m_DeltaTime; // adjust accordingly
 
     // w key was pressed
     if(event.getKeyCode() == 87)
