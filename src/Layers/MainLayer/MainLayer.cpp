@@ -103,6 +103,12 @@ bool MainLayer::onKeyPressed(KeyPressedEvent& event)
 
 bool MainLayer::onMouseMoved(MouseMovedEvent &event)
 {
+    if (m_Camera->m_FirstMouse)
+    {
+        m_Camera->m_LastX = event.getX();
+        m_Camera->m_lastY = event.getY();
+        m_Camera->m_FirstMouse = false;
+    }
     float xoffset = event.getX() - m_Camera->m_LastX;
     float yoffset = m_Camera->m_lastY - event.getY(); // reversed since y-coordinates range from bottom to top
     m_Camera->m_LastX = event.getX();
@@ -118,6 +124,8 @@ bool MainLayer::onMouseMoved(MouseMovedEvent &event)
         m_Camera->m_Pitch =  89.0f;
     if(m_Camera->m_Pitch < -89.0f)
         m_Camera->m_Pitch = -89.0f;
+
+    m_Camera->updateCameraVectors();
 
     return true;
 }

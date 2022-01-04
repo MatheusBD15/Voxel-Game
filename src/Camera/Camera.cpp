@@ -11,9 +11,9 @@ Camera::Camera()
     m_CameraDirection.z = sin(glm::radians(m_Yaw)) * cos(glm::radians(m_Pitch));
     m_CameraFront = glm::normalize(m_CameraDirection);
 
-    glm::vec3 up = glm::vec3(0.0f, 1.0f, 0.0f);
+    m_WorldUp = glm::vec3(0.0f, 1.0f, 0.0f);
 
-    m_CameraRight = glm::normalize(glm::cross(up, m_CameraDirection));
+    m_CameraRight = glm::normalize(glm::cross(m_WorldUp, m_CameraDirection));
 
     m_CameraUp = glm::cross(m_CameraDirection, m_CameraRight);
 
@@ -45,4 +45,15 @@ void Camera::use()
 void Camera::setVertexShader(const Shader &vertexShader)
 {
     m_VertexShader = vertexShader;
+}
+
+void Camera::updateCameraVectors()
+{
+    glm::vec3 front;
+    front.x = cos(glm::radians(m_Yaw)) * cos(glm::radians(m_Pitch));
+    front.y = sin(glm::radians(m_Pitch));
+    front.z = sin(glm::radians(m_Yaw)) * cos(glm::radians(m_Pitch));
+    m_CameraFront = glm::normalize(front);
+    m_CameraRight = glm::normalize(glm::cross(m_CameraFront, m_WorldUp));
+    m_CameraUp = glm::normalize(glm::cross(m_CameraRight, m_CameraFront));
 }

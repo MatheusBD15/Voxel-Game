@@ -11,6 +11,8 @@
 
 class Camera {
 public:
+
+    bool m_FirstMouse = true;
     // View matrices
     glm::mat4 m_Model;
     glm::mat4 m_View;
@@ -22,6 +24,8 @@ public:
     glm::vec3 m_CameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
 
     glm::vec3 m_CameraFront;
+
+    glm::vec3 m_WorldUp;
 
     glm::vec3 m_CameraDirection;
     glm::vec3 m_CameraRight;
@@ -39,6 +43,8 @@ public:
     Camera();
 
     void setVertexShader(const Shader &vertexShader);
+
+    void updateCameraVectors();
 
     // sets the uniforms
     void use();
