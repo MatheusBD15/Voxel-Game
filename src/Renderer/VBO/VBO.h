@@ -8,19 +8,19 @@
 #include <GLFW/glfw3.h>
 #include <glad/glad.h>
 #include <vector>
-#include <Utils/Vertice.h>
+#include <Utils/Vertex.h>
 
 class VBO
 {
 private:
     unsigned int m_Id;
-    std::vector<float> m_vertices;
+    std::vector<Vertex> m_vertices;
 
 public:
     VBO() = default;
     ~VBO();
 
-    explicit VBO(std::vector<float> vertices);
+    explicit VBO(std::vector<Vertex> vertices);
 
     unsigned int getId() const { return m_Id; };
 };

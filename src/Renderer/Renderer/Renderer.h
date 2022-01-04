@@ -17,6 +17,10 @@ public:
     static void prepare();
 
     static void render(Mesh* mesh, Camera* camera);
+
+    static std::vector<Vertex> createCube();
+
+
 };
 
 

@@ -4,7 +4,7 @@
 
 #include "Mesh.h"
 
-Mesh::Mesh(std::vector<float> vertices, std::vector<unsigned int> indices)
+Mesh::Mesh(std::vector<Vertex> vertices, std::vector<unsigned int> indices)
 {
     m_VAO = new VAO(vertices, indices);
 }

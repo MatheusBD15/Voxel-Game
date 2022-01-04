@@ -13,7 +13,7 @@ private:
     VAO* m_VAO;
 
 public:
-    Mesh(std::vector<float> vertices, std::vector<unsigned int> indices);
+    Mesh(std::vector<Vertex> vertices, std::vector<unsigned int> indices);
     Mesh() = default;
     ~Mesh();
 

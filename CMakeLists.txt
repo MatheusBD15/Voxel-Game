@@ -24,7 +24,6 @@ set(TRANSLATION_FILES "${SRC_DIR}/Main.cpp"
         src/Renderer/VBO/VBO.h
         src/Renderer/VAO/VAO.cpp
         src/Renderer/VAO/VAO.h
-        src/Renderer/Utils/Vertice.h
         src/Application/Application.cpp
         src/Application/Application.h
         src/Renderer/Mesh/Mesh.cpp
@@ -38,7 +37,7 @@ set(TRANSLATION_FILES "${SRC_DIR}/Main.cpp"
         src/Events/Event.h
         src/Events/KeyEvent.h
         src/Events/MouseEvent.h
-        src/Events/ApplicationEvent.h src/Layers/LayerStack.cpp src/Layers/LayerStack.h src/Layers/MainLayer/MainLayer.cpp src/Layers/MainLayer/MainLayer.h src/Layers/Layer.h)
+        src/Events/ApplicationEvent.h src/Layers/LayerStack.cpp src/Layers/LayerStack.h src/Layers/MainLayer/MainLayer.cpp src/Layers/MainLayer/MainLayer.h src/Layers/Layer.h src/Renderer/Utils/Vertex.h)
 
 set(SOURCES_FILES "${TRANSLATION_FILES}")
 

@@ -4,7 +4,7 @@
 
 #include "VAO.h"
 
-VAO::VAO(std::vector<float> vertices, std::vector<unsigned int> indices)
+VAO::VAO(std::vector<Vertex> vertices, std::vector<unsigned int> indices)
 {
     glCreateVertexArrays(1, &m_Id);
     glBindVertexArray(m_Id);
@@ -14,11 +14,11 @@ VAO::VAO(std::vector<float> vertices, std::vector<unsigned int> indices)
 
     // position attribute
     glEnableVertexArrayAttrib(m_Id, 0);
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 7 * sizeof(float), (void*)0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)0);
 
     // color attribute
     glEnableVertexArrayAttrib(m_Id, 1);
-    glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, 7 * sizeof(float), (void*)12);
+    glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const void*)offsetof(Vertex, color));
 }
 
 void VAO::bind() const
