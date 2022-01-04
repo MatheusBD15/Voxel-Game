@@ -20,16 +20,22 @@ void MainLayer::onAttach()
             1,3,7
     };
 
-    auto cube1 = Renderer::createCube(0.0, 0.0);
-    auto cube2 = Renderer::createCube(1.0, 1.0f);
+    std::vector<Vertex> cube1 = Renderer::createCube(0.0, 0.0, 0.0f);
 
-    auto vertices = std::move(cube1);
+    std::vector<Vertex> vertices = std::move(cube1);
 
-    vertices.insert(vertices.end(),
-                    std::make_move_iterator(cube2.begin()),
-                    std::make_move_iterator(cube2.end())
-                    );
+    for(int x = 0; x < 20; ++x)
+    {
+        for(int z = 0; z < 20; ++z)
+        {
+            std::vector<Vertex> cube = Renderer::createCube((float)x, 0.0f, (float)z * -1.0f);
 
+            vertices.insert(vertices.end(),
+                            std::make_move_iterator(cube.begin()),
+                            std::make_move_iterator(cube.end())
+            );
+        }
+    }
 
     m_Mesh = new Mesh(vertices, indices);
 

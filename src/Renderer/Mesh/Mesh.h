@@ -11,13 +11,16 @@ class Mesh
 {
 private:
     VAO* m_VAO;
+    unsigned int m_size;
 
 public:
     Mesh(std::vector<Vertex> vertices, std::vector<unsigned int> indices);
     Mesh() = default;
     ~Mesh();
 
-    VAO* getVAO() { return m_VAO; }
+    inline VAO* getVAO() { return m_VAO; }
+
+    inline unsigned int getSize() const { return m_size; }
 
     void bind();
 
