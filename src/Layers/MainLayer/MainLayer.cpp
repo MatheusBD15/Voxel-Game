@@ -23,7 +23,7 @@ void MainLayer::onAttach()
     std::vector<float> perlinNoise = NoiseGenerator::generate2d(400, 400, 4, 400, 400, 3.2f);
 
     std::vector<Vertex> vertices;
-    vertices.reserve(10000);
+    vertices.reserve(160000);
 
     for(int x = 0; x < 400; x++)
         for(int z = 0; z < 400; z++)
