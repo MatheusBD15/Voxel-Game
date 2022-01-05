@@ -82,7 +82,7 @@ void MainLayer::onEvent(Event &event)
 
 bool MainLayer::onKeyPressed(KeyPressedEvent& event)
 {
-    const float cameraSpeed = 10.0f * m_DeltaTime; // adjust accordingly
+    const float cameraSpeed = 50.0f * m_DeltaTime; // adjust accordingly
 
     // w key was pressed
     if(event.getKeyCode() == 87)
