@@ -31,7 +31,9 @@ public:
 
     // utility uniform functions
     // ------------------------------------------------------------------------
-    void setUniform(const std::string &name, glm::mat4 mat);
+    void setUniform(const std::string &name, glm::mat4 mat) const;
+
+    void setUniform(const std::string &name, glm::vec4 vec) const;
 
     void setUniform(const std::string &name, bool value) const;
 

@@ -35,6 +35,9 @@ void Window::start()
     glfwSetInputMode(m_Window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
     glfwSetWindowUserPointer(m_Window, &m_Data);
 
+    // for seeing wireframe
+    // glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+
     Window::setGLFWCallbacks();
 }
 

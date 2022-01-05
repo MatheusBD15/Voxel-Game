@@ -21,13 +21,14 @@ void MainLayer::onAttach()
     };
 
     std::vector<Vertex> vertices;
-    vertices.reserve(400);
+    vertices.reserve(800);
 
-    for(int x = 0; x < 20; ++x)
+    for(int x = -20; x < 20; ++x)
     {
-        for(int z = 0; z < 20; ++z)
+        for(int z = -20; z < 20; ++z)
         {
-            std::vector<Vertex> cube = Renderer::createCube((float)x, 0.0f, (float)z * -1.0f);
+            int height = rand() % 4 + 1;
+            std::vector<Vertex> cube = Renderer::createCube((float)x, (float)height, (float)z * -1.0f);
 
             vertices.insert(vertices.end(),
                             std::make_move_iterator(cube.begin()),
@@ -49,6 +50,10 @@ void MainLayer::onAttach()
 void MainLayer::onUpdate(float deltaTime)
 {
     m_DeltaTime = deltaTime;
+
+    glm::vec4 lightColor = {1.0f, 1.0f, 1.0f, 1.0f};
+
+    m_Shader->setUniform("lightColor", lightColor);
 
     Renderer::prepare();
 

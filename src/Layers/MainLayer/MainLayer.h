@@ -16,6 +16,7 @@
 #include <Camera/Camera.h>
 #include <Renderer/Renderer.h>
 #include <Renderer/utils/Vertex.h>
+#include <stdlib.h>
 
 class MainLayer : public Layer {
 private:
