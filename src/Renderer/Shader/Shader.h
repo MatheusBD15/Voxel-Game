@@ -35,6 +35,8 @@ public:
 
     void setUniform(const std::string &name, glm::vec4 vec) const;
 
+    void setUniform(const std::string &name, glm::vec3 vec) const;
+
     void setUniform(const std::string &name, bool value) const;
 
     // ------------------------------------------------------------------------

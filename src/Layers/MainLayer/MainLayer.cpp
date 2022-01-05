@@ -52,8 +52,10 @@ void MainLayer::onUpdate(float deltaTime)
     m_DeltaTime = deltaTime;
 
     glm::vec4 lightColor = {1.0f, 1.0f, 1.0f, 1.0f};
+    glm::vec3 lightPos = {0.0f, 50.0f, 15.0f};
 
     m_Shader->setUniform("lightColor", lightColor);
+    m_Shader->setUniform("lightPos", lightPos);
 
     Renderer::prepare();
 

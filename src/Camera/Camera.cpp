@@ -40,6 +40,8 @@ void Camera::use()
     m_VertexShader.setUniform("model", m_Model);
     m_VertexShader.setUniform("view", m_View);
     m_VertexShader.setUniform("projection", m_Projection);
+
+    m_VertexShader.setUniform("viewPos", m_CameraPos);
 }
 
 void Camera::setVertexShader(const Shader &vertexShader)
