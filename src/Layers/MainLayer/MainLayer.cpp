@@ -20,15 +20,18 @@ void MainLayer::onAttach()
             1,3,7
     };
 
-    std::vector<float> perlinNoise = NoiseGenerator::generate2d(400, 400, 4, 400, 400, 3.2f);
+    int mapX = 400;
+    int mapZ = 400;
+
+    std::vector<float> perlinNoise = NoiseGenerator::generate2d(mapX, mapZ, 4, mapX, mapZ, 3.2f);
 
     std::vector<Vertex> vertices;
-    vertices.reserve(160000);
+    vertices.reserve(mapX * mapZ * 36);
 
-    for(int x = 0; x < 400; x++)
-        for(int z = 0; z < 400; z++)
+    for(int x = 0; x < mapX; x++)
+        for(int z = 0; z < mapZ; z++)
         {
-            int height = floor(perlinNoise[z * 400 + x]) - 120;
+            int height = floor(perlinNoise[z * mapX + x]) - 120;
             std::vector<Vertex> cube = Renderer::createCube((float)x, (float)height, (float)z * -1.0f);
 
             vertices.insert(vertices.end(),
