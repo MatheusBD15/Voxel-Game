@@ -20,22 +20,22 @@ void MainLayer::onAttach()
             1,3,7
     };
 
-    std::vector<Vertex> vertices;
-    vertices.reserve(800);
+    std::vector<float> perlinNoise = NoiseGenerator::generate2d(400, 400, 4, 400, 400, 3.2f);
 
-    for(int x = -20; x < 20; ++x)
-    {
-        for(int z = -20; z < 20; ++z)
+    std::vector<Vertex> vertices;
+    vertices.reserve(10000);
+
+    for(int x = 0; x < 400; x++)
+        for(int z = 0; z < 400; z++)
         {
-            int height = rand() % 4 + 1;
+            int height = floor(perlinNoise[z * 400 + x]) - 120;
             std::vector<Vertex> cube = Renderer::createCube((float)x, (float)height, (float)z * -1.0f);
 
             vertices.insert(vertices.end(),
-                            std::make_move_iterator(cube.begin()),
-                            std::make_move_iterator(cube.end())
+                            cube.begin(),
+                            cube.end()
             );
         }
-    }
 
     m_Mesh = new Mesh(vertices, indices);
 
@@ -52,7 +52,7 @@ void MainLayer::onUpdate(float deltaTime)
     m_DeltaTime = deltaTime;
 
     glm::vec4 lightColor = {1.0f, 1.0f, 1.0f, 1.0f};
-    glm::vec3 lightPos = {0.0f, 50.0f, 15.0f};
+    glm::vec3 lightPos = {0.0f, 500.0f, 15.0f};
 
     m_Shader->setUniform("lightColor", lightColor);
     m_Shader->setUniform("lightPos", lightPos);
