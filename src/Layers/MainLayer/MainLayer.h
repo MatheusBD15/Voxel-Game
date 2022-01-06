@@ -23,7 +23,7 @@ class MainLayer : public Layer {
 private:
     Camera* m_Camera;
     Shader* m_Shader;
-    Mesh* m_Mesh;
+    std::vector<Mesh*> m_Meshes;
     float m_DeltaTime = 0.0f;
 
 public:
@@ -37,6 +37,8 @@ public:
 
     bool onKeyPressed(KeyPressedEvent& event);
     bool onMouseMoved(MouseMovedEvent& event);
+
+    std::vector<Vertex> generateChunk(int width, int xOffset, int zOffset, std::vector<float>& noise);
 };
 
 

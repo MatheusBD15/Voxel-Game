@@ -20,27 +20,29 @@ void MainLayer::onAttach()
             1,3,7
     };
 
-    int mapX = 400;
-    int mapZ = 400;
+    int mapX = 1024;
+    int mapZ = 1024;
+    int chunkWidth = 32;
+    int chunkNumber = 30;
 
     std::vector<float> perlinNoise = NoiseGenerator::generate2d(mapX, mapZ, 4, mapX, mapZ, 3.2f);
 
-    std::vector<Vertex> vertices;
-    vertices.reserve(mapX * mapZ * 36);
+    m_Meshes.reserve(chunkNumber * chunkNumber);
 
-    for(int x = 0; x < mapX; x++)
-        for(int z = 0; z < mapZ; z++)
+    for (int cX = 0; cX < chunkNumber; ++cX)
+    {
+        for (int cZ = 0; cZ < chunkNumber; ++cZ)
         {
-            int height = floor(perlinNoise[z * mapX + x]) - 120;
-            std::vector<Vertex> cube = Renderer::createCube((float)x, (float)height, (float)z * -1.0f);
+            int xOffset = cX * chunkWidth;
+            int zOffset = cZ * chunkWidth;
 
-            vertices.insert(vertices.end(),
-                            cube.begin(),
-                            cube.end()
-            );
+            std::vector<Vertex> chunk = generateChunk(chunkWidth, xOffset, zOffset, perlinNoise);
+
+            Mesh* mesh = new Mesh(chunk, indices);
+
+            m_Meshes.emplace_back(mesh);
         }
-
-    m_Mesh = new Mesh(vertices, indices);
+    }
 
     m_Shader = new Shader("src/Shaders/vertex.shader",
                            "src/Shaders/fragment.shader");
@@ -50,12 +52,40 @@ void MainLayer::onAttach()
     m_Camera->setVertexShader(*m_Shader);
 }
 
+std::vector<Vertex> MainLayer::generateChunk(int width, int xOffset, int zOffset, std::vector<float>& noise)
+{
+    std::vector<Vertex> chunk;
+    chunk.reserve(width * width);
+
+//    std::cout << noise.size();
+
+    int mapX = 1024;
+
+    for (int x = 0; x < width; ++x)
+    {
+        for (int z = 0; z < width; ++z)
+        {
+//            int height = floor(noise[1]) - 120;
+
+            std::vector<Vertex> cube = Renderer::createCube((float)(x + xOffset), (float)2.0f, (float)(z + zOffset));
+
+            chunk.insert(chunk.end(),
+                            cube.begin(),
+                            cube.end()
+            );
+        }
+    }
+
+    return chunk;
+}
+
+
 void MainLayer::onUpdate(float deltaTime)
 {
     m_DeltaTime = deltaTime;
 
     glm::vec4 lightColor = {1.0f, 1.0f, 1.0f, 1.0f};
-    glm::vec3 lightPos = {0.0f, 500.0f, 15.0f};
+    glm::vec3 lightPos = {0.0f, 5000.0f, 0.0f};
 
     m_Shader->setUniform("lightColor", lightColor);
     m_Shader->setUniform("lightPos", lightPos);
@@ -64,7 +94,10 @@ void MainLayer::onUpdate(float deltaTime)
 
     m_Shader->use();
 
-    Renderer::render(m_Mesh, m_Camera);
+    for (auto mesh : m_Meshes)
+    {
+        Renderer::render(mesh, m_Camera);
+    }
 }
 
 
