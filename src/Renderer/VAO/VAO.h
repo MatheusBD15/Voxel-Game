@@ -21,7 +21,7 @@ public:
     VAO() = default;
     ~VAO();
 
-    VAO(std::vector<Vertex> vertices, std::vector<unsigned int> indices);
+    VAO(const std::vector<Vertex>& vertices, const std::vector<unsigned int>& indices);
 
     void bind() const;
 

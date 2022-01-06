@@ -20,9 +20,9 @@ public:
     VBO() = default;
     ~VBO();
 
-    explicit VBO(std::vector<Vertex> vertices);
+    explicit VBO(const std::vector<Vertex>& vertices);
 
-    unsigned int getId() const { return m_Id; };
+    inline unsigned int getId() const { return m_Id; };
 };
 
 

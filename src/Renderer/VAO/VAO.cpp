@@ -4,7 +4,7 @@
 
 #include "VAO.h"
 
-VAO::VAO(std::vector<Vertex> vertices, std::vector<unsigned int> indices)
+VAO::VAO(const std::vector<Vertex>& vertices, const std::vector<unsigned int>& indices)
 {
     glCreateVertexArrays(1, &m_Id);
     glBindVertexArray(m_Id);

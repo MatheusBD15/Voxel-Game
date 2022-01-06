@@ -4,10 +4,10 @@
 
 #include "EBO.h"
 
-EBO::EBO(std::vector<unsigned int> indices)
+EBO::EBO(const std::vector<unsigned int>& indices)
 {
     glCreateBuffers(1, &m_Id);
-    m_Indices = std::move(indices);
+    m_Indices = indices;
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_Id);
     glBufferStorage(GL_ELEMENT_ARRAY_BUFFER, m_Indices.size() * sizeof(unsigned int), m_Indices.data(), GL_DYNAMIC_STORAGE_BIT);
 }
