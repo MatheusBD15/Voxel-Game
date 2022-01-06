@@ -20,12 +20,10 @@ void MainLayer::onAttach()
             1,3,7
     };
 
-    int mapX = 1024;
-    int mapZ = 1024;
     int chunkWidth = 32;
-    int chunkNumber = 30;
+    int chunkNumber = 32;
 
-    std::vector<float> perlinNoise = NoiseGenerator::generate2d(mapX, mapZ, 4, mapX, mapZ, 3.2f);
+    std::vector<float> perlinNoise = NoiseGenerator::generate2d(m_mapX, m_mapZ, 4, m_mapX, m_mapZ, 3.6f);
 
     m_Meshes.reserve(chunkNumber * chunkNumber);
 
@@ -40,7 +38,7 @@ void MainLayer::onAttach()
 
             Mesh* mesh = new Mesh(chunk, indices);
 
-            m_Meshes.emplace_back(mesh);
+            m_Meshes.push_back(mesh);
         }
     }
 
@@ -57,17 +55,13 @@ std::vector<Vertex> MainLayer::generateChunk(int width, int xOffset, int zOffset
     std::vector<Vertex> chunk;
     chunk.reserve(width * width);
 
-//    std::cout << noise.size();
-
-    int mapX = 1024;
-
     for (int x = 0; x < width; ++x)
     {
         for (int z = 0; z < width; ++z)
         {
-//            int height = floor(noise[1]) - 120;
+            int height = floor(noise.at((z + zOffset) * m_mapX + x + xOffset)) - 120;
 
-            std::vector<Vertex> cube = Renderer::createCube((float)(x + xOffset), (float)2.0f, (float)(z + zOffset));
+            std::vector<Vertex> cube = Renderer::createCube((float)(x + xOffset), (float)height, (float)(z + zOffset));
 
             chunk.insert(chunk.end(),
                             cube.begin(),

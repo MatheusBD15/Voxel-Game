@@ -64,12 +64,15 @@ std::vector<float> NoiseGenerator::generate2d(
     std::vector<float> fPerlinNoise2d (outputHeight * outputHeight);
     // fill seed array
 
-    for (int i = 0; i < outputHeight * outputWidth; ++i)
+    for (int i = 0; i < fNoiseSeed2d.size(); ++i)
     {
-        fNoiseSeed2d[i] = (float)rand() / (float)RAND_MAX;
-        teste.at(1) = 1;
+        fNoiseSeed2d.at(i) = (float)rand() / (float)RAND_MAX;
     }
-    std::cout << "CHEGUEI AQUI1";
+
+    for (int i = 0; i < teste.size(); ++i)
+    {
+        teste.at(i) = 1;
+    }
 
     for (int x = 0; x < nWidth; ++x)
         for (int y = 0; y < nHeight; ++y)
@@ -90,20 +93,16 @@ std::vector<float> NoiseGenerator::generate2d(
                 float fBlendX = (float)(x - nSample1X) / (float)nPitch;
                 float fBlendY = (float)(y - nSample1Y) / (float)nPitch;
 
-                float fSampleT = (1.0f - fBlendX) * fNoiseSeed2d[nSample1Y * nWidth + nSample1X] + fBlendX * fNoiseSeed2d[nSample1Y * nWidth + nSample2X];
-                float fSampleB = (1.0f - fBlendX) * fNoiseSeed2d[nSample2Y * nWidth + nSample1X] + fBlendX * fNoiseSeed2d[nSample2Y * nWidth + nSample2X];
+                float fSampleT = (1.0f - fBlendX) * fNoiseSeed2d.at(nSample1Y * nWidth + nSample1X) + fBlendX * fNoiseSeed2d.at(nSample1Y * nWidth + nSample2X);
+                float fSampleB = (1.0f - fBlendX) * fNoiseSeed2d.at(nSample2Y * nWidth + nSample1X) + fBlendX * fNoiseSeed2d.at(nSample2Y * nWidth + nSample2X);
 
                 fNoise += (fBlendY * (fSampleB - fSampleT) + fSampleT) * fScale;
                 fScaleAcc += fScale;
                 fScale = fScale / scalingBias;
             }
 
-            fPerlinNoise2d[y * nWidth + x] = fNoise / fScale;
-//            fPerlinNoise2d.at(y * nWidth + x) = fNoise / fScale;
+            fPerlinNoise2d.at(y * nWidth + x) = fNoise / fScale;
         }
-
-//    std::cout << fPerlinNoise2d.at(1) << " : : : ";
-    std::cout << "CHEGUEI AQUI3";
 
     return fPerlinNoise2d;
 

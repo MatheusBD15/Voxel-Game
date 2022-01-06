@@ -25,6 +25,8 @@ private:
     Shader* m_Shader;
     std::vector<Mesh*> m_Meshes;
     float m_DeltaTime = 0.0f;
+    int m_mapX = 1024;
+    int m_mapZ = 1024;
 
 public:
     MainLayer() = default;

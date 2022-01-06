@@ -19,7 +19,7 @@ public:
     glm::mat4 m_Projection;
 
     // position vectors
-    glm::vec3 m_CameraPos = glm::vec3(0.0f, 30.0f, 20.0f);
+    glm::vec3 m_CameraPos = glm::vec3(0.0f, 60.0f, 200.0f);
     glm::vec3 m_CameraTarget = glm::vec3(0.0f, 0.0f, 0.0f);
     glm::vec3 m_CameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
 
