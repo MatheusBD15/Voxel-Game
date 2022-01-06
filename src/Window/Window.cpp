@@ -10,7 +10,7 @@
 
 Window::Window()
 {
-    m_Window = glfwCreateWindow(800, 600, "Voxel Game", NULL, NULL);
+    m_Window = glfwCreateWindow(1200, 720, "Voxel Game", NULL, NULL);
 
     if (m_Window == NULL)
     {
@@ -30,7 +30,7 @@ void Window::start()
         std::cout << "Failed to initialize GLAD" << std::endl;
     }
 
-    glViewport(0, 0, 800, 600);
+    glViewport(0, 0, 1200, 720);
     glEnable(GL_DEPTH_TEST);
     glfwSetInputMode(m_Window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
     glfwSetWindowUserPointer(m_Window, &m_Data);

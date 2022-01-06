@@ -1,4 +1,4 @@
-#version 330 core
+#version 460 core
 out vec4 FragColor;
 
 in vec4 vColor;
@@ -16,7 +16,7 @@ void main()
     vec4 ambient = ambientStrength * lightColor;
 
     // diffuse light
-    vec3 norm = normalize(vNormal);
+    vec3 norm = vNormal;
     vec3 lightDir = normalize(lightPos - vFragPos);
     float diff = max(dot(norm, lightDir), 0.0);
     vec4 diffuse = diff * lightColor;

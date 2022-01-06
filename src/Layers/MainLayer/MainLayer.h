@@ -15,7 +15,7 @@
 #include <Shader/Shader.h>
 #include <Camera/Camera.h>
 #include <Renderer/Renderer.h>
-#include <Renderer/utils/Vertex.h>
+#include <Renderer/Utils/Vertex.h>
 #include "NoiseGenerator.h"
 #include <stdlib.h>
 
