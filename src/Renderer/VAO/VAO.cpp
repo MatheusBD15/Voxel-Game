@@ -2,6 +2,7 @@
 // Created by MatheusBD on 27/11/2021.
 //
 
+#include <iostream>
 #include "VAO.h"
 
 VAO::VAO(const std::vector<Vertex>& vertices, const std::vector<unsigned int>& indices)

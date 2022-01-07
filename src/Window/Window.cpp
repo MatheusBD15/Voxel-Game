@@ -17,18 +17,22 @@ Window::Window()
         std::cout << "Failed to create GLFW window" << std::endl;
         glfwTerminate();
     }
+
+    std::cout << "Window created with success" << std::endl;
 }
 
 void Window::start()
 {
     glfwMakeContextCurrent(m_Window);
 
-    glfwSwapInterval(1);
+    glfwSwapInterval(GLFW_TRUE);
 
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
     {
         std::cout << "Failed to initialize GLAD" << std::endl;
     }
+
+    std::cout << "Glad created with success" << std::endl;
 
     glViewport(0, 0, 1200, 720);
     glEnable(GL_DEPTH_TEST);

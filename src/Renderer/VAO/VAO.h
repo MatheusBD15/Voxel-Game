@@ -5,8 +5,8 @@
 #ifndef VOXELGAME_VAO_H
 #define VOXELGAME_VAO_H
 
-#include <GLFW/glfw3.h>
 #include <glad/glad.h>
+#include <GLFW/glfw3.h>
 #include "VBO/VBO.h"
 #include "EBO/EBO.h"
 

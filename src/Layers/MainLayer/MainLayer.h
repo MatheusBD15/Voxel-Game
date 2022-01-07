@@ -48,8 +48,9 @@ private:
     };
 
     std::vector<Mesh*> m_Meshes;
+    std::vector<std::vector<Vertex>> m_Chunks;
     std::vector<std::future<void>> m_Futures;
-    std::mutex m_MeshesMutex;
+    std::mutex m_ChunksMutex;
 
 
 public:
@@ -64,7 +65,7 @@ public:
     bool onKeyPressed(KeyPressedEvent& event);
     bool onMouseMoved(MouseMovedEvent& event);
 
-    Mesh* generateChunk(int xOffset, int zOffset, std::vector<float>& noise);
+    std::vector<Vertex> generateChunk(int xOffset, int zOffset, std::vector<float>& noise);
 };
 
 

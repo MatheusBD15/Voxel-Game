@@ -32,6 +32,8 @@ void Application::run()
     for(Layer* layer : m_LayerStack)
         layer->onAttach();
 
+    std::cout << "Layers attached" << std::endl;
+
     while(m_Running)
     {
         // delta time calculation
