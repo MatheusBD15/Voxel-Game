@@ -1,11 +1,12 @@
 
+#include <map>
 #include "MainLayer.h"
 
 #define EVENT_FUNCTION(function) [this](auto&&... args) -> decltype(auto) { return this->function(std::forward<decltype(args)>(args)...); }
 
 void MainLayer::onAttach()
 {
-    m_Noise = NoiseGenerator::generate2d(m_mapX, m_mapZ, 4, m_mapX, m_mapZ, 3.6f);
+    m_Noise = NoiseGenerator::generate2d(m_mapX, m_mapZ, 4, m_mapX, m_mapZ, 3.2f);
 
     m_Meshes.reserve(m_chunkNumber * m_chunkNumber);
 
@@ -45,10 +46,9 @@ void MainLayer::onAttach()
     m_Camera->setVertexShader(*m_Shader);
 }
 
-std::vector<Vertex> MainLayer::generateChunk(int xOffset, int zOffset, std::vector<float>& noise)
+std::vector<Vertex> MainLayer::generateChunk(int xOffset, int zOffset, std::vector<float>& noise) const
 {
     std::vector<Vertex> chunk;
-    chunk.reserve(m_chunkWidth * m_chunkWidth);
 
     for (int x = 0; x < m_chunkWidth; ++x)
     {
@@ -58,12 +58,28 @@ std::vector<Vertex> MainLayer::generateChunk(int xOffset, int zOffset, std::vect
 
             std::vector<Vertex> cube = Renderer::createCube((float)(x + xOffset), (float)height, (float)(z + zOffset));
 
-            chunk.insert(chunk.end(),
-                            cube.begin(),
-                            cube.end()
-            );
+//            std::vector<Vertex> processedCube;
+
+//            for (auto const & vertex : cube)
+//            {
+//                std::vector<Vertex>::iterator it;
+//
+//                it = std::find (chunk.begin(), chunk.end(), vertex);
+//
+//                if (it == chunk.end())
+//                {
+//                    processedCube.push_back(vertex);
+//                }
+//            }
+
+//            std::cout << "Normal cube size: " << cube.size();
+//            std::cout << "     Processed cube size: " << processedCube.size() << std::endl;
+
+            chunk.insert(chunk.end(), cube.begin(), cube.end());
         }
     }
+
+//    std::cout << "Normal chunk size: " << chunk.size() << std::endl;
 
     return chunk;
 }

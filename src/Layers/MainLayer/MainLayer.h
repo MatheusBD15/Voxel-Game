@@ -30,7 +30,7 @@ private:
     int m_mapZ = 1024;
     std::vector<float> m_Noise;
     int m_chunkWidth = 32;
-    int m_chunkNumber = 32;
+    int m_chunkNumber = 4;
 
     std::vector<unsigned int> m_indices = {
             0,1,2,
@@ -52,7 +52,6 @@ private:
     std::vector<std::future<void>> m_Futures;
     std::mutex m_ChunksMutex;
 
-
 public:
     MainLayer() = default;
     ~MainLayer() override = default;
@@ -65,7 +64,7 @@ public:
     bool onKeyPressed(KeyPressedEvent& event);
     bool onMouseMoved(MouseMovedEvent& event);
 
-    std::vector<Vertex> generateChunk(int xOffset, int zOffset, std::vector<float>& noise);
+    std::vector<Vertex> generateChunk(int xOffset, int zOffset, std::vector<float>& noise) const;
 };
 
 
