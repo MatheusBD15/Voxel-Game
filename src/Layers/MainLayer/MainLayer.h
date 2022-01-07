@@ -18,15 +18,39 @@
 #include <Renderer/Utils/Vertex.h>
 #include "NoiseGenerator.h"
 #include <stdlib.h>
+#include <mutex>
+#include <future>
 
 class MainLayer : public Layer {
 private:
     Camera* m_Camera;
     Shader* m_Shader;
-    std::vector<Mesh*> m_Meshes;
     float m_DeltaTime = 0.0f;
     int m_mapX = 1024;
     int m_mapZ = 1024;
+    std::vector<float> m_Noise;
+    int m_chunkWidth = 32;
+    int m_chunkNumber = 32;
+
+    std::vector<unsigned int> m_indices = {
+            0,1,2,
+            1,2,3,
+            4,5,6,
+            5,6,7,
+            0,1,5,
+            0,4,5,
+            2,3,7,
+            2,6,7,
+            0,2,6,
+            0,4,6,
+            1,5,7,
+            1,3,7
+    };
+
+    std::vector<Mesh*> m_Meshes;
+    std::vector<std::future<void>> m_Futures;
+    std::mutex m_MeshesMutex;
+
 
 public:
     MainLayer() = default;
@@ -40,7 +64,7 @@ public:
     bool onKeyPressed(KeyPressedEvent& event);
     bool onMouseMoved(MouseMovedEvent& event);
 
-    std::vector<Vertex> generateChunk(int width, int xOffset, int zOffset, std::vector<float>& noise);
+    Mesh* generateChunk(int xOffset, int zOffset, std::vector<float>& noise);
 };
 
 

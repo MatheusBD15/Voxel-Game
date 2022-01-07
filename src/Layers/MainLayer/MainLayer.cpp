@@ -5,42 +5,45 @@
 
 void MainLayer::onAttach()
 {
-    std::vector<unsigned int> indices = {
-            0,1,2,
-            1,2,3,
-            4,5,6,
-            5,6,7,
-            0,1,5,
-            0,4,5,
-            2,3,7,
-            2,6,7,
-            0,2,6,
-            0,4,6,
-            1,5,7,
-            1,3,7
-    };
+    m_Noise = NoiseGenerator::generate2d(m_mapX, m_mapZ, 4, m_mapX, m_mapZ, 3.6f);
 
-    int chunkWidth = 32;
-    int chunkNumber = 32;
+    m_Meshes.reserve(m_chunkNumber * m_chunkNumber);
 
-    std::vector<float> perlinNoise = NoiseGenerator::generate2d(m_mapX, m_mapZ, 4, m_mapX, m_mapZ, 3.6f);
-
-    m_Meshes.reserve(chunkNumber * chunkNumber);
-
-    for (int cX = 0; cX < chunkNumber; ++cX)
+    for (int cX = 0; cX < m_chunkNumber; ++cX)
     {
-        for (int cZ = 0; cZ < chunkNumber; ++cZ)
+        for (int cZ = 0; cZ < m_chunkNumber; ++cZ)
         {
-            int xOffset = cX * chunkWidth;
-            int zOffset = cZ * chunkWidth;
+            m_Futures.push_back(std::async(std::launch::async,  [&](int xOffset, int zOffset) -> void {
 
-            std::vector<Vertex> chunk = generateChunk(chunkWidth, xOffset, zOffset, perlinNoise);
+//                std::cout << "ANTES CHAMADA";
 
-            Mesh* mesh = new Mesh(chunk, indices);
+                Mesh* mesh = generateChunk(xOffset, zOffset, m_Noise);
 
-            m_Meshes.push_back(mesh);
+                std::cout << "ANTES LOCK GUARD";
+
+                std::lock_guard<std::mutex> lock(m_MeshesMutex);
+
+                std::cout << "ANTES PUSH BACK";
+
+                m_Meshes.push_back(mesh);
+
+                std::cout << "TERMINEI";
+
+            }, cX * m_chunkWidth, cZ * m_chunkWidth));
+
+            //cX * m_chunkWidth, cZ * m_chunkWidth
+
+//            Mesh* mesh = generateChunk(cX * m_chunkWidth, cZ * m_chunkWidth, m_Noise);
+//
+//            m_Meshes.push_back(mesh);
+
         }
     }
+
+//    for (auto i : m_Futures)
+//    {
+//
+//    }
 
     m_Shader = new Shader("src/Shaders/vertex.shader",
                            "src/Shaders/fragment.shader");
@@ -50,18 +53,20 @@ void MainLayer::onAttach()
     m_Camera->setVertexShader(*m_Shader);
 }
 
-std::vector<Vertex> MainLayer::generateChunk(int width, int xOffset, int zOffset, std::vector<float>& noise)
+Mesh* MainLayer::generateChunk(int xOffset, int zOffset, std::vector<float>& noise)
 {
     std::vector<Vertex> chunk;
-    chunk.reserve(width * width);
+    chunk.reserve(m_chunkWidth * m_chunkWidth);
 
-    for (int x = 0; x < width; ++x)
+//    std::cout << "FUNCAO CHAMADA";
+
+    for (int x = 0; x < m_chunkWidth; ++x)
     {
-        for (int z = 0; z < width; ++z)
+        for (int z = 0; z < m_chunkWidth; ++z)
         {
-            int height = floor(noise.at((z + zOffset) * m_mapX + x + xOffset)) - 120;
+//            int height = floor(noise.at((z + zOffset) * m_mapX + x + xOffset)) - 120;
 
-            std::vector<Vertex> cube = Renderer::createCube((float)(x + xOffset), (float)height, (float)(z + zOffset));
+            std::vector<Vertex> cube = Renderer::createCube((float)(x + xOffset), (float)2.0f, (float)(z + zOffset));
 
             chunk.insert(chunk.end(),
                             cube.begin(),
@@ -70,9 +75,14 @@ std::vector<Vertex> MainLayer::generateChunk(int width, int xOffset, int zOffset
         }
     }
 
-    return chunk;
-}
+//    std::cout << "FUNCAO RODADA";
 
+    Mesh* mesh = new Mesh(chunk, m_indices);
+
+    std::cout << "MESH CRIADA";
+
+    return mesh;
+}
 
 void MainLayer::onUpdate(float deltaTime)
 {

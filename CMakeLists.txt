@@ -8,7 +8,7 @@ project(voxelGame VERSION 0.0
         DESCRIPTION "Implementation of minecraft using C and OpenGL."
         LANGUAGES CXX)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 20)
 
 # Source dir variable
 set(SRC_DIR "${CMAKE_CURRENT_SOURCE_DIR}/src")
@@ -37,7 +37,16 @@ set(TRANSLATION_FILES "${SRC_DIR}/Main.cpp"
         src/Events/Event.h
         src/Events/KeyEvent.h
         src/Events/MouseEvent.h
-        src/Events/ApplicationEvent.h src/Layers/LayerStack.cpp src/Layers/LayerStack.h src/Layers/MainLayer/MainLayer.cpp src/Layers/MainLayer/MainLayer.h src/Layers/Layer.h src/Renderer/Utils/Vertex.h src/Layers/MainLayer/NoiseGenerator.cpp src/Layers/MainLayer/NoiseGenerator.h)
+        src/Events/ApplicationEvent.h
+        src/Layers/LayerStack.cpp
+        src/Layers/LayerStack.h
+        src/Layers/MainLayer/MainLayer.cpp
+        src/Layers/MainLayer/MainLayer.h
+        src/Layers/Layer.h
+        src/Renderer/Utils/Vertex.h
+        src/Layers/MainLayer/NoiseGenerator.cpp
+        src/Layers/MainLayer/NoiseGenerator.h
+        )
 
 set(SOURCES_FILES "${TRANSLATION_FILES}")
 
