@@ -18,7 +18,7 @@ struct Vertex
 
     friend inline bool operator== (const Vertex& vertex1, const Vertex& vertex2)
     {
-        return vertex1.position == vertex2.position && vertex1.normal == vertex2.normal;
+        return vertex1.position == vertex2.position && vertex1.normal == vertex2.normal && vertex1.color == vertex2.color;
     }
 };
 

@@ -6,7 +6,7 @@
 
 void MainLayer::onAttach()
 {
-    m_Noise = NoiseGenerator::generate2d(m_mapX, m_mapZ, 4, m_mapX, m_mapZ, 3.2f);
+    m_Noise = NoiseGenerator::generate2d(m_mapX, m_mapZ, 4, m_mapX, m_mapZ, 4.5f);
 
     m_Meshes.reserve(m_chunkNumber * m_chunkNumber);
 
@@ -58,28 +58,12 @@ std::vector<Vertex> MainLayer::generateChunk(int xOffset, int zOffset, std::vect
 
             std::vector<Vertex> cube = Renderer::createCube((float)(x + xOffset), (float)height, (float)(z + zOffset));
 
-//            std::vector<Vertex> processedCube;
+            std::vector<Vertex> processedCube;
 
-//            for (auto const & vertex : cube)
-//            {
-//                std::vector<Vertex>::iterator it;
-//
-//                it = std::find (chunk.begin(), chunk.end(), vertex);
-//
-//                if (it == chunk.end())
-//                {
-//                    processedCube.push_back(vertex);
-//                }
-//            }
-
-//            std::cout << "Normal cube size: " << cube.size();
-//            std::cout << "     Processed cube size: " << processedCube.size() << std::endl;
 
             chunk.insert(chunk.end(), cube.begin(), cube.end());
         }
     }
-
-//    std::cout << "Normal chunk size: " << chunk.size() << std::endl;
 
     return chunk;
 }
@@ -122,7 +106,7 @@ void MainLayer::onEvent(Event &event)
 
 bool MainLayer::onKeyPressed(KeyPressedEvent& event)
 {
-    const float cameraSpeed = 50.0f * m_DeltaTime; // adjust accordingly
+    const float cameraSpeed = 200.0f * m_DeltaTime; // adjust accordingly
 
     // w key was pressed
     if(event.getKeyCode() == 87)

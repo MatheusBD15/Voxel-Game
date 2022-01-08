@@ -30,7 +30,7 @@ private:
     int m_mapZ = 1024;
     std::vector<float> m_Noise;
     int m_chunkWidth = 32;
-    int m_chunkNumber = 4;
+    int m_chunkNumber = 50;
 
     std::vector<unsigned int> m_indices = {
             0,1,2,
