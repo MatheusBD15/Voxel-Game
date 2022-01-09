@@ -6,7 +6,7 @@
 
 void MainLayer::onAttach()
 {
-    m_Noise = NoiseGenerator::generate2d(m_mapX, m_mapZ, 4, m_mapX, m_mapZ, 4.5f);
+    m_Noise = NoiseGenerator::generate2d(m_mapX, m_mapZ, 4, m_mapX, m_mapZ, 4.7f);
 
     m_Meshes.reserve(m_chunkNumber * m_chunkNumber);
 
@@ -49,6 +49,7 @@ void MainLayer::onAttach()
 std::vector<Vertex> MainLayer::generateChunk(int xOffset, int zOffset, std::vector<float>& noise) const
 {
     std::vector<Vertex> chunk;
+    chunk.reserve(m_chunkWidth * m_chunkWidth);
 
     for (int x = 0; x < m_chunkWidth; ++x)
     {
@@ -57,9 +58,6 @@ std::vector<Vertex> MainLayer::generateChunk(int xOffset, int zOffset, std::vect
             int height = floor(noise.at((z + zOffset) * m_mapX + x + xOffset)) - 120;
 
             std::vector<Vertex> cube = Renderer::createCube((float)(x + xOffset), (float)height, (float)(z + zOffset));
-
-            std::vector<Vertex> processedCube;
-
 
             chunk.insert(chunk.end(), cube.begin(), cube.end());
         }
