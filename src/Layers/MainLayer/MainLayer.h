@@ -29,7 +29,7 @@ private:
     int m_mapX = 1024;
     int m_mapZ = 1024;
     std::vector<float> m_Noise;
-    int m_chunkWidth = 32;
+    int m_chunkWidth = 64;
     int m_chunkNumber = 50;
 
     std::vector<unsigned int> m_indices = {
@@ -65,7 +65,7 @@ public:
     bool onMouseMoved(MouseMovedEvent& event);
 
     std::vector<Vertex> generateChunk(int xOffset, int zOffset, std::vector<float>& noise) const;
-    std::vector<Vertex> generateOptimizedChunk() const;
+    std::vector<Vertex> generateOptimizedChunk(const glm::vec3& chunkPos) const;
 };
 
 

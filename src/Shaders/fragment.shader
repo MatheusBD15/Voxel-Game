@@ -29,7 +29,7 @@ void main()
     vec3 specular = specularStrength * spec * vec3(lightColor.r, lightColor.g, lightColor.b);
 
     // result light
-    vec4 result = (ambient + ( max(diffuse, 0.0) * 0.1) + vec4(0.1) + vec4(specular, 1.0)) * vColor;
+    vec4 result = (ambient + ( max(diffuse, 0.0) * 1.0f) + vec4(0.1) + vec4(specular, 1.0)) * vColor;
 
 //    if(result.g < 0.01 || result.r <= 0.048 || result.b < 0.03)
 //        result = vColor;

@@ -8,32 +8,31 @@ void MainLayer::onAttach()
 {
     m_Noise = NoiseGenerator::generate2d(m_mapX, m_mapZ, 4, m_mapX, m_mapZ, 4.7f);
 
-//    m_Meshes.reserve(m_chunkNumber * m_chunkNumber);
-//
-//    for (int cX = 0; cX < m_chunkNumber; ++cX)
-//    {
-//        for (int cZ = 0; cZ < m_chunkNumber; ++cZ)
-//        {
-//            m_Futures.push_back(std::async(std::launch::async,  [&](int xOffset, int zOffset) -> void {
-//
-//                std::vector<Vertex> chunk = generateChunk(xOffset, zOffset, m_Noise);
-//
-//                std::lock_guard<std::mutex> lock(m_ChunksMutex);
-//
-//                m_Chunks.push_back(chunk);
-//
-//            }, cX * m_chunkWidth, cZ * m_chunkWidth));
-//        }
-//    }
-//
-//    for ( std::future<void>& future : m_Futures)
-//    {
-//        future.wait();
-//    }
+    m_Meshes.reserve(m_chunkNumber * m_chunkNumber);
 
-    auto chunk = generateOptimizedChunk();
+    for (int cX = 0; cX < m_chunkNumber; ++cX)
+    {
+        for (int cZ = 0; cZ < m_chunkNumber; ++cZ)
+        {
+            glm::vec3 offset = { cX * m_chunkWidth, 0.0f, cZ * m_chunkWidth };
 
-    m_Chunks.push_back(chunk);
+            m_Futures.push_back(std::async(std::launch::async,  [&](const glm::vec3& chunkOffset) -> void {
+
+                std::vector<Vertex> chunk = generateOptimizedChunk(chunkOffset);
+//                std::vector<Vertex> chunk = generateChunk(chunkOffset.x, chunkOffset.z, m_Noise);
+
+                std::lock_guard<std::mutex> lock(m_ChunksMutex);
+
+                m_Chunks.push_back(chunk);
+
+            }, offset));
+        }
+    }
+
+    for ( std::future<void>& future : m_Futures)
+    {
+        future.wait();
+    }
 
     for( const auto& chunk : m_Chunks )
     {
@@ -71,30 +70,29 @@ std::vector<Vertex> MainLayer::generateChunk(int xOffset, int zOffset, std::vect
 }
 
 
-std::vector<Vertex> MainLayer::generateOptimizedChunk() const
+std::vector<Vertex> MainLayer::generateOptimizedChunk(const glm::vec3& chunkPos) const
 {
-    const int chunkSize = 256;
+    const int chunkSize = 64;
 
     glm::vec4 generalColor = { 0.2f, 0.65f, 0.32f, 1.0f };
     glm::vec3 face1Normal = {0.0f,  0.0f, -1.0f};
 
     std::vector<int> volume;
-    glm::vec3 chunkPos = { 0.0f, 0.0f, 0.0f};
     std::vector<Vertex> quads;
 
     // sweep over 3 axes
     for (int d = 0; d < 3; ++d)
     {
         int i, j, k, l, w, h;
-        int u = (d+1)%3;
-        int v = (d+2)%3;
+        int u = (d+1) % 3;
+        int v = (d+2) % 3;
 
         glm::vec3 x { 0.0f, 0.0f, 0.0f };
         glm::vec3 q { 0.0f, 0.0f, 0.0f };
 
         std::array<bool, chunkSize * chunkSize> mask {};
 
-        q[d] = 1;
+        q[d] = 1.0f;
 
         // check each slice of the chunk
         for (x[d] = -1; x[d] < chunkSize;)
@@ -102,9 +100,9 @@ std::vector<Vertex> MainLayer::generateOptimizedChunk() const
             // compute the mask
             int n = 0;
 
-            for (x[v] = 0; x[v] < chunkSize; ++x[v])
+            for (x[v] = 0; x[v] < chunkSize; x[v] += 1.0f)
             {
-                for (x[u] = 0; x[u] < chunkSize; ++x[u])
+                for (x[u] = 0; x[u] < chunkSize; x[u] += 1.0f)
                 {
                     // q determines the direction (X, Y or Z) that we are searching
                     // m.IsBlockAt(x,y,z) takes global map positions and returns true if a block exists there
@@ -162,8 +160,8 @@ std::vector<Vertex> MainLayer::generateOptimizedChunk() const
                             }
                         }
 
-                        x[u] = i;
-                        x[v] = j;
+                        x[u] = (float)i;
+                        x[v] = (float)j;
 
                         // du and dv determine the size and orientation of this face
                         std::array<int, 3> du {};
@@ -172,22 +170,13 @@ std::vector<Vertex> MainLayer::generateOptimizedChunk() const
                         std::array<int, 3> dv {};
                         dv.at(v) = h;
 
-                        Vertex topLeft {{x[0], x[1], x[2]}, generalColor, face1Normal};
+                        Vertex topLeft {{x[0] + chunkPos.x, x[1], x[2] + chunkPos.z}, generalColor, face1Normal};
 
-                        Vertex topRight {{x[0] + du[0],  x[1] + du[1],  x[2] + du[2]}, generalColor, face1Normal};
+                        Vertex topRight {{x[0] + du[0] + chunkPos.x,  x[1] + du[1],  x[2] + du[2] + chunkPos.z}, generalColor, face1Normal};
 
-                        Vertex bottomLeft {{x[0] + dv[0], x[1] + dv[1], x[2] + dv[2]}, generalColor, face1Normal};
+                        Vertex bottomLeft {{x[0] + dv[0] + chunkPos.x, x[1] + dv[1], x[2] + dv[2] + chunkPos.z}, generalColor, face1Normal};
 
-                        Vertex bottomRight {{x[0] + du[0] + dv[0], x[1] + du[1] + dv[1], x[2] + du[2] + dv[2]}, generalColor, face1Normal};
-
-//                        Vertex topLeft {{0.0f, 0.0f, 0.0f}, generalColor, face1Normal};
-//
-//                        Vertex topRight {{0.0f,  0.0f,  0.0f}, generalColor, face1Normal};
-//
-//                        Vertex bottomLeft {{0.0f, 0.0f, 0.0f}, generalColor, face1Normal};
-//
-//                        Vertex bottomRight {{x[0] + du[0] + dv[0], x[1] + du[1] + dv[1], x[2] + du[2] + dv[2]}, generalColor, face1Normal};
-
+                        Vertex bottomRight {{x[0] + du[0] + dv[0] + chunkPos.x, x[1] + du[1] + dv[1], x[2] + du[2] + dv[2] + chunkPos.z}, generalColor, face1Normal};
 
                         std::array<Vertex, 4> quad { topLeft, topRight, bottomLeft, bottomRight};
 
@@ -202,6 +191,7 @@ std::vector<Vertex> MainLayer::generateOptimizedChunk() const
                         i += w;
                         n += w;
                     }
+
                     else
                     {
                         ++i;
@@ -211,10 +201,6 @@ std::vector<Vertex> MainLayer::generateOptimizedChunk() const
             }
 
         }
-    }
-    for (auto vertex : quads)
-    {
-        std::cout << vertex.position.x << vertex.position.y << vertex.position.z << std::endl;
     }
 
     return quads;

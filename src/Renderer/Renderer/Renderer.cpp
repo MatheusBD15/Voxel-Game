@@ -14,7 +14,7 @@ void Renderer::render(Mesh* mesh, Camera* camera)
     camera->use();
 
 //    glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
-    glDrawArrays(GL_TRIANGLES, 0, mesh->getSize());
+    glDrawArrays(GL_TRIANGLE_STRIP, 0, mesh->getSize());
 
     mesh->unbind();
 }
