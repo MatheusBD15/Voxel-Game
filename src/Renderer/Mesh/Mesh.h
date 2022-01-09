@@ -25,6 +25,8 @@ public:
     void bind();
 
     void unbind();
+
+    static glm::vec3 normalizeTriangle(std::array<glm::vec3, 3>& triangle);
 };
 
 

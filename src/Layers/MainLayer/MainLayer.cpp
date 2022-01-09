@@ -72,10 +72,9 @@ std::vector<Vertex> MainLayer::generateChunk(int xOffset, int zOffset, std::vect
 
 std::vector<Vertex> MainLayer::generateOptimizedChunk(const glm::vec3& chunkPos) const
 {
-    const int chunkSize = 64;
+    const int chunkSize = 10;
 
     glm::vec4 generalColor = { 0.2f, 0.65f, 0.32f, 1.0f };
-    glm::vec3 face1Normal = {0.0f,  0.0f, -1.0f};
 
     std::vector<int> volume;
     std::vector<Vertex> quads;
@@ -170,13 +169,22 @@ std::vector<Vertex> MainLayer::generateOptimizedChunk(const glm::vec3& chunkPos)
                         std::array<int, 3> dv {};
                         dv.at(v) = h;
 
-                        Vertex topLeft {{x[0] + chunkPos.x, x[1], x[2] + chunkPos.z}, generalColor, face1Normal};
+                        glm::vec3 topLeftPos {x[0] + chunkPos.x, x[1], x[2] + chunkPos.z};
+                        glm::vec3 topRightPos {x[0] + du[0] + chunkPos.x,  x[1] + du[1],  x[2] + du[2] + chunkPos.z};
+                        glm::vec3 bottomLeftPos {x[0] + dv[0] + chunkPos.x, x[1] + dv[1], x[2] + dv[2] + chunkPos.z};
+                        glm::vec3 bottomRightPos {x[0] + du[0] + dv[0] + chunkPos.x, x[1] + du[1] + dv[1], x[2] + du[2] + dv[2] + chunkPos.z};
 
-                        Vertex topRight {{x[0] + du[0] + chunkPos.x,  x[1] + du[1],  x[2] + du[2] + chunkPos.z}, generalColor, face1Normal};
+                        std::array<glm::vec3, 3> triangle {topLeftPos, topRightPos, bottomLeftPos};
 
-                        Vertex bottomLeft {{x[0] + dv[0] + chunkPos.x, x[1] + dv[1], x[2] + dv[2] + chunkPos.z}, generalColor, face1Normal};
+                        glm::vec3 faceNormal = Mesh::normalizeTriangle(triangle);
 
-                        Vertex bottomRight {{x[0] + du[0] + dv[0] + chunkPos.x, x[1] + du[1] + dv[1], x[2] + du[2] + dv[2] + chunkPos.z}, generalColor, face1Normal};
+                        Vertex topLeft {topLeftPos, generalColor, faceNormal};
+
+                        Vertex topRight {topRightPos, generalColor, faceNormal};
+
+                        Vertex bottomLeft {bottomLeftPos, generalColor, faceNormal};
+
+                        Vertex bottomRight {bottomRightPos, generalColor, faceNormal};
 
                         std::array<Vertex, 4> quad { topLeft, topRight, bottomLeft, bottomRight};
 
