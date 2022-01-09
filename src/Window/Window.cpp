@@ -40,7 +40,7 @@ void Window::start()
     glfwSetWindowUserPointer(m_Window, &m_Data);
 
     // for seeing wireframe
-    // glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+//     glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
     Window::setGLFWCallbacks();
 }

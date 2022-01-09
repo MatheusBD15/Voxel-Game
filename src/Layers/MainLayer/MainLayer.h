@@ -65,6 +65,7 @@ public:
     bool onMouseMoved(MouseMovedEvent& event);
 
     std::vector<Vertex> generateChunk(int xOffset, int zOffset, std::vector<float>& noise) const;
+    std::vector<Vertex> generateOptimizedChunk() const;
 };
 
 
