@@ -12,14 +12,32 @@
 
 struct Vertex
 {
-    glm::vec3 position;
-    glm::vec4 color;
-    glm::vec3 normal;
+    glm::vec3 Position;
+    glm::vec3 Normal;
+    glm::vec3 Color;
 
-    friend inline bool operator== (const Vertex& vertex1, const Vertex& vertex2)
-    {
-        return vertex1.position == vertex2.position && vertex1.normal == vertex2.normal && vertex1.color == vertex2.color;
-    }
+    Vertex()
+            : Position(glm::vec3(0.0f))
+            , Normal(glm::vec3(0.0f))
+            , Color(glm::vec3(0.0f))
+    {}
+
+    Vertex(glm::vec3 position, glm::vec3 normal, glm::vec3 color)
+            : Position(position)
+            , Normal(normal)
+            , Color(color)
+    {}
+
+    Vertex(
+            float posX, float posY, float posZ,
+            float normalX, float normalY, float normalZ,
+            float colorR, float colorG, float colorB
+    )
+            : Position(glm::vec3(posX, posY, posZ))
+            , Normal(glm::vec3(normalX, normalY, normalZ))
+            , Color(glm::vec3(colorR, colorG, colorB))
+    {}
 };
+
 
 #endif //VOXELGAME_VERTEX_H

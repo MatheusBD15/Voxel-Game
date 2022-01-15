@@ -46,7 +46,7 @@ set(TRANSLATION_FILES "${SRC_DIR}/Main.cpp"
         src/Renderer/Utils/Vertex.h
         src/Layers/MainLayer/NoiseGenerator.cpp
         src/Layers/MainLayer/NoiseGenerator.h
-        )
+        src/Renderer/Utils/Lighting.cpp src/Layers/MainLayer/Primitives.cpp src/Layers/MainLayer/Primitives.h src/Layers/MainLayer/Terrain.cpp src/Layers/MainLayer/Terrain.h src/Layers/MainLayer/Noise.h)
 
 set(SOURCES_FILES "${TRANSLATION_FILES}")
 

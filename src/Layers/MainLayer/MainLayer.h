@@ -32,21 +32,6 @@ private:
     int m_chunkWidth = 10;
     int m_chunkNumber = 10;
 
-    std::vector<unsigned int> m_indices = {
-            0,1,2,
-            1,2,3,
-            4,5,6,
-            5,6,7,
-            0,1,5,
-            0,4,5,
-            2,3,7,
-            2,6,7,
-            0,2,6,
-            0,4,6,
-            1,5,7,
-            1,3,7
-    };
-
     std::vector<Mesh*> m_Meshes;
     std::vector<std::vector<Vertex>> m_Chunks;
     std::vector<std::future<void>> m_Futures;
@@ -65,7 +50,6 @@ public:
     bool onMouseMoved(MouseMovedEvent& event);
 
     std::vector<Vertex> generateChunk(int xOffset, int zOffset, std::vector<float>& noise) const;
-    std::vector<Vertex> generateOptimizedChunk(const glm::vec3& chunkPos) const;
 };
 
 

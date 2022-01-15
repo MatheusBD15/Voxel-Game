@@ -64,11 +64,6 @@ Shader::~Shader()
     glDeleteProgram(m_Id);
 }
 
-void Shader::use()
-{
-    glUseProgram(m_Id);
-}
-
 void Shader::checkCompileErrors(unsigned int shader, std::string type)
 {
     int success;

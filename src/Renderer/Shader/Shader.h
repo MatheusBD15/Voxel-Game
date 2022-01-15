@@ -19,7 +19,7 @@
 class Shader
 {
 public:
-    unsigned int m_Id;
+    GLuint m_Id;
     // constructor generates the shader on the fly
     // ------------------------------------------------------------------------
     Shader() = default;
@@ -27,7 +27,11 @@ public:
     ~Shader();
     // activate the shader
     // ------------------------------------------------------------------------
-    void use();
+    inline void use() const { glUseProgram(m_Id); }
+
+    inline void unUse() const { glUseProgram(0); }
+
+    inline GLuint getId() const { return m_Id; }
 
     // utility uniform functions
     // ------------------------------------------------------------------------

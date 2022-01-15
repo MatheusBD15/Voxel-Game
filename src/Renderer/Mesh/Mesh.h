@@ -14,7 +14,7 @@ private:
     unsigned int m_size;
 
 public:
-    Mesh(const std::vector<Vertex>& vertices, const std::vector<unsigned int>& indices);
+    Mesh(const std::vector<Vertex>& vertices);
     Mesh() = default;
     ~Mesh();
 

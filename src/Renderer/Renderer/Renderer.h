@@ -7,6 +7,7 @@
 
 #include <Mesh/Mesh.h>
 #include <Camera/Camera.h>
+#include <memory>
 
 
 class Renderer

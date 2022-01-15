@@ -4,9 +4,9 @@
 
 #include "Mesh.h"
 
-Mesh::Mesh(const std::vector<Vertex>& vertices, const std::vector<unsigned int>& indices)
+Mesh::Mesh(const std::vector<Vertex>& vertices)
 {
-    m_VAO = new VAO(vertices, indices);
+    m_VAO = new VAO(vertices);
     m_size = vertices.size();
 }
 
