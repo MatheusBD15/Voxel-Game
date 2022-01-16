@@ -2,11 +2,8 @@
 // Created by MatheusBD on 27/11/2021.
 //
 
-#include <VAO/VAO.h>
 #include "Window/Window.h"
 #include "Events/ApplicationEvent.h"
-#include "Events/MouseEvent.h"
-#include "Events/KeyEvent.h"
 
 Window::Window()
 {

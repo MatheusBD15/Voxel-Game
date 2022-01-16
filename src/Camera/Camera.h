@@ -8,46 +8,56 @@
 #include <glm/ext/matrix_float4x4.hpp>
 #include <Shader/Shader.h>
 #include <GLFW/glfw3.h>
+#include <Events/MouseEvent.h>
+#include <Events/KeyEvent.h>
 
 class Camera {
-public:
 
-    bool m_FirstMouse = true;
-    // View matrices
-    glm::mat4 m_Model;
+private:
     glm::mat4 m_View;
     glm::mat4 m_Projection;
 
-    // position vectors
-    glm::vec3 m_CameraPos = glm::vec3(0.0f, 60.0f, 200.0f);
-    glm::vec3 m_CameraTarget = glm::vec3(0.0f, 0.0f, 0.0f);
-    glm::vec3 m_CameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
+    glm::vec3 m_Position;
+    glm::vec3 m_Target;
+    glm::vec3 m_Right;
+    glm::vec3 m_Up;
 
-    glm::vec3 m_CameraFront;
-
-    glm::vec3 m_WorldUp;
-
-    glm::vec3 m_CameraDirection;
-    glm::vec3 m_CameraRight;
-
-    // variables for mouse movement
-    float m_Yaw = -90.0f;
+    float m_Yaw = 0.0f;
     float m_Pitch = 0.0f;
-    float m_LastX = 400, m_lastY = 300;
+
+    float m_Fov = 60.0f;
+
+    float m_Speed = 8.0f;
     float m_Sensitivity = 0.1f;
 
-    // vertex shader that belongs to the camera
-    Shader m_VertexShader;
+    float m_LastX = 1200 / 2.0f;
+    float m_LastY = 720 / 2.0f;
+    bool m_FirstMouse = true;
 
 public:
-    Camera();
+    Camera(glm::vec3 position, glm::vec3 target, float fov);
 
-    void setVertexShader(const Shader &vertexShader);
+    inline glm::mat4 GetView() const
+    {
+        return glm::lookAt(m_Position, m_Position + m_Target, m_Up);
+    }
 
-    void updateCameraVectors();
+    inline glm::mat4 GetProjection() const
+    {
+        return m_Projection;
+    }
 
-    // sets the uniforms
-    void use();
+    inline glm::vec3 GetPosition() const
+    {
+        return m_Position;
+    }
+
+    void UpdateMouse(MouseMovedEvent &event);
+
+    void UpdateKeyboard(KeyPressedEvent& event, float dt);
+
+private:
+    void UpdateVectors();
 };
 
 

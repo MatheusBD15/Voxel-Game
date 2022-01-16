@@ -7,15 +7,18 @@
 
 
 #include <Mesh/Mesh.h>
+#include <glm/vec3.hpp>
+#include <Utils/Vertex.h>
+#include <vector>
 
 class Primitives
-        {
+{
 public:
     Primitives() = delete;
     ~Primitives() = delete;
 
 public:
-    static Mesh cube(glm::vec3 scale = glm::vec3(1.0f), glm::vec3 color = glm::vec3(1.0f));
+    static Mesh Cube(glm::vec3 scale = glm::vec3(1.0f), glm::vec3 color = glm::vec3(1.0f));
 };
 
 

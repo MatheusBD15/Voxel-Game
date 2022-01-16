@@ -1,71 +1,53 @@
 
 #include <map>
 #include "MainLayer.h"
+#include "Light.h"
+#include "Chunk.h"
 
 #define EVENT_FUNCTION(function) [this](auto&&... args) -> decltype(auto) { return this->function(std::forward<decltype(args)>(args)...); }
 
-void MainLayer::onAttach()
+float iterTime = 0.0f;
+
+glm::vec3 circularPath(glm::vec3 current, float dt)
 {
-    m_Noise = NoiseGenerator::generate2d(m_mapX, m_mapZ, 4, m_mapX, m_mapZ, 4.7f);
+    iterTime += dt;
 
-    m_Meshes.reserve(m_chunkNumber * m_chunkNumber);
-
-    for (int cX = 0; cX < m_chunkNumber; ++cX)
-    {
-        for (int cZ = 0; cZ < m_chunkNumber; ++cZ)
-        {
-            glm::vec3 offset = { cX * m_chunkWidth, 0.0f, cZ * m_chunkWidth };
-
-            m_Futures.push_back(std::async(std::launch::async,  [&](const glm::vec3& chunkOffset) -> void {
-
-                std::vector<Vertex> chunk = generateChunk(chunkOffset.x, chunkOffset.z, m_Noise);
-
-                std::lock_guard<std::mutex> lock(m_ChunksMutex);
-
-                m_Chunks.push_back(chunk);
-
-            }, offset));
-        }
-    }
-
-    for ( std::future<void>& future : m_Futures)
-    {
-        future.wait();
-    }
-
-    for( const auto& chunk : m_Chunks )
-    {
-        Mesh* mesh = new Mesh(chunk);
-
-        m_Meshes.push_back(mesh);
-    }
-
-    m_Shader = new Shader("src/Shaders/vertex.shader",
-                           "src/Shaders/fragment.shader");
-
-    m_Camera = new Camera();
-
-    m_Camera->setVertexShader(*m_Shader);
+    return glm::vec3 {
+            75.0f,
+            10.0f,
+            75.0f,
+    };
 }
 
-std::vector<Vertex> MainLayer::generateChunk(int xOffset, int zOffset, std::vector<float>& noise) const
+void MainLayer::onAttach()
 {
-    std::vector<Vertex> chunk;
-    chunk.reserve(m_chunkWidth * m_chunkWidth);
+    m_Camera = new Camera(glm::vec3(3.0f, 3.0f, 3.0f), glm::vec3(0.0f, 0.0f, 0.0f), 60.0f);
 
-    for (int x = 0; x < m_chunkWidth; ++x)
-    {
-        for (int z = 0; z < m_chunkWidth; ++z)
-        {
-            int height = floor(noise.at((z + zOffset) * m_mapX + x + xOffset)) - 120;
+    Renderer::Init();
 
-            std::vector<Vertex> cube = Renderer::createCube((float)(x + xOffset), (float)height, (float)(z + zOffset));
+    m_Light = new Light(
+            glm::vec3(0.0f, 0.0f, 0.0f),
+            Lighting {
+                    glm::vec3(1.0f),
+                    glm::vec3(1.0f),
+                    glm::vec3(1.0f),
+            },
+            circularPath
+    );
 
-            chunk.insert(chunk.end(), cube.begin(), cube.end());
-        }
-    }
+    float x = 0.0f;
+    float y = 0.0f;
 
-    return chunk;
+    m_Chunk1 = new Chunk(
+            glm::vec2(x, y),
+            Material {
+                    glm::vec3(0.05375f, 0.05f, 0.06625f),
+                    glm::vec3(0.18275f, 0.17f, 0.22525f),
+                    glm::vec3(0.332741f, 0.328634f, 0.346435),
+                    0.3f
+            }
+    );
+
 }
 
 
@@ -73,20 +55,24 @@ void MainLayer::onUpdate(float deltaTime)
 {
     m_DeltaTime = deltaTime;
 
-    glm::vec4 lightColor = {1.0f, 1.0f, 1.0f, 1.0f};
-    glm::vec3 lightPos = {0.0f, 5000.0f, 0.0f};
+    m_Light->Update(deltaTime);
 
-    m_Shader->setUniform("lightColor", lightColor);
-    m_Shader->setUniform("lightPos", lightPos);
+    Renderer::Prepare();
 
-    Renderer::prepare();
+    // Preparação da luz
 
-    m_Shader->use();
+    m_Light->Prepare();
 
-    for (auto mesh : m_Meshes)
-    {
-        Renderer::render(mesh, m_Camera);
-    }
+    // Preparação do chunk
+    m_Chunk1->Prepare(
+            m_Light->GetPosition(),
+            m_Light->GetAspect(),
+            m_Camera->GetPosition()
+    );
+
+    // Render
+    Renderer::Render(m_Light->GetRenderable(), *m_Camera);
+    Renderer::Render(m_Chunk1->GetRenderable(), *m_Camera);
 }
 
 
@@ -107,57 +93,14 @@ void MainLayer::onEvent(Event &event)
 
 bool MainLayer::onKeyPressed(KeyPressedEvent& event)
 {
-    const float cameraSpeed = 200.0f * m_DeltaTime; // adjust accordingly
-
-    // w key was pressed
-    if(event.getKeyCode() == 87)
-    {
-        m_Camera->m_CameraPos += cameraSpeed * m_Camera->m_CameraFront;
-    }
-    // s key
-    if(event.getKeyCode() == 83)
-    {
-        m_Camera->m_CameraPos -= cameraSpeed * m_Camera->m_CameraFront;
-    }
-    // a key
-    if(event.getKeyCode() == 65)
-    {
-        m_Camera->m_CameraPos -= glm::normalize(glm::cross(m_Camera->m_CameraFront, m_Camera->m_CameraUp)) * cameraSpeed;
-    }
-    // d key
-    if(event.getKeyCode() == 68)
-    {
-        m_Camera->m_CameraPos += glm::normalize(glm::cross(m_Camera->m_CameraFront, m_Camera->m_CameraUp)) * cameraSpeed;
-    }
+    m_Camera->UpdateKeyboard(event, m_DeltaTime);
 
     return true;
 }
 
 bool MainLayer::onMouseMoved(MouseMovedEvent &event)
 {
-    if (m_Camera->m_FirstMouse)
-    {
-        m_Camera->m_LastX = event.getX();
-        m_Camera->m_lastY = event.getY();
-        m_Camera->m_FirstMouse = false;
-    }
-    float xoffset = event.getX() - m_Camera->m_LastX;
-    float yoffset = m_Camera->m_lastY - event.getY(); // reversed since y-coordinates range from bottom to top
-    m_Camera->m_LastX = event.getX();
-    m_Camera->m_lastY = event.getY();
-
-    xoffset *= m_Camera->m_Sensitivity;
-    yoffset *= m_Camera->m_Sensitivity;
-
-    m_Camera->m_Yaw   += xoffset;
-    m_Camera->m_Pitch += yoffset;
-
-    if(m_Camera->m_Pitch > 89.0f)
-        m_Camera->m_Pitch =  89.0f;
-    if(m_Camera->m_Pitch < -89.0f)
-        m_Camera->m_Pitch = -89.0f;
-
-    m_Camera->updateCameraVectors();
+    m_Camera->UpdateMouse(event);
 
     return true;
 }

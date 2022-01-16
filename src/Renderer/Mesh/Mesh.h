@@ -5,28 +5,30 @@
 #ifndef VOXELGAME_MESH_H
 #define VOXELGAME_MESH_H
 
-#include <VAO/VAO.h>
+#include <Utils/Vertex.h>
+#include <vector>
 
 class Mesh
 {
-private:
-    VAO* m_VAO;
-    unsigned int m_size;
-
 public:
-    Mesh(const std::vector<Vertex>& vertices);
     Mesh() = default;
-    ~Mesh();
 
-    inline VAO* getVAO() { return m_VAO; }
+    Mesh(std::vector<Vertex>&& vertices)
+            : m_Vertices{std::move(vertices)}
+    {
+    }
 
-    inline unsigned int getSize() const { return m_size; }
+    Mesh(const Mesh& other)
+    {
+        m_Vertices = std::move(other.m_Vertices);
+    }
 
-    void bind();
+    Mesh(Mesh&&);
 
-    void unbind();
+    ~Mesh() = default;
 
-    static glm::vec3 normalizeTriangle(std::array<glm::vec3, 3>& triangle);
+protected:
+    std::vector<Vertex> m_Vertices;
 };
 
 

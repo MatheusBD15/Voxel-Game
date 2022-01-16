@@ -19,7 +19,7 @@
 class Shader
 {
 public:
-    GLuint m_Id;
+    GLuint m_ShaderId;
     // constructor generates the shader on the fly
     // ------------------------------------------------------------------------
     Shader() = default;
@@ -27,11 +27,11 @@ public:
     ~Shader();
     // activate the shader
     // ------------------------------------------------------------------------
-    inline void use() const { glUseProgram(m_Id); }
+    inline void use() const { glUseProgram(m_ShaderId); }
 
     inline void unUse() const { glUseProgram(0); }
 
-    inline GLuint getId() const { return m_Id; }
+    inline GLuint getId() const { return m_ShaderId; }
 
     // utility uniform functions
     // ------------------------------------------------------------------------
@@ -52,6 +52,12 @@ private:
     // utility function for checking shader compilation/linking errors.
     // ------------------------------------------------------------------------
     void checkCompileErrors(unsigned int shader, std::string type);
+
+    static std::string LoadShader(GLenum shaderType, const char* fileName);
+
+    void CompileLinkShader(const char* vFileName, const char* fFileName);
+
+    void CheckErrors(GLuint shader, const char* type);
 };
 
 

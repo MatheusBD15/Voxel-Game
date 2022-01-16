@@ -17,6 +17,8 @@
 #include <Renderer/Renderer.h>
 #include <Renderer/Utils/Vertex.h>
 #include "NoiseGenerator.h"
+#include "Light.h"
+#include "Chunk.h"
 #include <stdlib.h>
 #include <mutex>
 #include <future>
@@ -31,6 +33,8 @@ private:
     std::vector<float> m_Noise;
     int m_chunkWidth = 10;
     int m_chunkNumber = 10;
+    Light* m_Light;
+    Chunk* m_Chunk1;
 
     std::vector<Mesh*> m_Meshes;
     std::vector<std::vector<Vertex>> m_Chunks;

@@ -29,9 +29,9 @@ struct Vertex
     {}
 
     Vertex(
-            float posX, float posY, float posZ,
-            float normalX, float normalY, float normalZ,
-            float colorR, float colorG, float colorB
+           float posX, float posY, float posZ,
+           float normalX, float normalY, float normalZ,
+           float colorR, float colorG, float colorB
     )
             : Position(glm::vec3(posX, posY, posZ))
             , Normal(glm::vec3(normalX, normalY, normalZ))

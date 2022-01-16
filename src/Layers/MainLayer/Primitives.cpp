@@ -4,7 +4,7 @@
 
 #include "Primitives.h"
 
-Mesh Primitives::cube(glm::vec3 scale, glm::vec3 color)
+Mesh Primitives::Cube(glm::vec3 scale, glm::vec3 color)
 {
     // Unit cube, has 1 of width
     scale *= 0.5f;

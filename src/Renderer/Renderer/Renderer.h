@@ -8,19 +8,23 @@
 #include <Mesh/Mesh.h>
 #include <Camera/Camera.h>
 #include <memory>
+#include <Mesh/RenderableMesh.h>
 
 
 class Renderer
 {
 public:
-    Renderer() = default;
+    Renderer() = delete;
+    ~Renderer() = delete;
 
-    static void prepare();
+public:
+    static void Init();
 
-    static void render(Mesh* mesh, Camera* camera);
+    static void Prepare();
 
-    static std::vector<Vertex> createCube(float x, float y, float z);
+    static void Render(RenderableMesh& renderable, const Camera& camera);
 };
+
 
 
 #endif //VOXELGAME_RENDERER_H

@@ -18,15 +18,8 @@ set(VENDORS_DIR "${CMAKE_CURRENT_SOURCE_DIR}/vendors")
 
 set(TRANSLATION_FILES "${SRC_DIR}/Main.cpp"
         "${SRC_DIR}/Window/Window.cpp"
-        src/Renderer/EBO/EBO.cpp
-        src/Renderer/EBO/EBO.h
-        src/Renderer/VBO/VBO.cpp
-        src/Renderer/VBO/VBO.h
-        src/Renderer/VAO/VAO.cpp
-        src/Renderer/VAO/VAO.h
         src/Application/Application.cpp
         src/Application/Application.h
-        src/Renderer/Mesh/Mesh.cpp
         src/Renderer/Mesh/Mesh.h
         src/Renderer/Renderer/Renderer.cpp
         src/Renderer/Renderer/Renderer.h
@@ -46,7 +39,18 @@ set(TRANSLATION_FILES "${SRC_DIR}/Main.cpp"
         src/Renderer/Utils/Vertex.h
         src/Layers/MainLayer/NoiseGenerator.cpp
         src/Layers/MainLayer/NoiseGenerator.h
-        src/Renderer/Utils/Lighting.cpp src/Layers/MainLayer/Primitives.cpp src/Layers/MainLayer/Primitives.h src/Layers/MainLayer/Terrain.cpp src/Layers/MainLayer/Terrain.h src/Layers/MainLayer/Noise.h)
+        src/Layers/MainLayer/Primitives.h
+        src/Layers/MainLayer/Primitives.cpp
+        src/Layers/MainLayer/Terrain.cpp
+        src/Layers/MainLayer/Terrain.h
+        src/Layers/MainLayer/Noise.h
+        src/Layers/MainLayer/Chunk.cpp
+        src/Layers/MainLayer/Chunk.h
+        src/Renderer/Utils/Lighting.h
+        src/Renderer/Mesh/RenderableMesh.cpp
+        src/Renderer/Mesh/RenderableMesh.h
+        src/Layers/MainLayer/Light.cpp
+        src/Layers/MainLayer/Light.h)
 
 set(SOURCES_FILES "${TRANSLATION_FILES}")
 
