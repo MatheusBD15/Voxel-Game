@@ -1,8 +1,8 @@
 
 #include <map>
 #include "MainLayer.h"
-#include "Light.h"
-#include "Chunk.h"
+#include "Layers/MainLayer/Components/Light.h"
+#include "Layers/MainLayer/Components/Chunk.h"
 
 #define EVENT_FUNCTION(function) [this](auto&&... args) -> decltype(auto) { return this->function(std::forward<decltype(args)>(args)...); }
 

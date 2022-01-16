@@ -9,7 +9,7 @@
 #include <Utils/Lighting.h>
 #include <Mesh/RenderableMesh.h>
 #include <functional>
-#include "Primitives.h"
+#include "Layers/MainLayer/Primitives.h"
 
 #define LIGHT_VERT "C:\\Users\\MBDambo\\Desktop\\vxel\\Shaders\\lightVertex.shader"
 #define LIGHT_FRAG "C:\\Users\\MBDambo\\Desktop\\vxel\\Shaders\\lightFrag.shader"

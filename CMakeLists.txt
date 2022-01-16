@@ -37,20 +37,20 @@ set(TRANSLATION_FILES "${SRC_DIR}/Main.cpp"
         src/Layers/MainLayer/MainLayer.h
         src/Layers/Layer.h
         src/Renderer/Utils/Vertex.h
-        src/Layers/MainLayer/NoiseGenerator.cpp
-        src/Layers/MainLayer/NoiseGenerator.h
+        src/Layers/MainLayer/Noise/NoiseGenerator.cpp
+        src/Layers/MainLayer/Noise/NoiseGenerator.h
         src/Layers/MainLayer/Primitives.h
         src/Layers/MainLayer/Primitives.cpp
-        src/Layers/MainLayer/Terrain.cpp
-        src/Layers/MainLayer/Terrain.h
-        src/Layers/MainLayer/Noise.h
-        src/Layers/MainLayer/Chunk.cpp
-        src/Layers/MainLayer/Chunk.h
+        src/Layers/MainLayer/Components/Terrain.cpp
+        src/Layers/MainLayer/Components/Terrain.h
+        src/Layers/MainLayer/Noise/Noise.h
+        src/Layers/MainLayer/Components/Chunk.cpp
+        src/Layers/MainLayer/Components/Chunk.h
         src/Renderer/Utils/Lighting.h
         src/Renderer/Mesh/RenderableMesh.cpp
         src/Renderer/Mesh/RenderableMesh.h
-        src/Layers/MainLayer/Light.cpp
-        src/Layers/MainLayer/Light.h)
+        src/Layers/MainLayer/Components/Light.cpp
+        src/Layers/MainLayer/Components/Light.h)
 
 set(SOURCES_FILES "${TRANSLATION_FILES}")
 

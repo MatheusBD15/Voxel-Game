@@ -16,9 +16,9 @@
 #include <Camera/Camera.h>
 #include <Renderer/Renderer.h>
 #include <Renderer/Utils/Vertex.h>
-#include "NoiseGenerator.h"
-#include "Light.h"
-#include "Chunk.h"
+#include "Layers/MainLayer/Noise/NoiseGenerator.h"
+#include "Layers/MainLayer/Components/Light.h"
+#include "Layers/MainLayer/Components/Chunk.h"
 #include <stdlib.h>
 #include <mutex>
 #include <future>

@@ -3,7 +3,7 @@
 //
 
 #include "Terrain.h"
-#include "Noise.h"
+#include "Layers/MainLayer/Noise/Noise.h"
 
 #define FLAT(i, j, width) i * width + j
 
